@@ -21,7 +21,7 @@ function App() {
 
       <BodyOverlay />
 
-       {/*<PageLoader />*/}
+       <PageLoader />
 
       <span className="icon-menu">
         <span className="bar"></span>
@@ -50,12 +50,11 @@ function App() {
 
             <Skills />
 
-
             <Portfolio />
 
-            {/* <Testimonial /> */}
+             {/*<Testimonial />*/}
 
-            {/* <Pricing /> */}
+             {/*<Pricing />*/}
 
             <Contact />
           </div>
