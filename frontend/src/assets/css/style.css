@@ -95,7 +95,6 @@ ul {
 .theme-btn {
     background: var(--primary_color);
     color: #000000;
-    display: block;
     text-align: center;
     padding: 11px 58px 10px 58px;
     display: inline-flex;
@@ -1385,7 +1384,7 @@ body .body-overlay {
 /* 19 - Breadcrumb */
 .breadcrumb-area {
     position: relative;
-    padding: 50px 0px 50px;
+    padding: 50px 0 50px;
     background: #1f1f1f;
     overflow: hidden;
     z-index: 1;
