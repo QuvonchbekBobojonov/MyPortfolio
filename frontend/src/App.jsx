@@ -21,7 +21,7 @@ function App() {
 
       <BodyOverlay />
 
-      {/* <PageLoader /> */}
+       {/*<PageLoader />*/}
 
       <span className="icon-menu">
         <span className="bar"></span>

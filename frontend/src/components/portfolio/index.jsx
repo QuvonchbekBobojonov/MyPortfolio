@@ -1,6 +1,10 @@
-import React from 'react';
+import portfolioImage1 from '../../assets/images/portfolio1.jpg'
+import portfolioImage2 from '../../assets/images/portfolio2.jpg'
+import portfolioImage3 from '../../assets/images/portfolio3.jpg'
+import portfolioImage4 from '../../assets/images/portfolio4.jpg'
+import portfolioImage5 from '../../assets/images/portfolio5.jpg'
 
-function Portfolio(props) {
+function Portfolio() {
     return (
         <section className="portfolio-area page-section scroll-to-page" id="portfolio">
             <div className="custom-container">
@@ -18,8 +22,8 @@ function Portfolio(props) {
                         <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                             <div className="portfolio-item portfolio-full">
                                 <div className="portfolio-item-inner">
-                                    <a href="./assets/images/portfolio1.jpg" data-lightbox="example-1">
-                                        <img src="./assets/images/portfolio1.jpg" alt="Portfolio" />
+                                    <a href={portfolioImage1} data-lightbox="example-1">
+                                        <img src={portfolioImage1} alt="Portfolio" />
                                     </a>
 
                                     <ul className="portfolio-categories">
@@ -41,11 +45,11 @@ function Portfolio(props) {
                         <div className="col-md-6 scroll-animation" data-animation="fade_from_left">
                             <div className="portfolio-item portfolio-half">
                                 <div className="portfolio-item-inner">
-                                    <a href="./assets/images/portfolio2.jpg" data-lightbox="example-1">
-                                        <img src="./assets/images/portfolio2.jpg" alt="Portfolio" />
+                                    <a href={portfolioImage2} data-lightbox="example-1">
+                                        <img src={portfolioImage2} alt="Portfolio" />
                                     </a>
 
-                                    <img src="./assets/images/portfolio2.jpg" alt="Portfolio" />
+                                    <img src={portfolioImage2} alt="Portfolio" />
 
                                     <ul className="portfolio-categories">
                                         <li>
@@ -63,8 +67,8 @@ function Portfolio(props) {
                         <div className="col-md-6 scroll-animation" data-animation="fade_from_right">
                             <div className="portfolio-item portfolio-half">
                                 <div className="portfolio-item-inner">
-                                    <a href="./assets/images/portfolio3.jpg" data-lightbox="example-1">
-                                        <img src="./assets/images/portfolio3.jpg" alt="Portfolio" />
+                                    <a href={portfolioImage3} data-lightbox="example-1">
+                                        <img src={portfolioImage3} alt="Portfolio" />
                                     </a>
 
                                     <ul className="portfolio-categories">
@@ -83,8 +87,8 @@ function Portfolio(props) {
                         <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                             <div className="portfolio-item portfolio-half">
                                 <div className="portfolio-item-inner">
-                                    <a href="./assets/images/portfolio4.jpg" data-lightbox="example-1">
-                                        <img src="./assets/images/portfolio4.jpg" alt="Portfolio" />
+                                    <a href={portfolioImage4} data-lightbox="example-1">
+                                        <img src={portfolioImage4} alt="Portfolio" />
                                     </a>
 
                                     <ul className="portfolio-categories">
@@ -103,8 +107,8 @@ function Portfolio(props) {
                         <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                             <div className="portfolio-item portfolio-half">
                                 <div className="portfolio-item-inner">
-                                    <a href="./assets/images/portfolio5.jpg" data-lightbox="example-1">
-                                        <img src="./assets/images/portfolio5.jpg" alt="Portfolio" />
+                                    <a href={portfolioImage5} data-lightbox="example-1">
+                                        <img src={portfolioImage5} alt="Portfolio" />
                                     </a>
 
                                     <ul className="portfolio-categories">

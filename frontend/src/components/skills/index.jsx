@@ -1,6 +1,13 @@
-import React from 'react';
+import pythonImage from '../../assets/images/python.png'
+import HTMLImage from '../../assets/images/html.png'
+import CSSImage from '../../assets/images/css.png'
+import JavaScriptImage from '../../assets/images/js.png'
+import WordPressImage from '../../assets/images/wordpress.png'
+import DjangoImage from '../../assets/images/django.png'
+import DjangoRestImage from '../../assets/images/django-rest.png'
+import QTImage from '../../assets/images/pyqt.png'
 
-function Skills(props) {
+function Skills() {
     return (
         <section className="skills-area page-section scroll-to-page" id="skills">
             <div className="custom-container">
@@ -18,7 +25,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/python.png" alt="python" width="70px" />
+                                    <img src={pythonImage} alt="python" width="70px" />
                                     <h1 className="percent">92%</h1>
                                 </div>
                                 <p className="name">Python</p>
@@ -27,7 +34,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/html.png" alt="html" width="70px" />
+                                    <img src={HTMLImage} alt="html" width="70px" />
                                     <h1 className="percent">85%</h1>
                                 </div>
                                 <p className="name">HTML</p>
@@ -36,7 +43,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/css.png" alt="CSS" width="70px" />
+                                    <img src={CSSImage} alt="CSS" width="70px" />
                                     <h1 className="percent">60%</h1>
                                 </div>
                                 <p className="name">CSS</p>
@@ -45,7 +52,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/js.png" alt="js" width="70px" />
+                                    <img src={JavaScriptImage} alt="js" width="70px" />
                                     <h1 className="percent">30%</h1>
                                 </div>
                                 <p className="name">JavaScript</p>
@@ -54,7 +61,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/wordpress.png" alt="WordPress" width="70px" />
+                                    <img src={WordPressImage} alt="WordPress" width="70px" />
                                     <h1 className="percent">86%</h1>
                                 </div>
                                 <p className="name">WordPress</p>
@@ -63,7 +70,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/django.png" alt="django" width="55px" />
+                                    <img src={DjangoImage} alt="django" width="55px" />
                                     <h1 className="percent">50%</h1>
                                 </div>
                                 <p className="name">Django</p>
@@ -72,7 +79,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/django-rest.png" alt="django rest framework" width="70px" />
+                                    <img src={DjangoRestImage} alt="django rest framework" width="70px" />
                                     <h1 className="percent">80%</h1>
                                 </div>
                                 <p className="name">django rest framework</p>
@@ -81,7 +88,7 @@ function Skills(props) {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src="./assets/images/pyqt.png" alt="pyqt" width="70px" />
+                                    <img src={QTImage} alt="pyqt" width="70px" />
                                     <h1 className="percent">70%</h1>
                                 </div>
                                 <p className="name">PYQT</p>

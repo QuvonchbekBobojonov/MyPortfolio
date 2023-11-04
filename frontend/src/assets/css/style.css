@@ -218,11 +218,11 @@ ul {
     /* transform: translate(0) !important; */
 }
 main.drake-main {
-    /* inset: 0px;
-    width: 100%;
-    height: 100vh;
-    position: fixed; */
-    /* overflow: hidden; */
+    /*inset: 0px;*/
+    /*width: 100%;*/
+    /*height: 100vh;*/
+    /*position: fixed;*/
+    /*overflow: hidden;*/
 }
 .page-section {
     overflow: hidden;
