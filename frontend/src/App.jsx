@@ -1,3 +1,7 @@
+import { useEffect } from 'react'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import About from "./components/about"
 import BodyOverlay from "./components/body-overlay"
 import Contact from "./components/contact"
@@ -14,14 +18,72 @@ import SidebarMenu from "./components/sidebar-menu"
 import Skills from "./components/skills"
 // import Testimonial from "./components/testimonial"
 
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
+    useEffect(() => {
+        const defaults = {
+            duration: 1.2,
+            ease: "power4.out",
+            animation: "fade_from_bottom",
+            once: false,
+        };
+
+        const animations = {
+            fade_from_bottom: {
+                y: 180,
+                opacity: 0,
+            },
+            fade_from_top: {
+                y: -180,
+                opacity: 0,
+            },
+            fade_from_left: {
+                x: -180,
+                opacity: 0,
+            },
+            fade_from_right: {
+                x: 180,
+                opacity: 0,
+            },
+            fade_in: {
+                opacity: 0,
+            },
+            rotate_up: {
+                y: 180,
+                rotation: 10,
+                opacity: 0,
+            },
+        };
+
+        gsap.utils.toArray(".scroll-animation").forEach(box => {
+            const gsapObj = {};
+            const settings = {
+                duration: parseFloat(box.dataset.animationDuration) || defaults.duration,
+            };
+            const scrollTrigger = {
+                scrollTrigger: {
+                    trigger: box,
+                    once: defaults.once,
+                    start: "top bottom+=20%",
+                    toggleActions: "play none none reverse",
+                    markers: false,
+                },
+            };
+
+            Object.assign(gsapObj, settings);
+            Object.assign(gsapObj, animations[box.dataset.animation || defaults.animation]);
+            Object.assign(gsapObj, scrollTrigger);
+            gsap.from(box, gsapObj);
+        });
+    }, []);
 
   return (
     <div className="home5-page">
 
       <BodyOverlay />
 
-       <PageLoader />
+       {/*<PageLoader />*/}
 
       <SidebarMenu />
 
