@@ -6,13 +6,13 @@ import LeftSidebar from "./components/left-sidebar"
 import LeftSidebarMobile from "./components/left-sidebar-mobile"
 import PageLoader from "./components/page-loader"
 import Portfolio from "./components/portfolio"
-import Pricing from "./components/pricing"
+// import Pricing from "./components/pricing"
 import Resume from "./components/resume"
 import ScrollNav from "./components/scroll-nav"
 import Services from "./components/services"
 import SidebarMenu from "./components/sidebar-menu"
 import Skills from "./components/skills"
-import Testimonial from "./components/testimonial"
+// import Testimonial from "./components/testimonial"
 
 function App() {
 
@@ -22,11 +22,6 @@ function App() {
       <BodyOverlay />
 
        <PageLoader />
-
-      <span className="icon-menu">
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </span>
 
       <SidebarMenu />
 

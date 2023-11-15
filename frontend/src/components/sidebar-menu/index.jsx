@@ -1,9 +1,20 @@
-import React from 'react';
+import {useState} from 'react';
 
 function SidebarMenu() {
+
+    const [menu, setMenu] = useState(false)
+
+    const openMenu = () => setMenu(!menu)
+
     return (
-        <div className="responsive-sidebar-menu">
-            <div className="overlay"></div>
+        <>
+            <span className="icon-menu" onClick={openMenu}>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </span>
+
+            <div className={`responsive-sidebar-menu ${menu ? 'active' : ''}`}>
+            <div className="overlay" onClick={openMenu}></div>
             <div className="sidebar-menu-inner">
                 <div className="menu-wrap">
                     <p>Menu</p>
@@ -62,6 +73,7 @@ function SidebarMenu() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
