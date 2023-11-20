@@ -1,4 +1,4 @@
-import video from '../../assets/images/video5.mp4';
+import video from '../../assets/video5.mp4';
 
 function BodyOverlay() {
     return (

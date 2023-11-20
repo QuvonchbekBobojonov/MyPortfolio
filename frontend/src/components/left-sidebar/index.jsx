@@ -1,5 +1,5 @@
-import logo from '../../assets/images/moorfo.svg';
-import meImage from '../../assets/images/me.jpg';
+import logo from '../../assets/moorfo.svg';
+import meImage from '../../assets/me.jpg';
 
 function LeftSidebar() {
     return (

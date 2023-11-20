@@ -79,7 +79,7 @@ function App() {
     }, []);
 
   return (
-    <div className="home5-page">
+    <div className="home-page">
 
       <BodyOverlay />
 

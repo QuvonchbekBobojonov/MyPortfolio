@@ -1,11 +1,11 @@
-import pythonImage from '../../assets/images/python.png'
-import HTMLImage from '../../assets/images/html.png'
-import CSSImage from '../../assets/images/css.png'
-import JavaScriptImage from '../../assets/images/js.png'
-import WordPressImage from '../../assets/images/wordpress.png'
-import DjangoImage from '../../assets/images/django.png'
-import DjangoRestImage from '../../assets/images/django-rest.png'
-import QTImage from '../../assets/images/pyqt.png'
+import pythonImage from '../../assets/python.png'
+import HTMLImage from '../../assets/html.png'
+import CSSImage from '../../assets/css.png'
+import JavaScriptImage from '../../assets/js.png'
+import WordPressImage from '../../assets/wordpress.png'
+import DjangoImage from '../../assets/django.png'
+import DjangoRestImage from '../../assets/django-rest.png'
+import QTImage from '../../assets/pyqt.png'
 
 function Skills() {
     return (
