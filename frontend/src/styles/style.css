@@ -195,7 +195,6 @@ main.drake-main {
 }
 .page-section {
     overflow: hidden;
-    z-index: 99;
 }
 
 
@@ -787,7 +786,7 @@ main.drake-main {
 .home1-page,
 .home-page,
 .home6-page {
-    background: #000;
+    background: transparent;
 }
 .home-3 {
     overflow: hidden;
@@ -813,14 +812,14 @@ main.drake-main {
     background: transparent;
 }
 /* 09 - Home 5 */
-body .body-overlay {
+.body-overlay {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 3;
+    z-index: -1;
 }
 .home2-page .body-overlay,
 .home3-page .body-overlay {
@@ -1875,7 +1874,7 @@ body .body-overlay {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url('../images/bg-shape.png') center no-repeat;
+    /*background: url('../images/bg-shape.png') center no-repeat;*/
     background-size: cover;
     opacity: 0.4;
 }

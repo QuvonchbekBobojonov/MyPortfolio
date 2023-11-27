@@ -1,4 +1,3 @@
-import React from 'react';
 
 function Resume() {
     return (
@@ -9,7 +8,8 @@ function Resume() {
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-briefcase"></i> Resume
                         </h4>
-                        <h1 className="scroll-animation" data-animation="fade_from_bottom">Ta'lim va
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
+                        <h1 className="scroll-animation" data-animation="fade_from_bottom">Ta'lim va&nbsp;
                             <span>Tajriba</span>
                         </h1>
                     </div>
@@ -33,6 +33,7 @@ function Resume() {
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2013 - 2022</span>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Umumiy o'rta talim.</h2>
                             <p>13 - maktab</p>
                         </div>

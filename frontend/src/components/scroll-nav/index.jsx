@@ -1,6 +1,6 @@
-import React from 'react';
 
-function ScrollNav(props) {
+
+function ScrollNav() {
     return (
         <ul className="menu scroll-nav d-flex">
             <li>
@@ -35,6 +35,7 @@ function ScrollNav(props) {
             </li>
             <li>
                 <a className="scroll-to" href="#contact">
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
                     <span>Bog'lanish</span> <i className="las la-envelope"></i>
                 </a>
             </li>

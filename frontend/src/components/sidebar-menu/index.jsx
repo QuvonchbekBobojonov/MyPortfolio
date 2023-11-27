@@ -51,6 +51,7 @@ function SidebarMenu() {
                         </li>
                         <li>
                             <a className="scroll-to" href="#contact">
+                                {/* eslint-disable-next-line react/no-unescaped-entities */}
                                 <i className="las la-envelope"></i> <span>Bog'lanish</span>
                             </a>
                         </li>
@@ -61,13 +62,13 @@ function SidebarMenu() {
                     <p>Ijtimoiy Sahifalar</p>
                     <ul className="social-links d-flex align-items-center">
                         <li>
-                            <a href=""><i className="lab la-telegram"></i></a>
+                            <a href="https://t.me/QuvonchbekBobojonov" target='_blank' rel="noreferrer"><i className="lab la-telegram"></i></a>
                         </li>
                         <li>
-                            <a href=""><i className="lab la-github"></i></a>
+                            <a href="https://github.com/QuvonchbekBobojonov" target='_blank' rel="noreferrer"><i className="lab la-github"></i></a>
                         </li>
                         <li>
-                            <a href=""><i className="lab la-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/moorfo/" target='_blank' rel="noreferrer"><i className="lab la-linkedin-in"></i></a>
                         </li>
                     </ul>
                 </div>
