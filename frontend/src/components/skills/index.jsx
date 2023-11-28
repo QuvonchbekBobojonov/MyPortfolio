@@ -1,11 +1,11 @@
-import pythonImage from '../../assets/images/python.png'
-import HTMLImage from '../../assets/images/html.png'
-import CSSImage from '../../assets/images/css.png'
-import JavaScriptImage from '../../assets/images/js.png'
-import WordPressImage from '../../assets/images/wordpress.png'
-import DjangoImage from '../../assets/images/django.png'
-import DjangoRestImage from '../../assets/images/django-rest.png'
-import QTImage from '../../assets/images/pyqt.png'
+import pythonImage from '../../assets/python.png'
+import HTMLImage from '../../assets/html.png'
+import CSSImage from '../../assets/css.png'
+import JavaScriptImage from '../../assets/js.png'
+import WordPressImage from '../../assets/wordpress.png'
+import DjangoImage from '../../assets/django.png'
+import DjangoRestImage from '../../assets/django-rest.png'
+import QTImage from '../../assets/pyqt.png'
 
 function Skills() {
     return (
@@ -26,7 +26,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={pythonImage} alt="python" width="70px" />
-                                    <h1 className="percent">92%</h1>
+                                    <h1 className="percent">67%</h1>
                                 </div>
                                 <p className="name">Python</p>
                             </div>
@@ -44,7 +44,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={CSSImage} alt="CSS" width="70px" />
-                                    <h1 className="percent">60%</h1>
+                                    <h1 className="percent">47%</h1>
                                 </div>
                                 <p className="name">CSS</p>
                             </div>
@@ -53,7 +53,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={JavaScriptImage} alt="js" width="70px" />
-                                    <h1 className="percent">30%</h1>
+                                    <h1 className="percent">45%</h1>
                                 </div>
                                 <p className="name">JavaScript</p>
                             </div>
@@ -62,7 +62,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={WordPressImage} alt="WordPress" width="70px" />
-                                    <h1 className="percent">86%</h1>
+                                    <h1 className="percent">66%</h1>
                                 </div>
                                 <p className="name">WordPress</p>
                             </div>
@@ -80,7 +80,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={DjangoRestImage} alt="django rest framework" width="70px" />
-                                    <h1 className="percent">80%</h1>
+                                    <h1 className="percent">65%</h1>
                                 </div>
                                 <p className="name">django rest framework</p>
                             </div>
@@ -89,7 +89,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={QTImage} alt="pyqt" width="70px" />
-                                    <h1 className="percent">70%</h1>
+                                    <h1 className="percent">57%</h1>
                                 </div>
                                 <p className="name">PYQT</p>
                             </div>

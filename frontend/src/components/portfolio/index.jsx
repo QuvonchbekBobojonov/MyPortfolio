@@ -1,8 +1,8 @@
-import portfolioImage1 from '../../assets/images/portfolio1.jpg'
-import portfolioImage2 from '../../assets/images/portfolio2.jpg'
-import portfolioImage3 from '../../assets/images/portfolio3.jpg'
-import portfolioImage4 from '../../assets/images/portfolio4.jpg'
-import portfolioImage5 from '../../assets/images/portfolio5.jpg'
+import portfolioImage1 from '../../assets/portfolio1.jpg'
+import portfolioImage2 from '../../assets/portfolio2.jpg'
+import portfolioImage3 from '../../assets/portfolio3.jpg'
+import portfolioImage4 from '../../assets/portfolio4.jpg'
+import portfolioImage5 from '../../assets/portfolio5.jpg'
 
 function Portfolio() {
     return (

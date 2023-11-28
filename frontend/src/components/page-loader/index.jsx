@@ -10,7 +10,7 @@ function PageLoader() {
 
         setTimeout(() => {
           pageLoader.style.display = 'none';
-        }, 2000);
+        }, 1500);
       }
     }, 1000);
   }, []);

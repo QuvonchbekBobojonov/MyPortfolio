@@ -4,14 +4,14 @@ import App from './App.jsx';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import './assets/css/owl.carousel.min.css'
-import './assets/css/owl.theme.default.min.css'
-import './assets/css/animate.min.css'
-import './assets/css/smooth-scrollbar.css'
-import './assets/css/lightbox.min.css'
+import './styles/owl.carousel.min.css'
+import './styles/owl.theme.default.min.css'
+import './styles/animate.min.css'
+import './styles/smooth-scrollbar.css'
+import './styles/lightbox.min.css'
 
-import './assets/css/style.css'
-import './assets/css/responsive.css'
+import './styles/style.css'
+import './styles/responsive.css'
 
 ReactDOM.render(
   <React.StrictMode>
