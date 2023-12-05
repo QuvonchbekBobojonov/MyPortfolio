@@ -1,5 +1,13 @@
+import {useEffect} from "react";
+import axios from "axios";
+import {env} from "../../../.eslintrc.cjs";
 
 function Resume() {
+    useEffect(() => {
+        const response = axios.get(env.BASE_URL + "experience-years/");
+        console.log(response);
+    }, []);
+
     return (
         <section className="resume-area page-section scroll-to-page" id="resume">
             <div className="custom-container">
