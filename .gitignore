@@ -1,2 +1,4 @@
 .idea
 .idea/
+backend/db.sqlite3
+backend/.venv
