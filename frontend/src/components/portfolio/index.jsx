@@ -1,8 +1,5 @@
-import portfolioImage1 from '../../assets/portfolio1.jpg'
-import portfolioImage2 from '../../assets/portfolio2.jpg'
-import portfolioImage3 from '../../assets/portfolio3.jpg'
-import portfolioImage4 from '../../assets/portfolio4.jpg'
-import portfolioImage5 from '../../assets/portfolio5.jpg'
+import portfolioImage1 from '../../assets/portfolio/1.png'
+import portfolioImage2 from '../../assets/portfolio/2.png'
 
 function Portfolio() {
     return (
@@ -23,101 +20,49 @@ function Portfolio() {
                             <div className="portfolio-item portfolio-full">
                                 <div className="portfolio-item-inner">
                                     <a href={portfolioImage1} data-lightbox="example-1">
-                                        <img src={portfolioImage1} alt="Portfolio" />
+                                        <img src={portfolioImage1} alt="Portfolio"/>
                                     </a>
 
                                     <ul className="portfolio-categories">
                                         <li>
-                                            <a href="">Figma</a>
+                                            <a href="">Django</a>
                                         </li>
                                         <li>
-                                            <a href="">Framer</a>
+                                            <a href="">Django Rest Framework</a>
                                         </li>
                                         <li>
-                                            <a href="">WordPress</a>
+                                            <a href="">Django Channels</a>
+                                        </li>
+                                        <li>
+                                            <a href="">JavaScript</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <h2><a href="">Bureau - Architecture Studio Website</a></h2>
+                                <h2><a href="https://apteka.medcontrol.uz/">MedControl apteka - Medical Control
+                                    System</a></h2>
                             </div>
                         </div>
 
-                        <div className="col-md-6 scroll-animation" data-animation="fade_from_left">
+                        <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
                             <div className="portfolio-item portfolio-half">
                                 <div className="portfolio-item-inner">
                                     <a href={portfolioImage2} data-lightbox="example-1">
-                                        <img src={portfolioImage2} alt="Portfolio" />
-                                    </a>
-
-                                    <img src={portfolioImage2} alt="Portfolio" />
-
-                                    <ul className="portfolio-categories">
-                                        <li>
-                                            <a href="">WordPress</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Larevel/PHP</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h2><a href="">Moonex WordPress Theme</a></h2>
-                            </div>
-                        </div>
-
-                        <div className="col-md-6 scroll-animation" data-animation="fade_from_right">
-                            <div className="portfolio-item portfolio-half">
-                                <div className="portfolio-item-inner">
-                                    <a href={portfolioImage3} data-lightbox="example-1">
-                                        <img src={portfolioImage3} alt="Portfolio" />
+                                        <img src={portfolioImage2} alt="Portfolio"/>
                                     </a>
 
                                     <ul className="portfolio-categories">
                                         <li>
-                                            <a href="">Figma</a>
+                                            <a href="">Django</a>
                                         </li>
                                         <li>
-                                            <a href="">Webflow</a>
+                                            <a href="">Django Rest Framework</a>
+                                        </li>
+                                        <li>
+                                            <a href="">JavaScript</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <h2><a href="">Taskly Dashboard</a></h2>
-                            </div>
-                        </div>
-
-                        <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="portfolio-item portfolio-half">
-                                <div className="portfolio-item-inner">
-                                    <a href={portfolioImage4} data-lightbox="example-1">
-                                        <img src={portfolioImage4} alt="Portfolio" />
-                                    </a>
-
-                                    <ul className="portfolio-categories">
-                                        <li>
-                                            <a href="">Figma</a>
-                                        </li>
-                                        <li>
-                                            <a href="">React</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h2><a href="">Hinterland - Real Estate Site Redesign</a></h2>
-                            </div>
-                        </div>
-
-                        <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="portfolio-item portfolio-half">
-                                <div className="portfolio-item-inner">
-                                    <a href={portfolioImage5} data-lightbox="example-1">
-                                        <img src={portfolioImage5} alt="Portfolio" />
-                                    </a>
-
-                                    <ul className="portfolio-categories">
-                                        <li>
-                                            <a href="">Framer</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h2><a href="">Lewis Portfolio Framer Template</a></h2>
+                                <h2><a href="https://makemoney.uz/uz/">MakeMoney - Online Money Earn System</a></h2>
                             </div>
                         </div>
                     </div>

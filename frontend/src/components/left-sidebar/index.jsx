@@ -9,7 +9,7 @@ function LeftSidebar() {
                 <span className="designation">Software Engineer</span>
             </div>
             <img className="me" src={meImage} alt="Me" />
-            <h2 className="email">info@moorfo.uz</h2>
+            <h2 className="email">moorfoinfo@gmail.com</h2>
             <h2 className="address">Uzbekistan, Xorazm, Yangibozor</h2>
             <p className="copyright">&copy; 2023 Moorfo. Barcha huquqlar himoyalangan</p>
             <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">

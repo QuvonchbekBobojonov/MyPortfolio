@@ -18,8 +18,7 @@ function Services() {
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-bezier-curve"></i>
                             <h2>Veb sayt yaratish</h2>
-                            <p>Istalgan Turdagi Web Saytlar Tayyorlash. Masalan: Internet Magazin, Blog, Axborot
-                                Beruvchi Saytlar!</p>
+                            <p>Istalgan turdagi veb-saytlar tayyorlash. Masalan: Internet do‘kon, Blog, Axborot Beruvchi Saytlar!</p>
                             <span className="projects"></span>
                         </div>
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
@@ -32,8 +31,7 @@ function Services() {
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-bezier-curve"></i>
                             <h2>SEO optimallashtirish</h2>
-                            <p> Saytni Google, Yandex va boshqa qidiruv tizimlarda optimallashtirish bilan
-                                shug’ullanamiz</p>
+                            <p> Saytni Google, Yandex va boshqa qidiruv tizimlarda optimallashtirish bilan shug‘ullanamiz.</p>
                             <span className="projects"></span>
                         </div>
                     </div>

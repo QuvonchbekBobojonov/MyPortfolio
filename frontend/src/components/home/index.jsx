@@ -1,4 +1,3 @@
-
 function Home() {
     return (
         <section className="hero-section page-section scroll-to-page" id="home">
@@ -13,7 +12,7 @@ function Home() {
                         </h1>
                     </div>
                     <p className="scroll-animation" data-animation="fade_from_bottom"> Dasturlarni yaxshi tushunish,
-                        tahlil qilish va ishlab chiqish. Yaratilayotgan dasturlarini doimiy ravishda yangilash,
+                        tahlil qilish va ishlab chiqish. Yaratilayotgan dasturlarni doimiy ravishda yangilash,
                         foydalanuvchilar uchun qulay imkoniyatlar yaratish.</p>
 
                     <div className="facts d-flex">
