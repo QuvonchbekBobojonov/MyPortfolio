@@ -6,7 +6,7 @@ function About() {
                 <div className="about-content content-width">
                     <div className="section-header">
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
-                            <i className="lar la-user"></i> Me haqimda
+                            <i className="lar la-user"></i> Men haqimda
                         </h4>
                         <h1 className="scroll-animation" data-animation="fade_from_bottom">Mening ismim&nbsp;
                             <span>Quvonchbek Bobojonov</span>
