@@ -7,8 +7,8 @@ function Home() {
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-home"></i> Asosy
                         </h4>
-                        <h1 className="scroll-animation title" data-animation="fade_from_bottom">Assalomu&nbsp;
-                            <span>Aleykum</span>
+                        <h1 className="scroll-animation title" data-animation="fade_from_bottom">Assalomu &nbsp;
+                            <span>Alaykum</span>
                         </h1>
                     </div>
                     <p className="scroll-animation" data-animation="fade_from_bottom"> Dasturlarni yaxshi tushunish,
