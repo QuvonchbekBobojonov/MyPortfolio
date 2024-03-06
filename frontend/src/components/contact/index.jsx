@@ -86,7 +86,7 @@ function Contact() {
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="subject">Mavzu <sup>*</sup></label>
-                                    <input type="text" name="subject" id="subject" placeholder="Mavru kiriting"/>
+                                    <input type="text" name="subject" id="subject" placeholder="Mavzu kiriting"/>
                                 </div>
                             </div>
                             <div className="col-md-12">
