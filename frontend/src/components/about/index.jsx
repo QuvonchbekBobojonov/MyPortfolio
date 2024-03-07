@@ -26,7 +26,7 @@ function About() {
                         </div>
                         <div className="col scroll-animation" data-animation="fade_from_right">
                             <ul>
-                                <li>Tel: +998993833582</li>
+                                <li>Tel: +998957090180</li>
                                 <li>Email: moorfoinfo@gmail.com</li>
                                 <li>ZIP code: 221209</li>
                                 <li>Manzil: Uzbekistan, Xorazm, Yangibozor, Chubalanchi</li>
