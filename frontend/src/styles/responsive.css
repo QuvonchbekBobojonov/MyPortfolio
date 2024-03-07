@@ -149,8 +149,8 @@
     .blog-three-columns-main .blog-content-area .row>.col-md-4 {
         width: 50%;
     }
-    .section-header h1.title{
-        font-size: 16px;
+    .section-header .title{
+        font-size: 11px;
     }
 }
 
