@@ -10,9 +10,9 @@ function PageLoader() {
 
         setTimeout(() => {
           pageLoader.style.display = 'none';
-        }, 1500);
+        }, 2000);
       }
-    }, 1000);
+    }, 1500);
   }, []);
 
   return (

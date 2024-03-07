@@ -1,8 +1,6 @@
-
-
-import { useEffect } from 'react'
+import {useEffect} from 'react'
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 import About from "./components/about"
 import BodyOverlay from "./components/body-overlay"
@@ -80,47 +78,47 @@ function App() {
         });
     }, []);
 
-  return (
-    <div className="home-page">
+    return (
+        <div className="home-page">
 
-      <BodyOverlay />
+            <BodyOverlay/>
 
-       <PageLoader />
+            <PageLoader/>
 
-      <SidebarMenu />
+            <SidebarMenu/>
 
-      <ScrollNav />
+            <ScrollNav/>
 
-      <LeftSidebar />
+            <LeftSidebar/>
 
-      <main className="drake-main">
-        <div id="smooth-wrapper">
-          <div id="smooth-content">
+            <main className="drake-main">
+                <div id="smooth-wrapper">
+                    <div id="smooth-content">
 
-            <LeftSidebarMobile />
+                        <LeftSidebarMobile/>
 
-            <Home />
+                        <Home/>
 
-            <About />
+                        <About/>
 
-            <Resume />
+                        <Resume/>
 
-            <Services />
+                        <Services/>
 
-            <Skills />
+                        <Skills/>
 
-            <Portfolio />
+                        <Portfolio/>
 
-             {/*<Testimonial />*/}
+                        {/*<Testimonial />*/}
 
-             {/*<Pricing />*/}
+                        {/*<Pricing />*/}
 
-            <Contact />
-          </div>
+                        <Contact/>
+                    </div>
+                </div>
+            </main>
         </div>
-      </main>
-    </div>
-  )
+    )
 }
 
 export default App
