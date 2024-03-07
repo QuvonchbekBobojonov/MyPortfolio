@@ -10,7 +10,7 @@ import Contact from "./components/contact"
 import Home from "./components/home"
 import LeftSidebar from "./components/left-sidebar"
 import LeftSidebarMobile from "./components/left-sidebar-mobile"
-// import PageLoader from "./components/page-loader"
+import PageLoader from "./components/page-loader"
 import Portfolio from "./components/portfolio"
 // import Pricing from "./components/pricing"
 import Resume from "./components/resume"
@@ -85,7 +85,7 @@ function App() {
 
       <BodyOverlay />
 
-       {/*<PageLoader />*/}
+       <PageLoader />
 
       <SidebarMenu />
 
