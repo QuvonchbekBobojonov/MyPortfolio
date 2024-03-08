@@ -2,17 +2,25 @@ import { useEffect } from 'react';
 
 function PageLoader() {
   useEffect(() => {
-    setTimeout(() => {
-      const pageLoader = document.querySelector('.page-loader');
+    const pageLoader = document.querySelector('.page-loader');
+
+    const fadeOutPageLoader = () => {
       if (pageLoader) {
         pageLoader.style.transition = 'opacity 1s';
         pageLoader.style.opacity = '0';
-
         setTimeout(() => {
           pageLoader.style.display = 'none';
-        }, 2000);
+        }, 1000);
       }
-    }, 1500);
+    };
+
+    window.addEventListener('load', () => {
+      setTimeout(fadeOutPageLoader, 500);
+    });
+
+    return () => {
+      window.removeEventListener('load', fadeOutPageLoader);
+    };
   }, []);
 
   return (
