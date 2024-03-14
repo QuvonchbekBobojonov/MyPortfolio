@@ -3,6 +3,7 @@ import aixos from 'axios';
 
 function Contact() {
     const [isSubmitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
 
     const SendToTelegram = (fullName, email, phoneNumber, subject, budget, message) => {
         const chatId = '6387607435';
@@ -29,11 +30,18 @@ function Contact() {
         const subject = data.get('subject');
         const budget = data.get('budget');
         const message = data.get('message');
+        if (!fullName || !email || !subject) {
+            setError(true);
+            setTimeout(() => {
+                setError(false);
+            }, 1500);
+            return;
+        }
         SendToTelegram(fullName, email, phoneNumber, subject, budget, message);
         form.reset();
         setTimeout(() => {
             setSubmitted(false);
-        },1500);
+        }, 1500);
     };
 
     return (
@@ -52,7 +60,8 @@ function Contact() {
                     </div>
                     <h3 className="scroll-animation" data-animation="fade_from_bottom">moorfoinfo@gmail.com</h3>
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
-                    <p id="required-msg">* Belgilangan maydonlarni to'ldirish talab qilinadi.</p>
+                    {error && <p className="alert alert-danger messenger-box-contact__msg" role="alert">Belgilangan
+                        maydonlarni to'ldiring.</p>}
 
                     <form className="contact-form scroll-animation" data-animation="fade_from_bottom"
                           onSubmit={handleSubmit}>
