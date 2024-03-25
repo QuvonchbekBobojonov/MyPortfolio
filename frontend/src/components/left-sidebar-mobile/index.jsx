@@ -9,7 +9,7 @@ function LeftSidebarMobile() {
                 <span className="designation"></span>
             </div>
             <img className="me" src={meImage} alt="Me" />
-            <h2 className="email">moorfoinfo@gmail.com</h2>
+            <h2 className="email">hi@moorfo.uz</h2>
             <h2 className="address">Uzbekistan, Xorazm, Yangibozor</h2>
             <p className="copyright">&copy; {new Date().getFullYear()} Moorfo. Barcha huquqlar himoyalangan</p>
             <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">

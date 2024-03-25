@@ -58,7 +58,7 @@ function Contact() {
                             <span>bog'lanish!</span>
                         </h1>
                     </div>
-                    <h3 className="scroll-animation" data-animation="fade_from_bottom">moorfoinfo@gmail.com</h3>
+                    <h3 className="scroll-animation" data-animation="fade_from_bottom">hi@moorfo.uz</h3>
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
                     {error && <p className="alert alert-danger messenger-box-contact__msg" role="alert">Belgilangan
                         maydonlarni to'ldiring.</p>}
