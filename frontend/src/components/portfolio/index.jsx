@@ -38,7 +38,7 @@ function Portfolio() {
                                         </li>
                                     </ul>
                                 </div>
-                                <h2><a href="https://apteka.medcontrol.uz/">MedControl apteka - Medical Control
+                                <h2><a href="https://apteka.medcontrol.uz/" target={'_blank'}>MedControl apteka - Medical Control
                                     System</a></h2>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ function Portfolio() {
                                         </li>
                                     </ul>
                                 </div>
-                                <h2><a href="https://makemoney.uz/uz/">MakeMoney - Online Money Earn System</a></h2>
+                                <h2><a href="https://makemoney.uz/uz/" target={'_blank'}>MakeMoney - Online Money Earn System</a></h2>
                             </div>
                         </div>
                     </div>
