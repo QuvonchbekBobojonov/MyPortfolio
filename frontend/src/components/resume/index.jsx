@@ -18,7 +18,7 @@ function Resume() {
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2023 - hozirda</span>
                             <h2>Back-end dasturchi.</h2>
-                            <p>Mega Soft</p>
+                            <p>TOTMEGA MCHJ</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2022 - hozirda</span>

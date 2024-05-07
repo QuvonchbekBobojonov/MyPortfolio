@@ -16,7 +16,6 @@ import ScrollNav from "./components/scroll-nav"
 import Services from "./components/services"
 import SidebarMenu from "./components/sidebar-menu"
 import Skills from "./components/skills"
-// import Testimonial from "./components/testimonial"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,8 +107,6 @@ function App() {
                         <Skills/>
 
                         <Portfolio/>
-
-                        {/*<Testimonial />*/}
 
                         {/*<Pricing />*/}
 
