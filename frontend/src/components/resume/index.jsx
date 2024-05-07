@@ -22,7 +22,8 @@ function Resume() {
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2022 - hozirda</span>
-                            <h2>Axborot vositalari mashinalari va kompyuter tarmoqlari operatori.</h2>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
+                            <h2>Axborot vositalari mashinalari va kompyuter tarmoqlari operatori o'quvchi.</h2>
                             <p>1-son kasb-hunar maktab (Yangibozor tumani)</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
