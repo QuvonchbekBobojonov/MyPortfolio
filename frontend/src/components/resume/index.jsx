@@ -37,7 +37,7 @@ function Resume() {
                             <span className="date">2020 - 2022</span>
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Back-end dasturlash & Kampyuter Savatxonlik kursi o'quvchi.</h2>
-                            <p>IT Center</p>
+                            <p>IT Park (Yangibozor tumani)</p>
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Front-end & Back-end dasturlash kursi o'quvchi.</h2>
                             <p>Mohirdev</p>
