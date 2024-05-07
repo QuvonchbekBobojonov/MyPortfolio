@@ -23,7 +23,7 @@ function Resume() {
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2022 - hozirda</span>
                             <h2>Axborot vositalari mashinalari va kompyuter tarmoqlari operatori.</h2>
-                            <p>1-son kasb-hunar maktab</p>
+                            <p>1-son kasb-hunar maktab (Yangibozor tumani)</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2022 - 2023</span>
@@ -40,12 +40,6 @@ function Resume() {
                             <p>Mohirdev</p>
                             <h2>WordPress & Django rest framework.</h2>
                             <p>YouTube</p>
-                        </div>
-                        <div className="item scroll-animation" data-animation="fade_from_right">
-                            <span className="date">2013 - 2022</span>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            <h2>Umumiy o'rta talim.</h2>
-                            <p>13 - maktab (Yangibozor tumani)</p>
                         </div>
                     </div>
 
