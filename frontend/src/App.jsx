@@ -83,7 +83,7 @@ function App() {
 
             <BodyOverlay/>
 
-            {/*<PageLoader/>*/}
+            <PageLoader/>
 
             <SidebarMenu/>
 
