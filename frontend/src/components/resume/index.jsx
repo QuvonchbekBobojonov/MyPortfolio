@@ -27,6 +27,7 @@ function Resume() {
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2022 - 2023</span>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Front-end dasturlash kursi o'quvchi.</h2>
                             <p>IT center</p>
                             <h2>Python Backend</h2>
@@ -34,8 +35,10 @@ function Resume() {
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2020 - 2022</span>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Back-end dasturlash & Kampyuter Savatxonlik kursi o'quvchi.</h2>
                             <p>IT Center</p>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Front-end & Back-end dasturlash kursi o'quvchi.</h2>
                             <p>Mohirdev</p>
                             <h2>WordPress & Django rest framework.</h2>
