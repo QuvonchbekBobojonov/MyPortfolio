@@ -29,7 +29,7 @@ function Resume() {
                             <span className="date">2022 - 2023</span>
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Front-end dasturlash kursi o'quvchi.</h2>
-                            <p>IT center</p>
+                            <p>IT Park (Yangibozor tumani)</p>
                             <h2>Python Backend</h2>
                             <p>Fulfil Education</p>
                         </div>
