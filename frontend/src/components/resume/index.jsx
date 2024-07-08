@@ -16,12 +16,17 @@ function Resume() {
 
                     <div className="resume-timeline">
                         <div className="item scroll-animation" data-animation="fade_from_right">
+                            <span className="date">2024 - hozirda</span>
+                            <h2>Desktop Engineer</h2>
+                            <p>TOTMEGA MCHJ</p>
+                        </div>
+                        <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2023 - hozirda</span>
                             <h2>Back-end dasturchi.</h2>
                             <p>TOTMEGA MCHJ</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
-                            <span className="date">2022 - hozirda</span>
+                            <span className="date">2022 - 2024</span>
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>Axborot vositalari mashinalari va kompyuter tarmoqlari operatori o'quvchi.</h2>
                             <p>1-son kasb-hunar maktab (Yangibozor tumani)</p>
