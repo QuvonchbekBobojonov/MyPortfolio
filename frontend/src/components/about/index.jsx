@@ -20,13 +20,13 @@ function About() {
                             <ul>
                                 <li>Ism: Quvonchbek</li>
                                 <li>Familya: Bobojonov</li>
-                                <li>Yosh: 18</li>
+                                <li>Yosh: {new Date().getFullYear() - 2006}</li>
                                 <li>Daraja: strong junior</li>
                             </ul>
                         </div>
                         <div className="col scroll-animation" data-animation="fade_from_right">
                             <ul>
-                                <li>Tel: +998957090180</li>
+                                <li>Tel: +998 77 404 00 66</li>
                                 <li>Email: hi@moorfo.uz</li>
                                 <li>ZIP code: 221209</li>
                                 <li>Manzil: Uzbekistan, Xorazm, Yangibozor, Chubalanchi</li>
