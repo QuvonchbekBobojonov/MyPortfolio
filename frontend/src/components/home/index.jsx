@@ -21,7 +21,7 @@ function Home() {
                             <p>Yilik Tajriba</p>
                         </div>
                         <div className="right scroll-animation" data-animation="fade_from_right">
-                            <h1>13+</h1>
+                            <h1>20+</h1>
                             <p>loyihalar</p>
                         </div>
                     </div>

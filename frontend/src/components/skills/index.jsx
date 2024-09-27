@@ -26,7 +26,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={pythonImage} alt="python" width="70px" />
-                                    <h1 className="percent">10+ loyihalar</h1>
+                                    <h1 className="percent">15+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">Python</p>
                             </div>
@@ -35,7 +35,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={HTMLImage} alt="html" width="70px" />
-                                    <h1 className="percent">12+ loyihalar</h1>
+                                    <h1 className="percent">12+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">HTML</p>
                             </div>
@@ -44,7 +44,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={CSSImage} alt="CSS" width="70px" />
-                                    <h1 className="percent">12+ loyihalar</h1>
+                                    <h1 className="percent">12+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">CSS</p>
                             </div>
@@ -53,7 +53,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={JavaScriptImage} alt="js" width="70px" />
-                                    <h1 className="percent">12+ loyihalar</h1>
+                                    <h1 className="percent">12+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">JavaScript</p>
                             </div>
@@ -62,7 +62,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={WordPressImage} alt="WordPress" width="70px" />
-                                    <h1 className="percent">5+ loyihalar</h1>
+                                    <h1 className="percent">5+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">WordPress</p>
                             </div>
@@ -71,7 +71,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={DjangoImage} alt="django" width="55px" />
-                                    <h1 className="percent">10+ loyihalar</h1>
+                                    <h1 className="percent">10+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">Django</p>
                             </div>
@@ -80,7 +80,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={DjangoRestImage} alt="django rest framework" width="70px" />
-                                    <h1 className="percent">8+ loyihalar</h1>
+                                    <h1 className="percent">8+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">django rest framework</p>
                             </div>
@@ -89,7 +89,7 @@ function Skills() {
                             <div className="skill">
                                 <div className="skill-inner">
                                     <img src={QTImage} alt="pyqt" width="70px" />
-                                    <h1 className="percent">2+ loyihalar</h1>
+                                    <h1 className="percent">2+<br/> loyihalar</h1>
                                 </div>
                                 <p className="name">PYQT</p>
                             </div>
