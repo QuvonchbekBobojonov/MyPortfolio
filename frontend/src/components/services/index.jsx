@@ -19,20 +19,20 @@ function Services() {
                             <i className="las la-bezier-curve"></i>
                             <h2>Veb sayt yaratish</h2>
                             <p>Istalgan turdagi veb-saytlar tayyorlash. Masalan: Internet do‘kon, Blog, Axborot Beruvchi Saytlar!</p>
-                            <span className="projects"></span>
+                            <span className="projects">12+ loyihalar</span>
                         </div>
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-code"></i>
                             <h2>Telegram bot</h2>
                             <p>Istalgan Turdagi Telegram Bot Tayyorlash Va Uni Serverga Qo'yish. Sifatli
                                 Ko'rinishda</p>
-                            <span className="projects"></span>
+                            <span className="projects">10+ loyihalar</span>
                         </div>
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-bezier-curve"></i>
                             <h2>SEO optimallashtirish</h2>
                             <p> Saytni Google, Yandex va boshqa qidiruv tizimlarda optimallashtirish bilan shug‘ullanamiz.</p>
-                            <span className="projects"></span>
+                            <span className="projects">5+ loyihalar</span>
                         </div>
                     </div>
 
