@@ -17,6 +17,8 @@ function Resume() {
                     <div className="resume-timeline">
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2024 - hozirda</span>
+                            <h2>Full Stack Engineer Mentor | "Al-Xorazmiy Vorislari" loyhasida mentor</h2>
+                            <p>IT Park MCHJ</p>
                             <h2>Desktop Engineer</h2>
                             <p>TOTMEGA MCHJ</p>
                         </div>
