@@ -18,7 +18,7 @@ function Home() {
 
                     <div className="facts d-flex">
                         <div className="left scroll-animation" data-animation="fade_from_left">
-                            <h1>1.5+</h1>
+                            <h1>{(new Date().getFullYear() - 2022) + "+"}</h1> 
                             <p>Years of Experience</p>
                         </div>
                         <div className="right scroll-animation" data-animation="fade_from_right">
