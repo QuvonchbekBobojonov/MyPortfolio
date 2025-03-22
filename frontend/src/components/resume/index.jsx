@@ -1,4 +1,3 @@
-
 function Resume() {
     return (
         <section className="resume-area page-section scroll-to-page" id="resume">
@@ -8,48 +7,43 @@ function Resume() {
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-briefcase"></i> Resume
                         </h4>
-                        {/* eslint-disable-next-line react/no-unescaped-entities */}
-                        <h1 className="scroll-animation" data-animation="fade_from_bottom">Ta'lim va&nbsp;
-                            <span>Tajriba</span>
+                        <h1 className="scroll-animation" data-animation="fade_from_bottom">Education &nbsp;
+                            <span>Experience</span>
                         </h1>
                     </div>
 
                     <div className="resume-timeline">
                         <div className="item scroll-animation" data-animation="fade_from_right">
-                            <span className="date">2024 - hozirda</span>
-                            <h2>Full Stack Engineer Mentor | "Al-Xorazmiy Vorislari" loyhasida mentor</h2>
-                            <p>IT Park MCHJ</p>
+                            <span className="date">2024 - Present</span>
+                            <h2>Full Stack Engineer Mentor | Mentor at "Al-Khwarizmi Heirs" Project</h2>
+                            <p>Digital education development center</p>
                             <h2>Desktop Engineer</h2>
-                            <p>TOTMEGA MCHJ</p>
+                            <p>TOTMEGA LLC</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
-                            <span className="date">2023 - hozirda</span>
-                            <h2>Back-end dasturchi.</h2>
-                            <p>TOTMEGA MCHJ</p>
+                            <span className="date">2023 - Present</span>
+                            <h2>Back-end Developer</h2>
+                            <p>TOTMEGA LLC</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2022 - 2024</span>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            <h2>Axborot vositalari mashinalari va kompyuter tarmoqlari operatori o'quvchi.</h2>
-                            <p>1-son kasb-hunar maktab (Yangibozor tumani)</p>
+                            <h2>Student, Information Media Machines and Computer Networks Operator</h2>
+                            <p>Vocational School No. 1 (Yangibozor District)</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2022 - 2023</span>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            <h2>Front-end dasturlash kursi o'quvchi.</h2>
-                            <p>IT Park (Yangibozor tumani)</p>
+                            <h2>Student, Front-end Development Course</h2>
+                            <p>IT Park (Yangibozor District)</p>
                             <h2>Python Backend</h2>
                             <p>Fulfil Education</p>
                         </div>
                         <div className="item scroll-animation" data-animation="fade_from_right">
                             <span className="date">2020 - 2022</span>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            <h2>Back-end dasturlash & Kampyuter Savatxonlik kursi o'quvchi.</h2>
-                            <p>IT Park (Yangibozor tumani)</p>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            <h2>Front-end & Back-end dasturlash kursi o'quvchi.</h2>
+                            <h2>Student, Back-end Development & Computer Literacy Course</h2>
+                            <p>IT Park (Yangibozor District)</p>
+                            <h2>Student, Front-end & Back-end Development Course</h2>
                             <p>Mohirdev</p>
-                            <h2>WordPress & Django rest framework.</h2>
+                            <h2>WordPress & Django REST Framework</h2>
                             <p>YouTube</p>
                         </div>
                     </div>
