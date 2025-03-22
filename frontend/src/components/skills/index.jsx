@@ -6,6 +6,9 @@ import WordPressImage from '../../assets/wordpress.png'
 import DjangoImage from '../../assets/django.png'
 import DjangoRestImage from '../../assets/django-rest.png'
 import QTImage from '../../assets/pyqt.png'
+import FlaskImage from '../../assets/flask.png'
+import AiogramImage from '../../assets/aiogram.png'
+import IoTImage from '../../assets/iot.png'
 
 function Skills() {
     return (
@@ -34,37 +37,10 @@ function Skills() {
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
                             <div className="skill">
                                 <div className="skill-inner">
-                                    <img src={HTMLImage} alt="html" width="70px" />
-                                    <h1 className="percent">12+<br/> loyihalar</h1>
-                                </div>
-                                <p className="name">HTML</p>
-                            </div>
-                        </div>
-                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="skill">
-                                <div className="skill-inner">
-                                    <img src={CSSImage} alt="CSS" width="70px" />
-                                    <h1 className="percent">12+<br/> loyihalar</h1>
-                                </div>
-                                <p className="name">CSS</p>
-                            </div>
-                        </div>
-                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="skill">
-                                <div className="skill-inner">
-                                    <img src={JavaScriptImage} alt="js" width="70px" />
-                                    <h1 className="percent">12+<br/> loyihalar</h1>
-                                </div>
-                                <p className="name">JavaScript</p>
-                            </div>
-                        </div>
-                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="skill">
-                                <div className="skill-inner">
-                                    <img src={WordPressImage} alt="WordPress" width="70px" />
+                                    <img src={FlaskImage} alt="flask" width="70px" />
                                     <h1 className="percent">5+<br/> loyihalar</h1>
                                 </div>
-                                <p className="name">WordPress</p>
+                                <p className="name">Flask</p>
                             </div>
                         </div>
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
@@ -82,7 +58,16 @@ function Skills() {
                                     <img src={DjangoRestImage} alt="django rest framework" width="70px" />
                                     <h1 className="percent">8+<br/> loyihalar</h1>
                                 </div>
-                                <p className="name">django rest framework</p>
+                                <p className="name">Django Rest Framework</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                            <div className="skill">
+                                <div className="skill-inner">
+                                    <img src={AiogramImage} alt="aiogram" width="70px" />
+                                    <h1 className="percent">6+<br/> loyihalar</h1>
+                                </div>
+                                <p className="name">Aiogram</p>
                             </div>
                         </div>
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
@@ -91,11 +76,19 @@ function Skills() {
                                     <img src={QTImage} alt="pyqt" width="70px" />
                                     <h1 className="percent">2+<br/> loyihalar</h1>
                                 </div>
-                                <p className="name">PYQT</p>
+                                <p className="name">PyQt</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                            <div className="skill">
+                                <div className="skill-inner">
+                                    <img src={IoTImage} alt="iot" width="70px" />
+                                    <h1 className="percent">4+<br/> loyihalar</h1>
+                                </div>
+                                <p className="name">IoT</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
