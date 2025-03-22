@@ -108,7 +108,7 @@ function App() {
 
                         <Portfolio/>
 
-                        {/*<Pricing />*/}
+                        <Pricing />
 
                         <Contact/>
                     </div>
