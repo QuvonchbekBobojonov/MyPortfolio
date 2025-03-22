@@ -6,7 +6,6 @@ import WordPressImage from '../../assets/wordpress.png';
 import DjangoImage from '../../assets/django.png';
 import DjangoRestImage from '../../assets/django-rest.png';
 import QTImage from '../../assets/pyqt.png';
-import FlaskImage from '../../assets/flask.png';
 import AiogramImage from '../../assets/aiogram.png';
 import IoTImage from '../../assets/iot.png';
 
@@ -32,15 +31,6 @@ function Skills() {
                                     <h1 className="percent">15+<br/> projects</h1>
                                 </div>
                                 <p className="name">Python</p>
-                            </div>
-                        </div>
-                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="skill">
-                                <div className="skill-inner">
-                                    <img src={FlaskImage} alt="flask" width="70px" />
-                                    <h1 className="percent">5+<br/> projects</h1>
-                                </div>
-                                <p className="name">Flask</p>
                             </div>
                         </div>
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
