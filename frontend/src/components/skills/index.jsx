@@ -6,8 +6,6 @@ import WordPressImage from '../../assets/wordpress.png';
 import DjangoImage from '../../assets/django.png';
 import DjangoRestImage from '../../assets/django-rest.png';
 import QTImage from '../../assets/pyqt.png';
-import AiogramImage from '../../assets/aiogram.png';
-import IoTImage from '../../assets/iot.png';
 
 function Skills() {
     return (
