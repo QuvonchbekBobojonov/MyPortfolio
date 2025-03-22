@@ -25,7 +25,12 @@ function About() {
                                 <li>Name: Quvonchbek</li>
                                 <li>Surname: Bobojonov</li>
                                 <li>Age: {new Date().getFullYear() - 2006}</li>
-                                <li>Level: Strong Junior</li>
+                                <li>  Level: {(() => {
+    const experience = new Date().getFullYear() - 2022; // Ish boshlagan yilni kiriting
+    if (experience < 2) return "Junior Developer";
+    if (experience < 5) return "Middle Developer";
+    return "Senior Developer";
+  })()}</li>
                             </ul>
                         </div>
                         <div className="col scroll-animation" data-animation="fade_from_right">
