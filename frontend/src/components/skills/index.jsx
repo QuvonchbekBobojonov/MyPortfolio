@@ -19,7 +19,7 @@ function Skills() {
                             <i className="las la-shapes"></i> Skills
                         </h4>
                         <h1 className="scroll-animation" data-animation="fade_from_bottom">
-                            My <span> Advantages</span>
+                            My <span> Strengths</span>
                         </h1>
                     </div>
 
@@ -31,6 +31,42 @@ function Skills() {
                                     <h1 className="percent">15+<br/> projects</h1>
                                 </div>
                                 <p className="name">Python</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                            <div className="skill">
+                                <div className="skill-inner">
+                                    <img src={HTMLImage} alt="html" width="70px" />
+                                    <h1 className="percent">12+<br/> projects</h1>
+                                </div>
+                                <p className="name">HTML</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                            <div className="skill">
+                                <div className="skill-inner">
+                                    <img src={CSSImage} alt="CSS" width="70px" />
+                                    <h1 className="percent">12+<br/> projects</h1>
+                                </div>
+                                <p className="name">CSS</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                            <div className="skill">
+                                <div className="skill-inner">
+                                    <img src={JavaScriptImage} alt="js" width="70px" />
+                                    <h1 className="percent">12+<br/> projects</h1>
+                                </div>
+                                <p className="name">JavaScript</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                            <div className="skill">
+                                <div className="skill-inner">
+                                    <img src={WordPressImage} alt="WordPress" width="70px" />
+                                    <h1 className="percent">5+<br/> projects</h1>
+                                </div>
+                                <p className="name">WordPress</p>
                             </div>
                         </div>
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
@@ -48,16 +84,7 @@ function Skills() {
                                     <img src={DjangoRestImage} alt="django rest framework" width="70px" />
                                     <h1 className="percent">8+<br/> projects</h1>
                                 </div>
-                                <p className="name">Django Rest Framework</p>
-                            </div>
-                        </div>
-                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="skill">
-                                <div className="skill-inner">
-                                    <img src={AiogramImage} alt="aiogram" width="70px" />
-                                    <h1 className="percent">6+<br/> projects</h1>
-                                </div>
-                                <p className="name">Aiogram</p>
+                                <p className="name">Django REST Framework</p>
                             </div>
                         </div>
                         <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
@@ -69,16 +96,8 @@ function Skills() {
                                 <p className="name">PyQt</p>
                             </div>
                         </div>
-                        <div className="col-md-3 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="skill">
-                                <div className="skill-inner">
-                                    <img src={IoTImage} alt="iot" width="70px" />
-                                    <h1 className="percent">4+<br/> projects</h1>
-                                </div>
-                                <p className="name">IoT</p>
-                            </div>
-                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
