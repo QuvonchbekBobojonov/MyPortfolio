@@ -5,24 +5,25 @@ function Home() {
                 <div className="hero-content content-width">
                     <div className="section-header">
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
-                            <i className="las la-home"></i> Asosy
+                            <i className="las la-home"></i> Main
                         </h4>
-                        <h1 className="scroll-animation title" data-animation="fade_from_bottom">Assalomu &nbsp;
-                            <span>Alaykum</span>
+                        <h1 className="scroll-animation title" data-animation="fade_from_bottom">Hello &nbsp;
+                            <span>There</span>
                         </h1>
                     </div>
-                    <p className="scroll-animation" data-animation="fade_from_bottom"> Dasturlarni yaxshi tushunish,
-                        tahlil qilish va ishlab chiqish. Yaratilayotgan dasturlarni doimiy ravishda yangilash,
-                        foydalanuvchilar uchun qulay imkoniyatlar yaratish.</p>
+                    <p className="scroll-animation" data-animation="fade_from_bottom">
+                        Understanding, analyzing, and developing software efficiently. 
+                        Continuously updating applications and creating user-friendly features.
+                    </p>
 
                     <div className="facts d-flex">
                         <div className="left scroll-animation" data-animation="fade_from_left">
                             <h1>1.5+</h1>
-                            <p>Yilik Tajriba</p>
+                            <p>Years of Experience</p>
                         </div>
                         <div className="right scroll-animation" data-animation="fade_from_right">
                             <h1>20+</h1>
-                            <p>loyihalar</p>
+                            <p>Projects</p>
                         </div>
                     </div>
                 </div>
