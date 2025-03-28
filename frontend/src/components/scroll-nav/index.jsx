@@ -1,16 +1,14 @@
-
-
 function ScrollNav() {
     return (
         <ul className="menu scroll-nav d-flex">
             <li>
                 <a className="scroll-to" href="#home">
-                    <span>Asosy</span> <i className="las la-home"></i>
+                    <span>Home</span> <i className="las la-home"></i>
                 </a>
             </li>
             <li>
                 <a className="scroll-to" href="#about">
-                    <span>Haqida</span> <i className="lar la-user"></i>
+                    <span>About</span> <i className="lar la-user"></i>
                 </a>
             </li>
             <li>
@@ -20,12 +18,12 @@ function ScrollNav() {
             </li>
             <li>
                 <a href="#services">
-                    <span>Xizmatlar</span> <i className="las la-stream"></i>
+                    <span>Services</span> <i className="las la-stream"></i>
                 </a>
             </li>
             <li>
                 <a className="scroll-to" href="#skills">
-                    <span>Bilimlar</span> <i className="las la-shapes"></i>
+                    <span>Skills</span> <i className="las la-shapes"></i>
                 </a>
             </li>
             <li>
@@ -35,8 +33,7 @@ function ScrollNav() {
             </li>
             <li>
                 <a className="scroll-to" href="#contact">
-                    {/* eslint-disable-next-line react/no-unescaped-entities */}
-                    <span>Bog'lanish</span> <i className="las la-envelope"></i>
+                    <span>Contact</span> <i className="las la-envelope"></i>
                 </a>
             </li>
         </ul>
