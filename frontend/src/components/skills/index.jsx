@@ -91,7 +91,7 @@ function Skills() {
                                     <img src={QTImage} alt="pyqt" width="70px" />
                                     <h1 className="percent">2+<br/> projects</h1>
                                 </div>
-                                <p className="name">PyQt</p>
+                                <p className="name">Qt for Python</p>
                             </div>
                         </div>
                     </div>
