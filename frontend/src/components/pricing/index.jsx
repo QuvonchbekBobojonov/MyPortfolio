@@ -34,7 +34,7 @@ function Pricing() {
                                         <li>Work on business days, no weekends</li>
                                         <li>Support for 3 months</li>
                                     </ul>
-                                    <a href="#" className="theme-btn">Pick this package</a>
+                                    <a href="tel:+998774040066" className="theme-btn">Pick this package</a>
                                 </div>
                             </div>
 
@@ -61,7 +61,7 @@ function Pricing() {
                                         <li>12-months support & maintenance</li>
                                         <li>Project always has priority</li>
                                     </ul>
-                                    <a href="#" className="theme-btn">Pick this package</a>
+                                    <a href="tel:+998774040066" className="theme-btn">Pick this package</a>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ function Pricing() {
                         {/* Custom Package */}
                         <p className="info scroll-animation" data-animation="fade_from_bottom">
                             Need a custom solution for your unique project?<br />
-                            Let's discuss and build a tailor-made package just for you. <a href="#">Contact Me</a>
+                            Let's discuss and build a tailor-made package just for you. <a href="tel:+998774040066">Contact Me</a>
                         </p>
                     </div>
                 </div>
