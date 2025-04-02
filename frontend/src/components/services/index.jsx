@@ -36,7 +36,7 @@ function Services() {
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-desktop"></i>
                             <h2>Desktop Application Development</h2>
-                            <p>Creating cross-platform desktop applications using PySide6, Electron, or other technologies.</p>
+                            <p>Creating cross-platform desktop applications using PySide6.</p>
                             <span className="projects">2+ projects</span>
                         </div>
                     </div>
