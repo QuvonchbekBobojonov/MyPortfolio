@@ -25,7 +25,7 @@ function Services() {
                             <i className="las la-code"></i>
                             <h2>Telegram Bot Development</h2>
                             <p>Developing Telegram bots of any kind and deploying them on a server with a professional appearance.</p>
-                            <span className="projects">10+ projects</span>
+                            <span className="projects">20+ projects</span>
                         </div>
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-search"></i>
