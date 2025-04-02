@@ -23,7 +23,7 @@ function Pricing() {
                                                 Budget-friendly solution
                                             </p>
                                         </div>
-                                        <h1>$49 <span>/ hour</span></h1>
+                                        <h1>$10 <span>/ hour</span></h1>
                                     </div>
                                     <ul className="feature-lists">
                                         <li>Backend development with Django & DRF</li>
@@ -49,7 +49,7 @@ function Pricing() {
                                                 Full project development
                                             </p>
                                         </div>
-                                        <h1>$99 <span>/ hour</span></h1>
+                                        <h1>$19 <span>/ hour</span></h1>
                                     </div>
                                     <ul className="feature-lists">
                                         <li>Advanced Django & Django Rest Framework development</li>
