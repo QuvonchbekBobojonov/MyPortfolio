@@ -7,7 +7,7 @@ function Resume() {
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
                             <i className="las la-briefcase"></i> Resume
                         </h4>
-                        <h1 className="scroll-animation" data-animation="fade_from_bottom">Education &nbsp;
+                        <h1 className="scroll-animation" data-animation="fade_from_bottom">Education and&nbsp;
                             <span>Experience</span>
                         </h1>
                     </div>
