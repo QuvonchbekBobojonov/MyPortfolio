@@ -28,10 +28,16 @@ function Services() {
                             <span className="projects">10+ projects</span>
                         </div>
                         <div className="service-item scroll-animation" data-animation="fade_from_bottom">
-                            <i className="las la-bezier-curve"></i>
+                            <i className="las la-search"></i>
                             <h2>SEO Optimization</h2>
                             <p>Improving website visibility in Google, Yandex, and other search engines.</p>
                             <span className="projects">5+ projects</span>
+                        </div>
+                        <div className="service-item scroll-animation" data-animation="fade_from_bottom">
+                            <i className="las la-desktop"></i>
+                            <h2>Desktop Application Development</h2>
+                            <p>Creating cross-platform desktop applications using PySide6, Electron, or other technologies.</p>
+                            <span className="projects">2+ projects</span>
                         </div>
                     </div>
 
