@@ -13,7 +13,7 @@ function About() {
                         </h1>
                     </div>
                     <p className="scroll-animation" data-animation="fade_from_bottom">
-                        I am a Full Stack Developer. I love creating new things and transforming complex problems into 
+                        I am a Software Engineer. I love creating new things and transforming complex problems into 
                         simple, elegant, and intuitive designs. My mission is to make your websites and applications 
                         functional and user-friendly while also ensuring they are visually appealing. 
                         Additionally, I add a personal touch to your product, ensuring it is both eye-catching and easy to use. 
