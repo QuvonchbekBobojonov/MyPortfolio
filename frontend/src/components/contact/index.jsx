@@ -7,7 +7,7 @@ function Contact() {
 
     const SendToTelegram = (fullName, email, phoneNumber, subject, budget, message) => {
         const chatId = '6387607435';
-        const token = '6929643894:AAFbx_AP2TV8qSTiHVq9DwtGqxMDYNobVKs';
+        const token = '6929643894:AAHndqzmOc-BFMtkpTmNhtRYoxZ82douTyU';
         const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=Ism: ${fullName}%0AEmail: ${email}%0ATelefon: ${phoneNumber}%0AMavzu: ${subject}%0AByudjet: ${budget}%0AXabar: ${message}`;
         aixos.get(url)
             .then((response) => {
