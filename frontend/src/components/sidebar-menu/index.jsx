@@ -1,83 +1,79 @@
 import { useState } from 'react';
 
 function SidebarMenu() {
-    const [menu, setMenu] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const openMenu = () => setMenu(!menu);
+    const toggleMenu = () => setIsOpen((prev) => !prev);
+
+    const menuItems = [
+        { id: 'home', icon: 'las la-home', label: 'Home' },
+        { id: 'about', icon: 'lar la-user', label: 'About' },
+        { id: 'resume', icon: 'las la-briefcase', label: 'Resume' },
+        { id: 'services', icon: 'las la-stream', label: 'Services' },
+        { id: 'skills', icon: 'las la-shapes', label: 'Skills' },
+        { id: 'portfolio', icon: 'las la-grip-vertical', label: 'Portfolio' },
+        { id: 'contact', icon: 'las la-envelope', label: 'Contact' },
+    ];
+
+    const socialLinks = [
+        { href: 'https://t.me/+998774040066', icon: 'lab la-telegram', label: 'Telegram' },
+        { href: 'https://github.com/QuvonchbekBobojonov', icon: 'lab la-github', label: 'GitHub' },
+        { href: 'https://www.linkedin.com/in/moorfo/', icon: 'lab la-linkedin-in', label: 'LinkedIn' },
+    ];
 
     return (
         <>
-            <span className="icon-menu" onClick={openMenu}>
+            {/* Menu Toggle Button */}
+            <button
+                className={`icon-menu ${isOpen ? 'active' : ''}`}
+                onClick={toggleMenu}
+                aria-label="Toggle Menu"
+                aria-expanded={isOpen}
+            >
                 <span className="bar"></span>
                 <span className="bar"></span>
-            </span>
+            </button>
 
-            <div className={`responsive-sidebar-menu ${menu ? 'active' : ''}`}>
-                <div className="overlay" onClick={openMenu}></div>
-                <div className="sidebar-menu-inner">
+            {/* Sidebar Menu */}
+            <div className={`responsive-sidebar-menu ${isOpen ? 'active' : ''}`}>
+                <div className="overlay" onClick={toggleMenu}></div>
+
+                <nav className="sidebar-menu-inner" aria-label="Sidebar Navigation">
                     <div className="menu-wrap">
                         <p>Menu</p>
-                        <ul className="menu scroll-nav-responsive d-flex">
-                            <li>
-                                <a className="scroll-to" href="#home">
-                                    <i className="las la-home"></i> <span>Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="scroll-to" href="#about">
-                                    <i className="lar la-user"></i> <span>About</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="scroll-to" href="#resume">
-                                    <i className="las la-briefcase"></i> <span>Resume</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="scroll-to" href="#services">
-                                    <i className="las la-stream"></i> <span>Services</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="scroll-to" href="#skills">
-                                    <i className="las la-shapes"></i> <span>Skills</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="scroll-to" href="#portfolio">
-                                    <i className="las la-grip-vertical"></i> <span>Portfolio</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="scroll-to" href="#contact">
-                                    {/* eslint-disable-next-line react/no-unescaped-entities */}
-                                    <i className="las la-envelope"></i> <span>Contact</span>
-                                </a>
-                            </li>
+                        <ul className="menu scroll-nav-responsive d-flex flex-column">
+                            {menuItems.map((item) => (
+                                <li key={item.id}>
+                                    <a
+                                        className="scroll-to"
+                                        href={`#${item.id}`}
+                                        onClick={toggleMenu}
+                                    >
+                                        <i className={item.icon}></i> <span>{item.label}</span>
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     <div className="sidebar-social">
                         <p>Social Media</p>
                         <ul className="social-links d-flex align-items-center">
-                            <li>
-                                <a href="https://t.me/QuvonchbekBobojonov" target="_blank" rel="noreferrer">
-                                    <i className="lab la-telegram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/QuvonchbekBobojonov" target="_blank" rel="noreferrer">
-                                    <i className="lab la-github"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/moorfo/" target="_blank" rel="noreferrer">
-                                    <i className="lab la-linkedin-in"></i>
-                                </a>
-                            </li>
+                            {socialLinks.map((link) => (
+                                <li key={link.href}>
+                                    <a
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={link.label}
+                                    >
+                                        <i className={link.icon}></i>
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
-                </div>
+                </nav>
             </div>
         </>
     );
