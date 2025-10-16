@@ -19,7 +19,7 @@ function Resume() {
 
     const educationData = [
         {
-            date: '2023 - Present',
+            date: '2024 - Present',
             title: "Bachelor's Degree in Information Systems and Technologies",
             place: 'International School of Finance Technology and Science (ISFT)',
         },
