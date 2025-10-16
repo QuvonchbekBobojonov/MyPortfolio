@@ -12,24 +12,34 @@ function Contact() {
 
         const fullName = data.get('full_name');
         const email = data.get('email');
+        const phoneNumber = data.get('phone_number');
         const subject = data.get('subject');
+        const message = data.get('message');
 
-        if (!fullName || !email || !subject) {
+        if (!fullName || !email || !phoneNumber || !subject || !message) {
             setError(true);
-            setTimeout(() => setError(false), 1500);
+            setTimeout(() => setError(false), 2000);
             return;
         }
 
         try {
-            await axios.post('https://api.moorfo.uz/send_telegram/', data, {
-                headers: { 'Content-Type': 'multipart/form-data' },
+            const payload = {
+                full_name: fullName,
+                email,
+                phone_number: phoneNumber,
+                subject,
+                budget: data.get('budget') || '',
+                message,
+            };
+
+            await axios.post('https://api.moorfo.uz/send_telegram/', payload, {
+                headers: { 'Content-Type': 'application/json' },
             });
 
             setSubmitted(true);
             form.reset();
             setTimeout(() => setSubmitted(false), 2000);
-        } catch (err) {
-            console.error('Xatolik:', err);
+        } catch {
             setError(true);
         }
     };
@@ -51,15 +61,11 @@ function Contact() {
 
                     {error && (
                         <p className="alert alert-danger messenger-box-contact__msg" role="alert">
-                            Please fill in the required fields.
+                            Please fill in all required fields.
                         </p>
                     )}
 
-                    <form
-                        className="contact-form scroll-animation"
-                        data-animation="fade_from_bottom"
-                        onSubmit={handleSubmit}
-                    >
+                    <form className="contact-form scroll-animation" data-animation="fade_from_bottom" onSubmit={handleSubmit}>
                         {isSubmitted && (
                             <div className="alert alert-success messenger-box-contact__msg" role="alert">
                                 Your message has been successfully sent.
@@ -70,25 +76,25 @@ function Contact() {
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="full-name">Full Name <sup>*</sup></label>
-                                    <input type="text" name="full_name" id="full-name" placeholder="Enter your full name" />
+                                    <input type="text" name="full_name" id="full-name" placeholder="Enter your full name" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="email">Email <sup>*</sup></label>
-                                    <input type="email" name="email" id="email" placeholder="Enter your email address" />
+                                    <input type="email" name="email" id="email" placeholder="Enter your email address" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
-                                    <label htmlFor="phone-number">Phone <span>(optional)</span></label>
-                                    <input type="text" name="phone_number" id="phone-number" placeholder="Enter your phone number" />
+                                    <label htmlFor="phone-number">Phone <sup>*</sup></label>
+                                    <input type="text" name="phone_number" id="phone-number" placeholder="Enter your phone number" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="subject">Subject <sup>*</sup></label>
-                                    <input type="text" name="subject" id="subject" placeholder="Enter subject" />
+                                    <input type="text" name="subject" id="subject" placeholder="Enter subject" required />
                                 </div>
                             </div>
                             <div className="col-md-12">
@@ -99,13 +105,13 @@ function Contact() {
                             </div>
                             <div className="col-md-12">
                                 <div className="input-group">
-                                    <label htmlFor="message">Message</label>
-                                    <textarea name="message" id="message" placeholder="Write your message here..."></textarea>
+                                    <label htmlFor="message">Message <sup>*</sup></label>
+                                    <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="input-group submit-btn-wrap">
-                                    <button className="theme-btn" name="submit" type="submit" id="submit-form">
+                                    <button className="theme-btn" type="submit" id="submit-form">
                                         Send Message
                                     </button>
                                 </div>
