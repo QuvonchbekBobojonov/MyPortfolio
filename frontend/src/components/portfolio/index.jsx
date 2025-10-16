@@ -1,95 +1,116 @@
+import { useEffect } from 'react';
 import portfolioImage1 from '../../assets/portfolio/1.png';
-import portfolioImage2 from '../../assets/portfolio/2.png';
+import portfolioImage2 from '../../assets/portfolio/5.jpg';
 import portfolioImage3 from '../../assets/portfolio/3.jpg';
 
 function Portfolio() {
+    const projects = [
+        {
+            id: 1,
+            title: 'MegaLord - PC Monitoring System and Game Club Management Software',
+            image: portfolioImage2,
+            link: '#',
+            tech: ['Django', 'Django Rest Framework', 'JavaScript', 'Qt', 'PySide6'],
+            layout: 'half',
+        },
+        {
+            id: 2,
+            title: 'Megalife - Water Automation Selling Device',
+            image: portfolioImage3,
+            link: '/',
+            tech: ['Django', 'Django Rest Framework', 'MQTT', 'JavaScript', 'Qt'],
+            layout: 'full',
+        },
+        {
+            id: 3,
+            title: 'MedControl Apteka - Medical Control System',
+            image: portfolioImage1,
+            link: 'https://apteka.medcontrol.uz/',
+            tech: ['Django', 'Django Rest Framework', 'Django Channels', 'JavaScript'],
+            layout: 'full',
+        },
+    ];
+
+    // Fade from bottom animation on scroll
+    useEffect(() => {
+        const elements = document.querySelectorAll('.scroll-animation');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+        elements.forEach((el) => observer.observe(el));
+        return () => elements.forEach((el) => observer.unobserve(el));
+    }, []);
+
     return (
         <section className="portfolio-area page-section scroll-to-page" id="portfolio">
             <div className="custom-container">
                 <div className="portfolio-content content-width">
-                    <div className="section-header">
-                        <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
+                    <div
+                        className="section-header scroll-animation"
+                        data-animation="fade_from_bottom"
+                    >
+                        <h4 className="subtitle">
                             <i className="las la-grip-vertical"></i> Portfolio
                         </h4>
-                        <h1 className="scroll-animation" data-animation="fade_from_bottom">
+                        <h1>
                             Featured <span>Projects</span>
                         </h1>
                     </div>
 
                     <div className="row portfolio-items">
-                        {/* Megalife Project */}
-                        <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="portfolio-item portfolio-full">
-                                <div className="portfolio-item-inner">
-                                    <a href={portfolioImage3} data-lightbox="example-1">
-                                        <img src={portfolioImage3} alt="Megalife Project" loading="lazy" />
-                                    </a>
+                        {projects.map((project) => (
+                            <div
+                                key={project.id}
+                                className={`col-md-12 scroll-animation`}
+                                data-animation="fade_from_bottom"
+                            >
+                                <div
+                                    className={`portfolio-item ${
+                                        project.layout === 'half' ? 'portfolio-half' : 'portfolio-full'
+                                    }`}
+                                >
+                                    <div className="portfolio-item-inner">
+                                        <a href={project.image} data-lightbox={`project-${project.id}`}>
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                loading="lazy"
+                                            />
+                                        </a>
 
-                                    <ul className="portfolio-categories">
-                                        {["Django", "Django Rest Framework", "MQTT", "JavaScript", "QT"].map((tech) => (
-                                            <li key={tech}>
-                                                <a href="#">{tech}</a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <h2>
-                                    <a href="/" target="_blank" rel="noopener noreferrer">
-                                        Megalife - Water Automation Selling Device
-                                    </a>
-                                </h2>
-                            </div>
-                        </div>
-
-                        {/* MedControl Project */}
-                        <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="portfolio-item portfolio-full">
-                                <div className="portfolio-item-inner">
-                                    <a href={portfolioImage1} data-lightbox="example-1">
-                                        <img src={portfolioImage1} alt="MedControl Project" loading="lazy" />
-                                    </a>
-
-                                    <ul className="portfolio-categories">
-                                        {["Django", "Django Rest Framework", "Django Channels", "JavaScript"].map(
-                                            (tech) => (
+                                        <ul className="portfolio-categories">
+                                            {project.tech.map((tech) => (
                                                 <li key={tech}>
-                                                    <a href="#">{tech}</a>
+                                                    <a
+                                                        href="#"
+                                                        onClick={(e) => e.preventDefault()}
+                                                    >
+                                                        {tech}
+                                                    </a>
                                                 </li>
-                                            )
-                                        )}
-                                    </ul>
-                                </div>
-                                <h2>
-                                    <a href="https://apteka.medcontrol.uz/" target="_blank" rel="noopener noreferrer">
-                                        MedControl Apteka - Medical Control System
-                                    </a>
-                                </h2>
-                            </div>
-                        </div>
+                                            ))}
+                                        </ul>
+                                    </div>
 
-                        {/* MakeMoney Project */}
-                        <div className="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                            <div className="portfolio-item portfolio-half">
-                                <div className="portfolio-item-inner">
-                                    <a href={portfolioImage2} data-lightbox="example-1">
-                                        <img src={portfolioImage2} alt="MakeMoney Project" loading="lazy" />
-                                    </a>
-
-                                    <ul className="portfolio-categories">
-                                        {["Django", "Django Rest Framework", "JavaScript"].map((tech) => (
-                                            <li key={tech}>
-                                                <a href="#">{tech}</a>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <h2>
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {project.title}
+                                        </a>
+                                    </h2>
                                 </div>
-                                <h2>
-                                    <a href="https://makemoney.uz/uz/" target="_blank" rel="noopener noreferrer">
-                                        MakeMoney - Online Money Earn System
-                                    </a>
-                                </h2>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

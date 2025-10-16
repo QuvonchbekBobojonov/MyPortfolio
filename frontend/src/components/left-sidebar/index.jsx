@@ -12,7 +12,7 @@ function LeftSidebar() {
             <h2 className="email">hi@moorfo.uz</h2>
             <h2 className="address">Uzbekistan, Khorezm, Yangibozor</h2>
             <p className="copyright">
-                &copy; {new Date().getFullYear()} Moorfo. All rights reserved.
+                &copy; 2023 - {new Date().getFullYear()} Moorfo. All rights reserved.
             </p>
             <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
                 <li>

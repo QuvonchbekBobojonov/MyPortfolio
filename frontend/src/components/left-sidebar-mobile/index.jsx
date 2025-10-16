@@ -12,7 +12,7 @@ function LeftSidebarMobile() {
             <h2 className="email">hi@moorfo.uz</h2>
             <h2 className="address">Uzbekistan, Khorezm, Yangibozor</h2>
             <p className="copyright">
-                &copy; {new Date().getFullYear()} Moorfo. All rights reserved.
+                &copy; 2023 - {new Date().getFullYear()} Moorfo. All rights reserved.
             </p>
             <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
                 <li>
@@ -21,7 +21,7 @@ function LeftSidebarMobile() {
                     </a>
                 </li>
                 <li>
-                    <a href="https://t.me/QuvonchbekBobojonov" target="_blank" rel="noreferrer">
+                    <a href="https://t.me/+998774040066" target="_blank" rel="noreferrer">
                         <i className="lab la-telegram"></i>
                     </a>
                 </li>
