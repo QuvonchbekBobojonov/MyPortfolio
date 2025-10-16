@@ -13,6 +13,7 @@ import './styles/lightbox.min.css'
 import './styles/style.css'
 import './styles/responsive.css'
 
+// eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <React.StrictMode>
     <App />

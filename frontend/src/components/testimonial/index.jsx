@@ -1,6 +1,6 @@
-import React from 'react';
 
-function Testimonial(props) {
+
+function Testimonial() {
     return (
         <section className="testimonial-area page-section scroll-to-page" id="testimonial">
             <div className="custom-container">
