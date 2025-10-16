@@ -23,17 +23,8 @@ function Contact() {
         }
 
         try {
-            const payload = {
-                full_name: fullName,
-                email,
-                phone_number: phoneNumber,
-                subject,
-                budget: data.get('budget') || '',
-                message,
-            };
-
-            await axios.post('https://api.moorfo.uz/send_telegram/', payload, {
-                headers: { 'Content-Type': 'application/json' },
+            await axios.post('https://api.moorfo.uz/send_telegram/', data, {
+                headers: { 'Content-Type': 'multipart/form-data' },
             });
 
             setSubmitted(true);
@@ -76,37 +67,37 @@ function Contact() {
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="full-name">Full Name <sup>*</sup></label>
-                                    <input type="text" name="full_name" id="full-name" placeholder="Enter your full name" required />
+                                    <input type="text" name="full_name" id="full-name" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="email">Email <sup>*</sup></label>
-                                    <input type="email" name="email" id="email" placeholder="Enter your email address" required />
+                                    <input type="email" name="email" id="email" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="phone-number">Phone <sup>*</sup></label>
-                                    <input type="text" name="phone_number" id="phone-number" placeholder="Enter your phone number" required />
+                                    <input type="text" name="phone_number" id="phone-number" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="subject">Subject <sup>*</sup></label>
-                                    <input type="text" name="subject" id="subject" placeholder="Enter subject" required />
+                                    <input type="text" name="subject" id="subject" required />
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="input-group">
                                     <label htmlFor="budget">Your Budget <span>(optional)</span></label>
-                                    <input type="number" name="budget" id="budget" placeholder="Enter your project budget" />
+                                    <input type="number" name="budget" id="budget" />
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="input-group">
                                     <label htmlFor="message">Message <sup>*</sup></label>
-                                    <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+                                    <textarea name="message" id="message" required></textarea>
                                 </div>
                             </div>
                             <div className="col-md-12">
