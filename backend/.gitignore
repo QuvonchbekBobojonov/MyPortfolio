@@ -1,0 +1,87 @@
+# === Python / FastAPI backend ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+instance/
+.env
+venv/
+.venv/
+.env.*
+*.log
+*.pid
+.DS_Store
+.cache/
+.mypy_cache/
+.pytest_cache/
+coverage/
+
+# Uvicorn / FastAPI artifacts
+*.db-journal
+*.sqlite
+
+# === Node / React frontend ===
+node_modules/
+dist/
+build/
+.vscode/
+.idea/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# === System / IDE ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# === Deployment / Misc ===
+*.bak
+*.old
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.tmp
+
+# === Logs ===
+logs/
+*.log
+*.out
+
+# === Test / Coverage ===
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+nosetests.xml
+test-results.xml
+pytest.xml
+
+# === MacOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# === Python virtual envs ===
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# === JetBrains / WebStorm ===
+.idea/
+*.iml
+
+# === VSCode ===
+.vscode/
+
+# === FastAPI build cache ===
+__pypackages__/
