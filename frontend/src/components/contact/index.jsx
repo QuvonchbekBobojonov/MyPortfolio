@@ -70,7 +70,7 @@ function Contact() {
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="full-name">Full Name <sup>*</sup></label>
-                                    <input type="text" name="full-name" id="full-name" placeholder="Enter your full name" />
+                                    <input type="text" name="full_name" id="full-name" placeholder="Enter your full name" />
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -82,7 +82,7 @@ function Contact() {
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="phone-number">Phone <span>(optional)</span></label>
-                                    <input type="text" name="phone-number" id="phone-number" placeholder="Enter your phone number" />
+                                    <input type="text" name="phone_number" id="phone-number" placeholder="Enter your phone number" />
                                 </div>
                             </div>
                             <div className="col-md-6">
