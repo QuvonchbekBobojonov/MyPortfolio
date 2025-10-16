@@ -10,7 +10,7 @@ function Contact() {
         const form = e.target;
         const data = new FormData(form);
 
-        const fullName = data.get('full-name');
+        const fullName = data.get('full_name');
         const email = data.get('email');
         const subject = data.get('subject');
 
