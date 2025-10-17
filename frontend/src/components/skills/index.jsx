@@ -9,6 +9,7 @@ import NginxImage from '../../assets/nginx.png';
 import PostgresImage from '../../assets/postgresql.png';
 import SQLiteImage from '../../assets/sqlite.png';
 import RedisImage from '../../assets/redis.png';
+import CeleryImage from '../../assets/celery.png';
 
 const skillsData = [
     {name: "Python", image: pythonImage, projects: "15+"},
@@ -19,10 +20,11 @@ const skillsData = [
     {name: "WordPress", image: WordPressImage, projects: "5+"},
     {name: "Docker", image: DockerImage, projects: "5+"},
     {name: "Nginx", image: NginxImage, projects: "5+"},
-    {name: "PostgreSQL", image: PostgresImage, projects: "10+"},
+    {name: "PostgresSQL", image: PostgresImage, projects: "10+"},
     {name: "SQLite", image: SQLiteImage, projects: "10+"},
     {name: "Redis", image: RedisImage, projects: "3+"},
     {name: "Qt for Python (PySide6)", image: QTImage, projects: "2+"},
+    {name: "Celery", image: CeleryImage, projects: "4+"},
 ];
 
 function Skills() {
