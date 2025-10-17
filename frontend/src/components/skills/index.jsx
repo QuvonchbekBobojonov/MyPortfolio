@@ -14,7 +14,7 @@ const skillsData = [
     {name: "Python", image: pythonImage, projects: "15+"},
     {name: "Django", image: DjangoImage, projects: "10+"},
     {name: "Django REST Framework", image: DjangoRestImage, projects: "8+"},
-    {name: "Qt for Python (PySide6)", image: QTImage, projects: "2+"},
+    {name: "MQTT (Broker & Client)", image: 'https://user-images.githubusercontent.com/20068373/149942025-f8282889-15e5-4f8e-a40f-dc1c2b0be4fd.png', projects: "2+"},
     {name: "JavaScript", image: JavaScriptImage, projects: "12+"},
     {name: "WordPress", image: WordPressImage, projects: "5+"},
     {name: "Docker", image: DockerImage, projects: "5+"},
@@ -22,7 +22,7 @@ const skillsData = [
     {name: "PostgreSQL", image: PostgresImage, projects: "10+"},
     {name: "SQLite", image: SQLiteImage, projects: "10+"},
     {name: "Redis", image: RedisImage, projects: "3+"},
-    {name: "MQTT (Broker & Client)", image: 'https://user-images.githubusercontent.com/20068373/149942025-f8282889-15e5-4f8e-a40f-dc1c2b0be4fd.png', projects: "2+"},
+    {name: "Qt for Python (PySide6)", image: QTImage, projects: "2+"},
 ];
 
 function Skills() {
