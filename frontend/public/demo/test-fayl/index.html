@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Professional Quiz — Audit / Byudjet / Buxgalteriya</title>
+  <style>
+    /* CSS VARIABLES (DARK MODE - DEFAULT) */
+    :root {
+      --bg1: #071026;
+      --bg2: #082033;
+      --main-bg: linear-gradient(135deg, var(--bg1), var(--bg2));
+      --text-color: #eaf6ff;
+      --muted-text: rgba(255, 255, 255, 0.72);
+      --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+      --card-shadow: 0 12px 40px rgba(2, 6, 23, 0.7);
+      --card-border: 1px solid rgba(255, 255, 255, 0.04);
+      --glass: rgba(255, 255, 255, 0.04);
+      --accent1: #6ee7ff;
+      --accent2: #7c3aed;
+      --correct: #41d77a;
+      --wrong: #ff6b6b;
+      --btn-shadow: 0 10px 26px rgba(124, 58, 237, 0.12);
+      --topic-hover-shadow: 0 20px 50px rgba(3, 12, 30, 0.6);
+      --main-padding: 22px;
+      /* Katta ekranlar uchun padding */
+    }
+
+    /* LIGHT MODE OVERRIDES */
+    body.light-mode {
+      --bg1: #f0f4f8;
+      --bg2: #e6ebf1;
+      --main-bg: linear-gradient(135deg, var(--bg1), var(--bg2));
+      --text-color: #1e293b;
+      --muted-text: rgba(30, 41, 59, 0.7);
+      --card-bg: #ffffff;
+      --card-shadow: 0 10px 30px rgba(30, 41, 59, 0.1);
+      --card-border: 1px solid #e2e8f0;
+      --glass: #f8fafc;
+      --accent1: #10b981;
+      /* Green accent for light mode */
+      --accent2: #059669;
+      --correct: #047857;
+      /* Darker green for readability */
+      --wrong: #dc2626;
+      /* Darker red */
+      --btn-shadow: 0 10px 26px rgba(16, 185, 129, 0.2);
+      --topic-hover-shadow: 0 15px 40px rgba(30, 41, 59, 0.1);
+    }
+
+    /* General CSS (Uses variables) */
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--main-bg);
+      color: var(--text-color);
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* App */
+    .app {
+      width: 100%;
+      max-width: 1150px;
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: var(--main-padding);
+      border: var(--card-border);
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* flex-wrap: wrap qo'shildi */
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--text-color)
+    }
+
+    body.light-mode .logo {
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20px
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted-text);
+      font-size: 13px
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted-text)
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: var(--glass);
+      border: var(--card-border);
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      color: var(--muted-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, color 0.2s;
+      font-weight: 600;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    body.light-mode .theme-toggle {
+      background: var(--bg2);
+      color: var(--text-color);
+    }
+
+    .topics {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 14px
+    }
+
+    .topic {
+      flex: 1 1 220px;
+      min-width: 220px;
+      background: var(--glass);
+      border-radius: 12px;
+      padding: 18px;
+      border-left: 6px solid var(--accent1);
+      cursor: pointer;
+      border: var(--card-border);
+      transition: transform .18s ease, box-shadow .18s;
+    }
+
+    .topic:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--topic-hover-shadow)
+    }
+
+    .topic h3 {
+      margin: 0;
+      color: var(--text-color)
+    }
+
+    .topic p {
+      margin: 6px 0 0 0;
+      color: var(--muted-text);
+      font-size: 13px
+    }
+
+    /* Quiz layout */
+    .quiz-wrap {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 18px
+    }
+
+    .card {
+      background: var(--glass);
+      border-radius: 12px;
+      padding: 18px;
+      border: var(--card-border)
+    }
+
+    .progress {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 12px
+    }
+
+    body.light-mode .progress {
+      background: rgba(30, 41, 59, 0.1)
+    }
+
+    .bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent2), var(--accent1));
+      transition: width .45s cubic-bezier(.2, .9, .3, 1)
+    }
+
+    .qmeta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px
+    }
+
+    .qtitle {
+      font-size: 18px;
+      margin: 8px 0 14px 0;
+      color: var(--text-color);
+      line-height: 1.3
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .option {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: var(--card-border);
+      cursor: pointer;
+      transition: transform .12s, box-shadow .12s
+    }
+
+    body.light-mode .option {
+      background: rgba(30, 41, 59, 0.02)
+    }
+
+    .option:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(3, 12, 30, 0.5)
+    }
+
+    body.light-mode .option:hover {
+      box-shadow: 0 10px 20px rgba(30, 41, 59, 0.08)
+    }
+
+    .option input {
+      accent-color: var(--accent1)
+    }
+
+    .option .label {
+      flex: 1;
+      color: var(--text-color)
+    }
+
+    .option.correct {
+      background: linear-gradient(90deg, rgba(65, 215, 122, 0.12), rgba(65, 215, 122, 0.04));
+      border-color: var(--correct)
+    }
+
+    .option.wrong {
+      background: linear-gradient(90deg, rgba(255, 107, 107, 0.08), rgba(255, 107, 107, 0.02));
+      border-color: var(--wrong)
+    }
+
+    body.light-mode .option.correct {
+      background: rgba(4, 120, 87, 0.1);
+      border-color: var(--correct)
+    }
+
+    body.light-mode .option.wrong {
+      background: rgba(220, 38, 38, 0.1);
+      border-color: var(--wrong)
+    }
+
+
+    .answer-info {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--muted-text);
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02)
+    }
+
+    body.light-mode .answer-info {
+      background: rgba(30, 41, 59, 0.05)
+    }
+
+    .answer-info.correct {
+      background: rgba(65, 215, 122, 0.1);
+      color: var(--correct);
+      border: 1px solid rgba(65, 215, 122, 0.2)
+    }
+
+    .answer-info.wrong {
+      background: rgba(255, 107, 107, 0.1);
+      color: var(--wrong);
+      border: 1px solid rgba(255, 107, 107, 0.2)
+    }
+
+    body.light-mode .answer-info.correct {
+      background: rgba(4, 120, 87, 0.1);
+      color: var(--correct);
+      border-color: var(--correct)
+    }
+
+    body.light-mode .answer-info.wrong {
+      background: rgba(220, 38, 38, 0.1);
+      color: var(--wrong);
+      border-color: var(--wrong)
+    }
+
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 16px;
+      align-items: center
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(90deg, var(--accent2), var(--accent1));
+      color: var(--bg1);
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--btn-shadow)
+    }
+
+    body.light-mode .btn {
+      color: white
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--muted-text);
+      border: var(--card-border);
+      box-shadow: none
+    }
+
+    .btn:active {
+      transform: scale(.98)
+    }
+
+    .aside h4 {
+      margin: 0 0 8px 0
+    }
+
+    .q-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .q-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--glass);
+      cursor: pointer;
+      border: var(--card-border);
+      font-weight: 700;
+      color: var(--muted-text)
+    }
+
+    .q-badge.answered {
+      background: linear-gradient(90deg, var(--accent2), var(--accent1));
+      color: var(--bg1);
+    }
+
+    body.light-mode .q-badge.answered {
+      color: white
+    }
+
+    .q-badge.correct-ans {
+      background: var(--correct);
+      color: var(--bg1);
+    }
+
+    .q-badge.wrong-ans {
+      background: var(--wrong);
+      color: var(--bg1);
+    }
+
+
+    .result-overlay {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.85));
+      z-index: 50
+    }
+
+    body.light-mode .result-overlay {
+      background: rgba(30, 41, 59, 0.7)
+    }
+
+    .result-overlay.show {
+      display: flex
+    }
+
+    .result-box {
+      background: var(--card-bg);
+      padding: 26px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 720px;
+      border: var(--card-border);
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(2, 6, 23, 0.8)
+    }
+
+    .percent {
+      font-size: 44px;
+      color: var(--accent1);
+      font-weight: 900;
+      margin: 8px 0
+    }
+
+    .result-msg {
+      color: var(--muted-text);
+      margin-bottom: 14px
+    }
+
+    .controls-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+
+    /* ==================================== */
+    /* Responsive Kodlar */
+    /* ==================================== */
+
+    @media (max-width: 980px) {
+      .quiz-wrap {
+        grid-template-columns: 1fr
+      }
+
+      .aside {
+        order: 2
+      }
+
+      .app {
+        padding: 16px;
+      }
+
+      /* Umumiy paddingni kamaytirish */
+      .card {
+        padding: 16px;
+      }
+
+      .logo {
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 580px) {
+
+      /* Headerni optimallashtirish */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .brand {
+        order: 1;
+        /* Brand yuqoriga */
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      /* Theme Toggle va User Info joylashuvi */
+      header>div:last-child {
+        order: 2;
+        /* Pastga joylashuvi */
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      /* Tez O'tish tugmalarini kichraytirish */
+      .q-badge {
+        width: 34px;
+        /* Kichik o'lcham */
+        height: 34px;
+        font-size: 12px;
+        border-radius: 6px;
+        gap: 6px;
+      }
+
+      .q-list {
+        gap: 6px;
+      }
+
+      .topic {
+        flex: 1 1 100%;
+        /* Telefonlarda to'liq kenglik */
+        min-width: unset;
+      }
+
+      .option {
+        padding: 10px;
+        /* Variantlar paddingini kamaytirish */
+        font-size: 14px;
+      }
+
+      .app {
+        padding: 12px;
+      }
+    }
+
+ 
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">QZ</div>
+        <div>
+          <h1>Professional Quiz</h1>
+          <p class="lead">Audit / Byudjet hisobi / Buxgalteriya hisobi — savollar: 6. тестлар.doc.
+            :contentReference[oaicite:1]{index=1}</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button id="themeToggle" class="theme-toggle" title="Kun/Tun rejimini almashtirish">
+          <span id="themeIcon">☀️</span>
+          <span id="themeText">Kun rejimi</span>
+        </button>
+        <div class="small">Foydalanuvchi: <strong id="userName">—</strong></div>
+      </div>
+    </header>
+
+    <div id="home">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+        <div style="font-weight:700;color:var(--text-color)">Mavzular</div>
+        <div class="small">Jami mavzu: 3</div>
+      </div>
+      <div class="topics" id="topicsArea" style="margin-top:14px"></div>
+    </div>
+
+    <div id="quiz" style="display:none;margin-top:16px">
+      <div class="quiz-wrap">
+        <div>
+          <div class="card">
+            <div class="progress" aria-hidden="true">
+              <div class="bar" id="progress" style="width:0%"></div>
+            </div>
+            <div class="qmeta">
+              <div id="qMeta">Savol <span id="qIndex">1</span> / <span id="qTotal">1</span></div>
+              <div class="small" id="qTimer">Vaqt: 00:00</div>
+            </div>
+
+            <div class="qtitle" id="qText">...</div>
+            <div class="options" id="options"></div>
+            <div id="answerNote"></div>
+
+            <div class="controls">
+              <div style="display:flex;gap:8px">
+                <button class="btn" id="nextBtn" disabled>Keyingi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="aside card">
+          <h4>Natija & nazorat</h4>
+
+          <div style="margin-bottom:12px;font-weight:700">Test nazorati:</div>
+
+          <div class="meta">Mavzu: <strong id="topicName">—</strong></div>
+          <div class="meta">Savollar: <span id="topicCount">0</span></div>
+          <div class="meta" style="margin-top:8px">Boshlash vaqti: <span id="startAt">—</span></div>
+
+          <div style="margin-top:12px">
+            <div class="small">Tez o‘tish:</div>
+            <div class="q-list" id="quickList"></div>
+          </div>
+
+          <div style="margin-top:12px;text-align:center">
+            <button class="btn" id="exportBtn" style="margin-left:8px">Export JSON</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="result-overlay" id="resultModal" aria-hidden="true">
+      <div class="result-box">
+        <h2 id="finalTitle">Natija</h2>
+        <div class="percent" id="finalPercent">0 / 0 (0%)</div>
+        <div class="result-msg" id="finalMessage">Sizning natijangiz hisoblanmoqda.</div>
+
+        <div class="controls-row">
+          <button class="btn" id="restartModalBtn">Qayta boshlash</button>
+          <button class="btn secondary" id="closeResultBtn">Yopish</button>
+          <button class="btn secondary" id="exitBtn">Chiqish</button>
+        </div>
+      </div>
+    </div>
+      <p>2025 &copy; Alibek Jumanazarov</p>
+  </div>
+
+ 
+
+  <script>
+    /* =============
+       Savollar: 3 mavzu (Audit 20, Byudjet 10, Buxgalteriya 20)
+       Manba: 6. тестлар.doc.
+       ============= */
+
+    const topics = [
+      {
+        id: 'audit',
+        title: 'Audit',
+        description: 'Audit bo‘yicha nazorat savollari (20 ta)',
+        questions: [
+          { q: "1. Quyidagilardan qaysi biri noto`g`ri?", opts: ["Aktiv – Kapital = Majburiyat", "Majburiyat + Kapital = Aktiv", "Majburiyat + Aktiv = Kapital", "Aktiv – Majburiyat = Kapital"], a: 2 },
+          { q: "2. Quyidagilarning qaysi biri aktiv emas?", opts: ["Bino", "Uskunalar", "Debitor qarzlar", "Kreditor qarzlar"], a: 3 },
+          { q: "3. O`z mablag`lari manbasiga nima kiradi?", opts: ["Debitor qarz", "Tayyor mahsulot", "Bankning uzoq muddatli krediti", "Ustav kapitali"], a: 3 },
+          { q: "4. Majburiyatga nima kiradi?", opts: ["Kassadagi pul mablag`i", "Xom-ashyo va materiallar", "Kreditor qarz", "Qo`shimcha kapital"], a: 2 },
+          { q: "5. Qaysi biri to`g`ri? (aktiv schetlar)", opts: ["Aktiv schetlar debetida ko`payadi", "Aktiv schetlar debetida kamayadi", "Aktiv schetlar kreditida ko`payadi", "Kreditida qoldiq bo`ladi"], a: 0 },
+          { q: "6. Xo`jalik muomalalari turi qaysi javobda to’liq?", opts: ["Ta’minot, ishlab chiqarish, ayirboshlash jarayonlari", "Ishlab chiqarish, ayirboshlash jarayonlari", "Ta’minot, ishlab chiqarish jarayonlari", "Ta’minot, ayirboshlash jarayonlari"], a: 0 },
+          { q: "7. Qaysi biri to`g`ri? (passiv schyetlar)", opts: ["Passiv schetlar kreditda ko`payadi", "Passiv schetlar kreditda kamayadi", "Passiv schetlar debetda ko`payadi", "Qoldiq passiv schetlarda debetda"], a: 0 },
+          {
+            q: "8. Buxgalteriya hisobi usullari qaysi javobda kengroq berilgan?", opts: [
+              "xujjatlashtirish, inventarizasiya, schetlar, ikki yoqlama yozuv",
+              "xujjatlashtirish, inventarizasiya, schetlar, ikki yoqlama yozuv, baholash, kalkulyasiya, balans, hisobot",
+              "inventarizasiya, schetlar, ikki yoqlama yozuv, kalkulyasiya, balans, hisobot",
+              "xujjatlashtirish, ikki yoqlama yozuv, baholash, kalkulyasiya, balans, hisobot"
+            ], a: 1
+          },
+          {
+            q: "9. Qanday xolda oy oxiriga qoldiq passiv schetlarda nolga teng?", opts: [
+              "Schetda oy davomida harakat bo`lmadi",
+              "Agar oy boshiga qoldiq va debet oborot teng bo`ladi kredit oborotga",
+              "Oy oxiriga qoldiq bo`lib, debet oborot kredit oborotga teng bo`lganda",
+              "Bunday xech qachon bo`lmaydi"
+            ], a: 0
+          },
+          {
+            q: "10. Qanday xolda oy oxiriga qoldiq aktiv schetlarda nolga teng?", opts: [
+              "Schetda oy davomida harakat bo`lmadi",
+              "Agar oy boshiga qoldiq va kredit oborot teng bo`ladi debet oborotga",
+              "Oy oxiriga qoldiq bo`lib, kredit oborot debet oborotga teng bo`lganda",
+              "Bunday xech qachon bo`lmaydi"
+            ], a: 0
+          },
+          { q: "11. Kim ikki yoqlama yozuvning asoschisi hisoblanadi?", opts: ["Gyugli i SHerr", "Luka Pacholi", "Benedikt Kotruli", "Sovet iqtisodchilari"], a: 1 },
+          {
+            q: "12. Asosiy vositalar qanday baholanadi? (variantlar)", opts: [
+              "Dastlabki, tiklash, qoldiq, joriy, tugatish qiymati",
+              "Dastlabki, joriy, tugatish qiymati",
+              "Tiklash, qoldiq, joriy, tugatish qiymati",
+              "Dastlabki, tiklash, qoldiq qiymati"
+            ], a: 0
+          },
+          { q: "13. Arendadagi asosiy vositalarni o`z asosiy vositalariga o`tkazganda qaysi variant mos?", opts: ["Variant A", "Variant B", "Variant V", "Variant G"], a: 2 },
+          { q: "14. Asosiy vositalarga eskirish hisoblash usullari qaysidir?", opts: ["Kumulyativ, to‘g‘ri chiziqli, ishlab chiqarish", "Kumulyativ, to‘g‘ri chiziqli, ishlab chiqarish, kamayib boruvchi", "To‘g‘ri chiziqli, ishlab chiqarish, kamayib boruvchi", "Kumulyativ, to‘g‘ri chiziqli, ishlab chiqarish"], a: 3 },
+          { q: "15. Asosiy vositalarning chiqib ketishidan olingan foyda qanday aks ettiriladi?", opts: ["A", "B", "V", "G"], a: 0 },
+          { q: "16. Sub’ektda buxgalteriya hisobini yuritish uchun kim javobgar?", opts: ["Buxgalter", "Rahbar", "Buxgalter va rahbar", "Buxgalteriya xodimlari"], a: 0 },
+          { q: "17. Moliyaviy hisob bilan boshqaruv hisobining farqi bormi?", opts: ["Ha", "Yo`q", "O`xshash", "Qisman farqi bor"], a: 0 },
+          { q: "18. Yillik moliyaviy hisobot nechta shakldan iborat?", opts: ["3 ta", "5 ta", "4 ta", "7 ta"], a: 0 },
+          { q: "19. Sub’ektning aktivlari nimadan tashkil topgan?", opts: ["Xususiy kapital - majburiyat", "Uzoq muddatli va aylanma aktivlardan", "Xususiy kapital – majburiyat", "Aylanma aktivlar va kreditorlik qarz"], a: 1 },
+          { q: "20. Xorij firmalari bilan hisoblashishda valyuta schyotidan chek daftarchalari olindi — bu qaysi yozuvga mos?", opts: ["Debet 5510 / Kredit 5210", "Debet 5520 / Kredit 5210", "Debet 5530 / Kredit 5210", "Debet 5530 / Kredit 5110"], a: 0 }
+        ]
+      },
+      {
+        id: 'byudjet',
+        title: 'Byudjet hisobi',
+        description: 'Byudjet hisobi savollari (10 ta)',
+        questions: [
+          { q: "21. Ishchilarga mexnat ta’tili uchun rezerv tashkil etilganda qanday yozuv qilinadi?", opts: ["D-t 8910 / K-t 2310", "D-t 2310 / K-t 8910", "D-t 2010 / K-t 8910", "D-t 2510 / K-t 1030"], a: 0 },
+          { q: "22. Balansda necha xil o`zgarish bor?", opts: ["2 xil", "Juda ko`p", "4 xil", "Yo`q"], a: 2 },
+          { q: "23. Xomashyo yuklash va tushirish sarflari chek bilan to`landi — qaysi schyotga yoziladi?", opts: ["Debet 0800 / Kredit 5520", "Debet 0810 / Kredit 5510", "Debet 0820 / Kredit 5530", "Debet 0830 / Kredit 5110"], a: 0 },
+          { q: "24. Sotib olinayotgan asosiy vositalarning qiymati chek bilan to`landi — qanday yozuv?", opts: ["Debet 0800 / Kredit 5520", "Debet 0810 / Kredit 5510", "Debet 0820 / Kredit 5530", "Debet 0830 / Kredit 5110"], a: 0 },
+          { q: "25. Ish haqidan daromad solig`i ushlanganda qanday yozuv qilinadi?", opts: ["D-t 2510 / K-t 6710", "D-t 2310 / K-t 6710", "D-t 6710 / K-t 2510", "D-t 6710 / K-t 6410"], a: 0 },
+          { q: "26. Buxgalteriya hisobi to`g`risidagi qonun qachon qabul qilingan?", opts: ["10 yanvar 1994", "5 mart 1995", "12 sentyabr 1996", "30 avgust 1996"], a: 0 },
+          { q: "27. Tashqaridan ko`rsatilgan reklama va marketing xizmatlari — debit qaysi?", opts: ["9412", "9412", "9410", "9412"], a: 2 },
+          { q: "28. Boshqaruv xodimlariga mehnat haqi hisoblandi — debit qaysi?", opts: ["6710", "9421", "9421 (V)", "9421 (G)"], a: 0 },
+          { q: "29. Davr sarflari hisobot davri oxirida hisobdan chiqarildi — debit qaysi?", opts: ["9910", "9910 (B)", "9910 (V)", "9910 (G)"], a: 0 },
+          { q: "30. Tovar moddiy zag`iralariga nimalar kiradi?", opts: ["Hisob-kitob schetidagi pul, tayyor mahsulot, ustav kapitali", "Debitor qarz, ustavniy kapitali", "Xom-ashyo, yoqilg`i, tayyor mahsulot", "Asosiy vositalar, kreditorlik qarzi"], a: 2 }
+        ]
+      },
+      {
+        id: 'buxgalter',
+        title: 'Buxgalteriya hisobi',
+        description: 'Buxgalteriya hisobi savollari (20 ta)',
+        questions: [
+          { q: "31. Bankdagi maxsus schyotdan kassaga naqd pul olindi — qaysi yozuv to‘g‘ri?", opts: ["Debet 5010 / Kredit 5530", "Debet 5010 / Kredit 5110", "Debet 5010 / Kredit 5210", "Debet 5010 / Kredit 5520"], a: 0 },
+          { q: "32. Inventarizasiyada aniqlangan ortiqcha chiqishlar qanday aks ettiriladi?", opts: ["Dt 0100 / Kt 8530,0200", "Dt 9210 ...", "Dt 0200 ...", "Dt 4730 ..."], a: 0 },
+          { q: "33. Olingan materiallar qiymati chet el firmalariga to`landi — qanday yozuv?", opts: ["Debet 6020 / Kredit 5210", "Debet 6010 / Kredit 5210", "Debet 6810 / Kredit 5210", "Debet 1000 / Kredit 5210"], a: 0 },
+          { q: "34. Chet el firmalaridan bo`nak olindi — qaysi schyotlar?", opts: ["Debet 5210 / Kredit 6810", "Debet 5220 / Kredit 6310", "Debet 5210 / Kredit 6320", "Debet 5210 / Kredit 6310"], a: 0 },
+          { q: "35. Eksportdan valyuta tushumi kirim qilindi — qaysi yozuv?", opts: ["Debet 5220 / Kredit 4010", "Debet 5210 / Kredit 4020", "Debet 5210 / Kredit 4010", "Debet 5220 / Kredit 4010"], a: 3 },
+          { q: "36. Ishchilarga kassadan ish haqi berildi — bu balansning qaysi xil o`zgarishiga tegishli?", opts: ["1 xil", "2 xil", "3 xil", "4 xil"], a: 1 },
+          { q: "37. Mehnatga haq to`lash yuzasidan bo`nak berildi — yozuv qanday?", opts: ["Debet 4220 / Kredit 5010", "Debet 4230 / Kredit 5010", "Debet 4290 / Kredit 5010", "Debet 4210 / Kredit 5010"], a: 0 },
+          { q: "38. Mahsulotlar, ishlar va xizmatlar korxona xodimlariga sotildi — qaysi debet/kredit?", opts: ["Debet 9110 / Kredit 2810", "Debet 4010 / Kredit 9010", "Debet 6710 / Kredit 9010", "Debet 4210 / Kredit 9010"], a: 0 },
+          { q: "39. Jo`natilgan tayyor mahsulotlar tannarxi aks ettirildi — Debet qaysi?", opts: ["Debet 2810", "Debet 9120", "Debet 9130", "Debet 9110"], a: 0 },
+          { q: "40. Oy tugagach 9110,9120,9130 schyotlarini yopish — debit qaysi?", opts: ["9910", "9910 (B)", "9110", "9010"], a: 0 },
+          { q: "41. Chiqib ketgan asosiy vositalar boshlang`ich qiymati aks ettirildi — debit qaysi?", opts: ["9210", "9210 (B)", "9210 (V)", "9210 (G)"], a: 0 },
+          { q: "42. Asosiy vositalarning chiqib ketishidan materiallar kirim qilindi — debit qaysi?", opts: ["1040", "1010", "1090", "1020"], a: 0 },
+          { q: "43. Arendadagi asosiy vositalarning boshqa yozuvlari bilan bog‘liq bo‘lgan savol (variant)", opts: ["A variant", "B variant", "V variant", "G variant"], a: 0 },
+          { q: "44. Asosiy vositalarning chiqib ketishidan kelib chiqadigan yozuvlar qaysi hisobda aks etadi?", opts: ["9210", "9220", "9230", "9240"], a: 0 },
+          { q: "45. Moliyaviy hisobotni tuzish tartibini kim belgilaydi?", opts: ["Moliya Vazirligi", "Soliq qo`mitasi", "Yuqori tashkilot", "Sub’ekt boshqaruv hay’ati"], a: 0 },
+          { q: "46. Boshqaruv hisobotini tuzish tartibini kim belgilaydi?", opts: ["Moliya Vazirligi", "Soliq qo`mitasi", "Yuqori tashkilot", "Sub’ekt boshqaruv hay’ati"], a: 3 },
+          { q: "47. Yillik moliyaviy hisobot nechta shakldan iborat?", opts: ["3 ta", "5 ta", "7 ta", "10 ta"], a: 0 },
+          { q: "48. Oylik va choraklik hisobot nechta shakldan iborat?", opts: ["3 ta", "1 ta", "5 ta", "7 ta"], a: 0 },
+          { q: "49. Moliyaviy hisobot qachon topshirilgan deb hisoblanadi?", opts: ["Tuzilgandan keyin", "Imzo va muhr bilan tasdiqlangandan keyin", "Auditor xulosasini olgandan keyin", "Gazetada chop qilingandan keyin"], a: 1 },
+          { q: "50. Moliyaviy hisobotni topshirish muddati kim tomonidan belgilanadi?", opts: ["Moliya Vazirligi", "Yuqori tashkilot", "Iqtisodiyot Vazirligi", "Umumiy majlis"], a: 0 }
+        ]
+      }
+    ];
+
+    /* ========== App State ========== */
+    let state = { topicIndex: null, qIndex: 0, answers: [], startAt: null, reviewed: false };
+    let timerInterval = null;
+    let secondsElapsed = 0;
+
+
+    /* DOM refs */
+    const topicsArea = document.getElementById('topicsArea');
+    const homeEl = document.getElementById('home');
+    const quizEl = document.getElementById('quiz');
+    const qText = document.getElementById('qText');
+    const optionsEl = document.getElementById('options');
+    const qIndexEl = document.getElementById('qIndex');
+    const qTotalEl = document.getElementById('qTotal');
+    const progressBar = document.getElementById('progress');
+    const quickList = document.getElementById('quickList');
+    const topicNameEl = document.getElementById('topicName');
+    const topicCountEl = document.getElementById('topicCount');
+    const startAtEl = document.getElementById('startAt');
+    const answerNote = document.getElementById('answerNote');
+    const qTimerEl = document.getElementById('qTimer');
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIconEl = document.getElementById('themeIcon');
+    const themeTextEl = document.getElementById('themeText');
+
+    const nextBtn = document.getElementById('nextBtn');
+    const exportBtn = document.getElementById('exportBtn');
+
+    const resultModal = document.getElementById('resultModal');
+    const finalPercentEl = document.getElementById('finalPercent');
+    const finalMessage = document.getElementById('finalMessage');
+    const finalTitle = document.getElementById('finalTitle');
+    const closeResultBtn = document.getElementById('closeResultBtn');
+    const exitBtn = document.getElementById('exitBtn');
+    const restartModalBtn = document.getElementById('restartModalBtn');
+    const userNameEl = document.getElementById('userName');
+
+    /* Theme Toggle Mantiqi */
+    function applyTheme(isLight) {
+      const body = document.body;
+      if (isLight) {
+        body.classList.add('light-mode');
+        themeIconEl.textContent = '🌙';
+        themeTextEl.textContent = 'Tun rejimi';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.remove('light-mode');
+        themeIconEl.textContent = '☀️';
+        themeTextEl.textContent = 'Kun rejimi';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Lokal saqlashdan rejimni yuklash
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme === 'light');
+
+    // Tugma bosilganda rejimni almashtirish
+    themeToggleBtn.addEventListener('click', () => {
+      const isLightMode = document.body.classList.contains('light-mode');
+      applyTheme(!isLightMode);
+    });
+
+    /* Render topics */
+    function renderTopics() {
+      topicsArea.innerHTML = '';
+      topics.forEach((t, i) => {
+        const el = document.createElement('div');
+        el.className = 'topic';
+        el.innerHTML = `<h3>${i + 1}. ${t.title}</h3><p>${t.description}<br><span class="small">Savollar: ${t.questions.length}</span></p>`;
+        el.onclick = () => startTopic(i);
+        topicsArea.appendChild(el);
+      });
+    }
+    renderTopics();
+
+    /* Shuffle helper (Fisher-Yates) */
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    /* Taymer Mantiqi */
+    function formatTime(totalSeconds) {
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      const formattedMinutes = String(minutes).padStart(2, '0');
+      const formattedSeconds = String(seconds).padStart(2, '0');
+      return `Vaqt: ${formattedMinutes}:${formattedSeconds}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      secondsElapsed = 0;
+      qTimerEl.textContent = formatTime(secondsElapsed);
+
+      timerInterval = setInterval(() => {
+        secondsElapsed++;
+        qTimerEl.textContent = formatTime(secondsElapsed);
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+
+    /* Start topic (copy & shuffle) */
+    function startTopic(idx) {
+      stopTimer();
+      const copied = topics[idx].questions.map(q => ({ ...q, opts: [...q.opts] }));
+      topics[idx].questions = shuffleArray(copied);
+      state.topicIndex = idx;
+      state.qIndex = 0;
+      state.answers = Array(topics[idx].questions.length).fill(null);
+      state.startAt = new Date();
+      state.reviewed = false;
+      topicNameEl.textContent = topics[idx].title;
+      topicCountEl.textContent = topics[idx].questions.length;
+      startAtEl.textContent = state.startAt.toLocaleString();
+      qTotalEl.textContent = topics[idx].questions.length;
+      homeEl.style.display = 'none';
+      quizEl.style.display = 'block';
+      renderQuestion();
+      renderQuickList();
+      updateMiniScore();
+      startTimer();
+    }
+
+    /* Render question */
+    function renderQuestion() {
+      const topic = topics[state.topicIndex];
+      const i = state.qIndex;
+      const item = topic.questions[i];
+      const isAnswered = state.answers[i] !== null;
+
+      qIndexEl.textContent = i + 1;
+      qText.textContent = item.q;
+      optionsEl.innerHTML = '';
+      answerNote.innerHTML = '';
+
+      optionsEl.style.pointerEvents = isAnswered ? 'none' : 'auto';
+      nextBtn.disabled = !isAnswered;
+
+      item.opts.forEach((opt, j) => {
+        const lab = document.createElement('label');
+        lab.className = 'option';
+        lab.innerHTML = `<input type="radio" name="opt" value="${j}" ${state.answers[i] === j ? 'checked' : ''} ${isAnswered ? 'disabled' : ''}><div class="label">${opt}</div>`;
+
+        // Javob berish mantiqi
+        lab.onclick = () => {
+          if (isAnswered) return;
+          state.answers[i] = j;
+          const isCorrect = j === item.a;
+
+          // Immediate Feedback funksiyasi
+          lab.classList.add(isCorrect ? 'correct' : 'wrong');
+
+          // Boshqa javoblarni bloklash
+          optionsEl.querySelectorAll('.option').forEach(o => {
+            o.querySelector('input').disabled = true;
+          });
+
+          answerNote.innerHTML = `<div class="answer-info ${isCorrect ? 'correct' : 'wrong'}">
+        Javobingiz **${isCorrect ? 'TO‘G‘RI' : 'NOTO‘G‘RI'}**! ${isCorrect ? '✅' : '❌'}
+      </div>`;
+
+          optionsEl.style.pointerEvents = 'none';
+          nextBtn.disabled = false;
+          updateMiniScore();
+          renderQuickList();
+        };
+
+        // Agar savolga javob berilgan bo'lsa (Render holati)
+        if (isAnswered) {
+          const isSelected = state.answers[i] === j;
+          const isCorrectOption = item.a === j;
+          const isCorrectAns = state.answers[i] === item.a;
+
+          if (isCorrectOption && isCorrectAns) {
+            lab.classList.add('correct');
+          } else if (isSelected && !isCorrectAns) {
+            lab.classList.add('wrong');
+          }
+
+          // Javob berilganligini ko'rsatish (to'g'ri javob matnisiz)
+          answerNote.innerHTML = `<div class="answer-info ${isCorrectAns ? 'correct' : 'wrong'}">
+            Sizning javobingiz: **${isCorrectAns ? 'TO‘G‘RI' : 'NOTO‘G‘RI'}** ${isCorrectAns ? '✅' : '❌'}
+        </div>`;
+        }
+
+        optionsEl.appendChild(lab);
+      });
+
+      const answeredCount = state.answers.filter(ans => ans !== null).length;
+      const total = topic.questions.length;
+      const perc = Math.round((answeredCount / total) * 100);
+      progressBar.style.width = perc + '%';
+      nextBtn.textContent = (i === topic.questions.length - 1) ? 'Tugatish' : 'Keyingi';
+    }
+
+    /* Quick list */
+    function renderQuickList() {
+      quickList.innerHTML = '';
+      const topic = topics[state.topicIndex];
+      topic.questions.forEach((q, idx) => {
+        const b = document.createElement('div');
+        b.className = 'q-badge';
+        b.textContent = idx + 1;
+
+        if (state.answers[idx] !== null) {
+          const isCorrect = state.answers[idx] === q.a;
+          b.classList.add('answered');
+          b.classList.add(isCorrect ? 'correct-ans' : 'wrong-ans');
+          b.title = isCorrect ? 'To‘g‘ri javob berildi' : 'Noto‘g‘ri javob berildi';
+        } else {
+          b.title = 'Javob berilmagan';
+        }
+
+        b.onclick = () => {
+          state.qIndex = idx;
+          renderQuestion();
+        };
+        quickList.appendChild(b);
+      });
+    }
+
+    /* Navigation */
+    nextBtn.addEventListener('click', () => {
+      const topic = topics[state.topicIndex];
+      if (state.qIndex < topic.questions.length - 1) {
+        state.qIndex++;
+        renderQuestion();
+      } else {
+        revealResult();
+      }
+    });
+
+    /* Reveal ONLY aggregated result (no per-question answers yet) */
+    function revealResult() {
+      stopTimer();
+      const topic = topics[state.topicIndex];
+      let correct = 0;
+      topic.questions.forEach((q, i) => {
+        if (state.answers[i] === q.a) correct++;
+      });
+
+      const pct = Math.round((correct / topic.questions.length) * 100);
+
+      // Natija endi ball va foizni ko'rsatadi
+      finalPercentEl.textContent = `${correct} / ${topic.questions.length} (${pct}%)`;
+
+      finalMessage.textContent = (pct >= 85) ? "Ajoyib! Siz juda yaxshi bilasiz." : (pct >= 60) ? "Yaxshi! Biroz mashq qilsangiz mukammal bo‘ladi." : "Mashqni davom ettiring — keyingi safar yaxshiroq bo‘ladi.";
+      const name = window.__quizName || 'Mehmon';
+      finalTitle.textContent = `Natija — ${name}`;
+
+      resultModal.classList.add('show');
+      resultModal.setAttribute('aria-hidden', 'false');
+      state.reviewed = false;
+    }
+
+    /* Modal handlers */
+    restartModalBtn.addEventListener('click', () => {
+      if (state.topicIndex === null) return;
+      if (confirm('Testni qayta boshlashni xohlaysizmi? Javoblar o‘chadi va savollar tasodifiy aralashadi.')) {
+        const idx = state.topicIndex;
+        const copied = topics[idx].questions.map(q => ({ ...q, opts: [...q.opts] }));
+        topics[idx].questions = shuffleArray(copied);
+        state.qIndex = 0;
+        state.answers = Array(topics[idx].questions.length).fill(null);
+        state.startAt = new Date();
+        state.reviewed = false;
+        startAtEl.textContent = state.startAt.toLocaleString();
+        renderQuestion();
+        renderQuickList();
+        updateMiniScore();
+        resultModal.classList.remove('show');
+        startTimer();
+      }
+    });
+    closeResultBtn.addEventListener('click', () => {
+      resultModal.classList.remove('show');
+      resultModal.setAttribute('aria-hidden', 'true');
+    });
+    exitBtn.addEventListener('click', () => {
+      stopTimer();
+      resultModal.classList.remove('show');
+      resultModal.setAttribute('aria-hidden', 'true');
+      quizEl.style.display = 'none';
+      homeEl.style.display = 'block';
+      state = { topicIndex: null, qIndex: 0, answers: [], startAt: null, reviewed: false };
+      renderTopics();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* export (exports user answers only) */
+    exportBtn.addEventListener('click', () => {
+      if (state.topicIndex === null) return alert('Dastlab mavzu tanlang');
+      const payload = {
+        topic: topics[state.topicIndex].title,
+        startedAt: state.startAt,
+        answers: state.answers,
+        questionsCount: topics[state.topicIndex].questions.length,
+        elapsedTimeSeconds: secondsElapsed,
+        score: (() => { let c = 0; topics[state.topicIndex].questions.forEach((q, i) => { if (state.answers[i] === q.a) c++; }); return `${c}/${topics[state.topicIndex].questions.length}` })()
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = `${topics[state.topicIndex].id}_answers.json`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    /* mini score update (Endi faqat progress bar va Quick List uchun ishlatiladi) */
+    function updateMiniScore() {
+      if (state.topicIndex === null) return;
+
+      const answeredCount = state.answers.filter(ans => ans !== null).length;
+      const total = topics[state.topicIndex].questions.length;
+      const perc = Math.round((answeredCount / total) * 100);
+
+      progressBar.style.width = perc + '%';
+    }
+
+
+    /* username prompt */
+    window.addEventListener("DOMContentLoaded", () => {
+      let name = window.prompt("Ismingizni kiriting:", "Mehmon");
+      if (!name || name.trim() === "") name = "Mehmon";
+      window.__quizName = name;
+      userNameEl.textContent = name;
+    });
+  </script>
+
+</body>
+
+</html>
