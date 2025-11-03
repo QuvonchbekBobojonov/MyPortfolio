@@ -24,7 +24,6 @@
       --btn-shadow: 0 10px 26px rgba(124, 58, 237, 0.12);
       --topic-hover-shadow: 0 20px 50px rgba(3, 12, 30, 0.6);
       --main-padding: 22px;
-      /* Katta ekranlar uchun padding */
     }
 
     /* LIGHT MODE OVERRIDES */
@@ -39,12 +38,9 @@
       --card-border: 1px solid #e2e8f0;
       --glass: #f8fafc;
       --accent1: #10b981;
-      /* Green accent for light mode */
       --accent2: #059669;
       --correct: #047857;
-      /* Darker green for readability */
       --wrong: #dc2626;
-      /* Darker red */
       --btn-shadow: 0 10px 26px rgba(16, 185, 129, 0.2);
       --topic-hover-shadow: 0 15px 40px rgba(30, 41, 59, 0.1);
     }
@@ -93,7 +89,6 @@
       flex-wrap: wrap;
     }
 
-    /* flex-wrap: wrap qo'shildi */
     .brand {
       display: flex;
       gap: 12px;
@@ -120,13 +115,7 @@
       margin: 0;
       font-size: 20px
     }
-
-    .lead {
-      margin: 0;
-      color: var(--muted-text);
-      font-size: 13px
-    }
-
+    
     .small {
       font-size: 13px;
       color: var(--muted-text)
@@ -253,7 +242,7 @@
       background: rgba(255, 255, 255, 0.02);
       border: var(--card-border);
       cursor: pointer;
-      transition: transform .12s, box-shadow .12s
+      transition: transform .12s, box-shadow .12s, border-color .2s, background-color .2s;
     }
 
     body.light-mode .option {
@@ -278,6 +267,22 @@
       color: var(--text-color)
     }
 
+    /* Tanlangan javobni ajratish */
+    .option input:checked+.label {
+      font-weight: 700;
+      color: var(--accent1);
+    }
+
+    .option.answered-highlight {
+      border: 1px solid var(--accent1);
+      background: rgba(124, 58, 237, 0.05);
+    }
+
+    body.light-mode .option.answered-highlight {
+      background: rgba(5, 150, 105, 0.05);
+    }
+
+    /* Javoblarni ko'rib chiqish rejimida ishlatiladi */
     .option.correct {
       background: linear-gradient(90deg, rgba(65, 215, 122, 0.12), rgba(65, 215, 122, 0.04));
       border-color: var(--correct)
@@ -298,7 +303,6 @@
       border-color: var(--wrong)
     }
 
-
     .answer-info {
       margin-top: 8px;
       font-size: 14px;
@@ -312,30 +316,18 @@
       background: rgba(30, 41, 59, 0.05)
     }
 
+    /* Javob natijasi uchun qo'shimcha CSS */
     .answer-info.correct {
-      background: rgba(65, 215, 122, 0.1);
+      border-left: 5px solid var(--correct);
       color: var(--correct);
-      border: 1px solid rgba(65, 215, 122, 0.2)
+      background: rgba(65, 215, 122, 0.08);
     }
 
     .answer-info.wrong {
-      background: rgba(255, 107, 107, 0.1);
+      border-left: 5px solid var(--wrong);
       color: var(--wrong);
-      border: 1px solid rgba(255, 107, 107, 0.2)
+      background: rgba(255, 107, 107, 0.08);
     }
-
-    body.light-mode .answer-info.correct {
-      background: rgba(4, 120, 87, 0.1);
-      color: var(--correct);
-      border-color: var(--correct)
-    }
-
-    body.light-mode .answer-info.wrong {
-      background: rgba(220, 38, 38, 0.1);
-      color: var(--wrong);
-      border-color: var(--wrong)
-    }
-
 
     .controls {
       display: flex;
@@ -366,6 +358,15 @@
       border: var(--card-border);
       box-shadow: none
     }
+    
+    /* LIGHT MODE: Secondary tugmalarni kontrastli qilish - TUZATISH */
+    body.light-mode .btn.secondary {
+      background: var(--glass);
+      color: var(--text-color);
+      border: var(--card-border);
+      box-shadow: none; /* Shadow ni o'chirib qo'yishni ta'minlaymiz */
+    }
+    /* /TUZATISH */
 
     .btn:active {
       transform: scale(.98)
@@ -396,6 +397,7 @@
       color: var(--muted-text)
     }
 
+    /* Faqat javob berilganligini bildiradi */
     .q-badge.answered {
       background: linear-gradient(90deg, var(--accent2), var(--accent1));
       color: var(--bg1);
@@ -405,36 +407,32 @@
       color: white
     }
 
-    .q-badge.correct-ans {
-      background: var(--correct);
-      color: var(--bg1);
-    }
 
-    .q-badge.wrong-ans {
-      background: var(--wrong);
-      color: var(--bg1);
-    }
-
-
+    /* YANGILANGAN CSS (Natija Oynasi Overlay) */
     .result-overlay {
       position: fixed;
       inset: 0;
       display: none;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(180deg, rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.85));
-      z-index: 50
+      /* Shaffoflik olib tashlandi, endi faqat birinchi fon rangi */
+      background: var(--bg1); /* Dark Mode: Kichik shaffoflikdagi to'q rang */
+      z-index: 50;
+      transition: background 0.3s;
     }
 
     body.light-mode .result-overlay {
-      background: rgba(30, 41, 59, 0.7)
+      /* Oq rejim uchun yangilangan rang */
+      background: var(--bg1); 
     }
+    /* /YANGLANGAN CSS */
 
     .result-overlay.show {
       display: flex
     }
 
     .result-box {
+      /* Asosiy karta stillarini ishlatadi */
       background: var(--card-bg);
       padding: 26px;
       border-radius: 12px;
@@ -442,7 +440,7 @@
       max-width: 720px;
       border: var(--card-border);
       text-align: center;
-      box-shadow: 0 20px 60px rgba(2, 6, 23, 0.8)
+      box-shadow: var(--card-shadow);
     }
 
     .percent {
@@ -466,9 +464,7 @@
     }
 
 
-    /* ==================================== */
     /* Responsive Kodlar */
-    /* ==================================== */
 
     @media (max-width: 980px) {
       .quiz-wrap {
@@ -483,25 +479,12 @@
         padding: 16px;
       }
 
-      /* Umumiy paddingni kamaytirish */
       .card {
         padding: 16px;
-      }
-
-      .logo {
-        width: 48px;
-        height: 48px;
-        font-size: 16px;
-      }
-
-      h1 {
-        font-size: 18px;
       }
     }
 
     @media (max-width: 580px) {
-
-      /* Headerni optimallashtirish */
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -510,23 +493,18 @@
 
       .brand {
         order: 1;
-        /* Brand yuqoriga */
         width: 100%;
         justify-content: space-between;
       }
 
-      /* Theme Toggle va User Info joylashuvi */
       header>div:last-child {
         order: 2;
-        /* Pastga joylashuvi */
         justify-content: space-between;
         width: 100%;
       }
 
-      /* Tez O'tish tugmalarini kichraytirish */
       .q-badge {
         width: 34px;
-        /* Kichik o'lcham */
         height: 34px;
         font-size: 12px;
         border-radius: 6px;
@@ -539,13 +517,11 @@
 
       .topic {
         flex: 1 1 100%;
-        /* Telefonlarda to'liq kenglik */
         min-width: unset;
       }
 
       .option {
         padding: 10px;
-        /* Variantlar paddingini kamaytirish */
         font-size: 14px;
       }
 
@@ -553,8 +529,6 @@
         padding: 12px;
       }
     }
-
- 
   </style>
 </head>
 
@@ -566,7 +540,6 @@
         <div class="logo">QZ</div>
         <div>
           <h1>Professional Quiz</h1>
-
         </div>
       </div>
       <div style="display:flex;gap:12px;align-items:center">
@@ -574,7 +547,6 @@
           <span id="themeIcon">☀️</span>
           <span id="themeText">Kun rejimi</span>
         </button>
-        <div class="small">Foydalanuvchi: <strong id="userName">—</strong></div>
       </div>
     </header>
 
@@ -630,28 +602,35 @@
     <div class="result-overlay" id="resultModal" aria-hidden="true">
       <div class="result-box">
         <h2 id="finalTitle">Natija</h2>
+        
+        <div class="small" id="finalTime" style="margin-bottom: 10px;">Ishlash vaqti: 00:00</div>
         <div class="percent" id="finalPercent">0 / 0 (0%)</div>
         <div class="result-msg" id="finalMessage">Sizning natijangiz hisoblanmoqda.</div>
 
         <div class="controls-row">
           <button class="btn" id="restartModalBtn">Qayta boshlash</button>
-          <button class="btn secondary" id="closeResultBtn">Yopish</button>
-          <button class="btn secondary" id="exitBtn">Chiqish</button>
+          <button class="btn secondary" id="reviewBtn">Javoblarni ko‘rib chiqish</button>
+          <button class="btn" id="nextQuizBtn">Keyingi testga o‘tish</button>
+          <button class="btn secondary" id="exitBtn">Yopish & Chiqish</button>
         </div>
       </div>
     </div>
-      <p style="margin-top: 5px">2025 &copy; Alibek Jumanazarov</p>
+    <p style="font-size:12px;color:var(--muted-text);text-align:center;margin-top:20px;">2025 &copy; Alibek Jumanazarov</p>
   </div>
 
- 
 
   <script>
-    /* =============
-       Savollar: 3 mavzu (Audit 20, Byudjet 10, Buxgalteriya 20)
-       Manba: 6. тестлар.doc.
-       ============= */
-
-    const topics = [
+    /* =======================================
+       1. Savol raqamlarini olib tashlash
+       2. Faqat mavzu ichida aralashtirish saqlanadi
+       3. Natija modalida vaqtni ko'rsatish
+       4. FOYDALANUVCHI ISMI OCHIRILDI
+       5. QO'SHIMCHA SARLAVHA MATNI O'CHIRILDI
+       6. EXPORT JSON TUGMASI O'CHIRILDI
+       7. NATIJALAR OYNASI FON RANGI O'ZGARTIRILDI (CSS da qoldi)
+       8. KEYINGI TESTGA O'TISH TUGMASI QO'SHILDI VA FUNKSIYAGA BOG'LANDI
+       ======================================= */
+    const rawTopics = [
       {
         id: 'audit',
         title: 'Audit',
@@ -741,7 +720,7 @@
           { q: "40. Oy tugagach 9110,9120,9130 schyotlarini yopish — debit qaysi?", opts: ["9910", "9910 (B)", "9110", "9010"], a: 0 },
           { q: "41. Chiqib ketgan asosiy vositalar boshlang`ich qiymati aks ettirildi — debit qaysi?", opts: ["9210", "9210 (B)", "9210 (V)", "9210 (G)"], a: 0 },
           { q: "42. Asosiy vositalarning chiqib ketishidan materiallar kirim qilindi — debit qaysi?", opts: ["1040", "1010", "1090", "1020"], a: 0 },
-          { q: "43. Arendadagi asosiy vositalarning boshqa yozuvlari bilan bog‘liq bo‘lgan savol (variant)", opts: ["A variant", "B variant", "V variant", "G variant"], a: 0 },
+          { q: "43. Arendadagi asosiy vositalarning boshqa yozuvlari bilan bog`liq bo`lgan savol (variant)", opts: ["A variant", "B variant", "V variant", "G variant"], a: 0 },
           { q: "44. Asosiy vositalarning chiqib ketishidan kelib chiqadigan yozuvlar qaysi hisobda aks etadi?", opts: ["9210", "9220", "9230", "9240"], a: 0 },
           { q: "45. Moliyaviy hisobotni tuzish tartibini kim belgilaydi?", opts: ["Moliya Vazirligi", "Soliq qo`mitasi", "Yuqori tashkilot", "Sub’ekt boshqaruv hay’ati"], a: 0 },
           { q: "46. Boshqaruv hisobotini tuzish tartibini kim belgilaydi?", opts: ["Moliya Vazirligi", "Soliq qo`mitasi", "Yuqori tashkilot", "Sub’ekt boshqaruv hay’ati"], a: 3 },
@@ -752,6 +731,20 @@
         ]
       }
     ];
+
+    /* Savol matnlaridan raqamlarni olib tashlaydigan funksiya */
+    function cleanQuestionNumbers(topicsArray) {
+        return topicsArray.map(topic => {
+            topic.questions = topic.questions.map(q => {
+                // Savol matnining boshidagi "N." yoki "NN. " kabi qismlarni o'chirish
+                q.q = q.q.replace(/^\d+\.\s*/, '');
+                return q;
+            });
+            return topic;
+        });
+    }
+
+    const topics = cleanQuestionNumbers(rawTopics);
 
     /* ========== App State ========== */
     let state = { topicIndex: null, qIndex: 0, answers: [], startAt: null, reviewed: false };
@@ -779,16 +772,20 @@
     const themeTextEl = document.getElementById('themeText');
 
     const nextBtn = document.getElementById('nextBtn');
-    const exportBtn = document.getElementById('exportBtn');
+    
+    // Yangi tugma uchun ref
+    const nextQuizBtn = document.getElementById('nextQuizBtn');
 
     const resultModal = document.getElementById('resultModal');
     const finalPercentEl = document.getElementById('finalPercent');
     const finalMessage = document.getElementById('finalMessage');
     const finalTitle = document.getElementById('finalTitle');
-    const closeResultBtn = document.getElementById('closeResultBtn');
     const exitBtn = document.getElementById('exitBtn');
     const restartModalBtn = document.getElementById('restartModalBtn');
-    const userNameEl = document.getElementById('userName');
+    
+    // VAQT UCHUN DOM REFERENCE
+    const finalTimeEl = document.getElementById('finalTime');
+
 
     /* Theme Toggle Mantiqi */
     function applyTheme(isLight) {
@@ -869,8 +866,12 @@
     /* Start topic (copy & shuffle) */
     function startTopic(idx) {
       stopTimer();
+      // Asl savollarni nusxalash
       const copied = topics[idx].questions.map(q => ({ ...q, opts: [...q.opts] }));
+      
+      // FAQAT TANLANGAN MAVZU SAVOLLARINI ARALASHTIRISH
       topics[idx].questions = shuffleArray(copied);
+      
       state.topicIndex = idx;
       state.qIndex = 0;
       state.answers = Array(topics[idx].questions.length).fill(null);
@@ -888,66 +889,88 @@
       startTimer();
     }
 
+    /* Review Mode ni boshlash */
+    function startReviewMode() {
+        state.reviewed = true; // Review Mode holatini yoqish
+        state.qIndex = 0; // Birinchi savolga qaytish
+        resultModal.classList.remove('show');
+        stopTimer();
+        renderQuestion();
+    }
+    
     /* Render question */
     function renderQuestion() {
       const topic = topics[state.topicIndex];
       const i = state.qIndex;
       const item = topic.questions[i];
       const isAnswered = state.answers[i] !== null;
+      const isReviewing = state.reviewed; 
 
       qIndexEl.textContent = i + 1;
       qText.textContent = item.q;
       optionsEl.innerHTML = '';
       answerNote.innerHTML = '';
 
-      optionsEl.style.pointerEvents = isAnswered ? 'none' : 'auto';
-      nextBtn.disabled = !isAnswered;
+      // Review Mode faol bo'lsa, variantlarni bloklash
+      optionsEl.style.pointerEvents = isReviewing ? 'none' : (isAnswered ? 'none' : 'auto');
+      
+      // Review Mode bo'lsa, "Keyingi" ni bloklamaymiz
+      nextBtn.disabled = isReviewing ? false : !isAnswered; 
 
       item.opts.forEach((opt, j) => {
         const lab = document.createElement('label');
         lab.className = 'option';
-        lab.innerHTML = `<input type="radio" name="opt" value="${j}" ${state.answers[i] === j ? 'checked' : ''} ${isAnswered ? 'disabled' : ''}><div class="label">${opt}</div>`;
+        
+        const isSelected = state.answers[i] === j;
+        const isDisabled = isAnswered || isReviewing;
+        
+        lab.innerHTML = `<input type="radio" name="opt" value="${j}" ${isSelected ? 'checked' : ''} ${isDisabled ? 'disabled' : ''}><div class="label">${opt}</div>`;
 
-        // Javob berish mantiqi
-        lab.onclick = () => {
-          if (isAnswered) return;
-          state.answers[i] = j;
-          const isCorrect = j === item.a;
+        // Javob berish mantiqi (Review Mode bo'lmaganda)
+        if (!isReviewing) {
+            lab.onclick = () => {
+                if (isAnswered) return;
+                
+                // Oldingi tanlovni bekor qilish (vizual)
+                optionsEl.querySelectorAll('.option.answered-highlight').forEach(o => o.classList.remove('answered-highlight'));
+                
+                state.answers[i] = j; 
+                
+                lab.classList.add('answered-highlight');
 
-          // Immediate Feedback funksiyasi
-          lab.classList.add(isCorrect ? 'correct' : 'wrong');
+                optionsEl.style.pointerEvents = 'none';
+                nextBtn.disabled = false;
+                
+                updateMiniScore();
+                renderQuickList();
+            };
+        }
 
-          // Boshqa javoblarni bloklash
-          optionsEl.querySelectorAll('.option').forEach(o => {
-            o.querySelector('input').disabled = true;
-          });
+        // Agar savolga javob berilgan bo'lsa YOKI Review Mode da bo'lsa
+        if (isAnswered || isReviewing) {
+            const isSelected = state.answers[i] === j;
+            const isCorrectAns = state.answers[i] === item.a;
 
-          answerNote.innerHTML = `<div class="answer-info ${isCorrect ? 'correct' : 'wrong'}">
-        Javobingiz **${isCorrect ? 'TO‘G‘RI' : 'NOTO‘G‘RI'}**! ${isCorrect ? '✅' : '❌'}
-      </div>`;
-
-          optionsEl.style.pointerEvents = 'none';
-          nextBtn.disabled = false;
-          updateMiniScore();
-          renderQuickList();
-        };
-
-        // Agar savolga javob berilgan bo'lsa (Render holati)
-        if (isAnswered) {
-          const isSelected = state.answers[i] === j;
-          const isCorrectOption = item.a === j;
-          const isCorrectAns = state.answers[i] === item.a;
-
-          if (isCorrectOption && isCorrectAns) {
-            lab.classList.add('correct');
-          } else if (isSelected && !isCorrectAns) {
-            lab.classList.add('wrong');
-          }
-
-          // Javob berilganligini ko'rsatish (to'g'ri javob matnisiz)
-          answerNote.innerHTML = `<div class="answer-info ${isCorrectAns ? 'correct' : 'wrong'}">
-            Sizning javobingiz: **${isCorrectAns ? 'TO‘G‘RI' : 'NOTO‘G‘RI'}** ${isCorrectAns ? '✅' : '❌'}
-        </div>`;
+            if (isSelected) {
+                // Review Mode da bo'lsa, tanlangan javobni to'g'ri/noto'g'ri ranglash
+                if (isReviewing) {
+                     lab.classList.add(isCorrectAns ? 'correct' : 'wrong');
+                } else {
+                    // Test jarayonida bo'lsa, faqat tanlanganligini bildiruvchi rang
+                    lab.classList.add('answered-highlight'); 
+                }
+            }
+            
+            // Tekshirish rejimida javob natijasini ko'rsatish
+            if (isReviewing) {
+                answerNote.innerHTML = `<div class="answer-info ${isCorrectAns ? 'correct' : 'wrong'}">
+                    Sizning javobingiz: ${isCorrectAns ? '**TO‘G‘RI**' : '**NOTO‘G‘RI**'}. 
+                </div>`;
+            } else if (isAnswered) {
+                 answerNote.innerHTML = `<div class="answer-info">
+                    Siz bu savolga javob berdingiz. **Keyingi** tugmasini bosing yoki tez o'tish ro'yxatidan boshqa savolni tanlang.
+                </div>`;
+            }
         }
 
         optionsEl.appendChild(lab);
@@ -957,7 +980,32 @@
       const total = topic.questions.length;
       const perc = Math.round((answeredCount / total) * 100);
       progressBar.style.width = perc + '%';
-      nextBtn.textContent = (i === topic.questions.length - 1) ? 'Tugatish' : 'Keyingi';
+      
+      // NEXT tugmasi mantiqi
+      if (isReviewing) {
+          // Review Mode da navigatsiya
+          nextBtn.textContent = (i === topic.questions.length - 1) ? 'Testdan chiqish' : 'Keyingi Savol';
+          nextBtn.onclick = () => {
+              if (state.qIndex < topic.questions.length - 1) {
+                  state.qIndex++;
+                  renderQuestion();
+              } else {
+                  // Review Mode tugaganda Home ga o'tish
+                  exitQuizToHome();
+              }
+          };
+      } else {
+          // Test jarayonidagi navigatsiya
+          nextBtn.textContent = (i === topic.questions.length - 1) ? 'Natijani yuborish' : 'Keyingi';
+          nextBtn.onclick = () => {
+              if (state.qIndex < topic.questions.length - 1) {
+                  state.qIndex++;
+                  renderQuestion();
+              } else {
+                  revealResult();
+              }
+          };
+      }
     }
 
     /* Quick list */
@@ -970,10 +1018,8 @@
         b.textContent = idx + 1;
 
         if (state.answers[idx] !== null) {
-          const isCorrect = state.answers[idx] === q.a;
           b.classList.add('answered');
-          b.classList.add(isCorrect ? 'correct-ans' : 'wrong-ans');
-          b.title = isCorrect ? 'To‘g‘ri javob berildi' : 'Noto‘g‘ri javob berildi';
+          b.title = 'Javob berilgan';
         } else {
           b.title = 'Javob berilmagan';
         }
@@ -986,20 +1032,10 @@
       });
     }
 
-    /* Navigation */
-    nextBtn.addEventListener('click', () => {
-      const topic = topics[state.topicIndex];
-      if (state.qIndex < topic.questions.length - 1) {
-        state.qIndex++;
-        renderQuestion();
-      } else {
-        revealResult();
-      }
-    });
-
-    /* Reveal ONLY aggregated result (no per-question answers yet) */
+    /* Reveal ONLY aggregated result (VAQT HISOBLANADI) */
     function revealResult() {
-      stopTimer();
+      stopTimer(); // Taymerni to'xtatish
+
       const topic = topics[state.topicIndex];
       let correct = 0;
       topic.questions.forEach((q, i) => {
@@ -1008,16 +1044,37 @@
 
       const pct = Math.round((correct / topic.questions.length) * 100);
 
-      // Natija endi ball va foizni ko'rsatadi
+      // VAQTNI FORMATLASH VA KO'RSATISH
+      finalTimeEl.textContent = `Ishlash vaqti: ${formatTime(secondsElapsed).replace('Vaqt: ', '')}`;
+      
       finalPercentEl.textContent = `${correct} / ${topic.questions.length} (${pct}%)`;
 
       finalMessage.textContent = (pct >= 85) ? "Ajoyib! Siz juda yaxshi bilasiz." : (pct >= 60) ? "Yaxshi! Biroz mashq qilsangiz mukammal bo‘ladi." : "Mashqni davom ettiring — keyingi safar yaxshiroq bo‘ladi.";
-      const name = window.__quizName || 'Mehmon';
-      finalTitle.textContent = `Natija — ${name}`;
+      
+      finalTitle.textContent = `Natija`; 
+      
+      // Faqat review tugmasi mantiqi
+      let reviewBtn = document.getElementById('reviewBtn');
+      reviewBtn.onclick = startReviewMode;
+      
+      // Chiqish tugmasi matnini yangilash
+      exitBtn.textContent = 'Yopish & Chiqish';
 
       resultModal.classList.add('show');
       resultModal.setAttribute('aria-hidden', 'false');
       state.reviewed = false;
+    }
+    
+    // Asosiy sahifaga qaytish funksiyasi
+    function exitQuizToHome() {
+        stopTimer();
+        resultModal.classList.remove('show');
+        resultModal.setAttribute('aria-hidden', 'true');
+        quizEl.style.display = 'none';
+        homeEl.style.display = 'block';
+        state = { topicIndex: null, qIndex: 0, answers: [], startAt: null, reviewed: false };
+        renderTopics();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     /* Modal handlers */
@@ -1025,8 +1082,10 @@
       if (state.topicIndex === null) return;
       if (confirm('Testni qayta boshlashni xohlaysizmi? Javoblar o‘chadi va savollar tasodifiy aralashadi.')) {
         const idx = state.topicIndex;
-        const copied = topics[idx].questions.map(q => ({ ...q, opts: [...q.opts] }));
+        // Savollarni qayta aralashtirish
+        const copied = topics[idx].questions.map(q => ({ ...q.q, opts: [...q.opts] }));
         topics[idx].questions = shuffleArray(copied);
+        
         state.qIndex = 0;
         state.answers = Array(topics[idx].questions.length).fill(null);
         state.startAt = new Date();
@@ -1039,35 +1098,15 @@
         startTimer();
       }
     });
-    closeResultBtn.addEventListener('click', () => {
-      resultModal.classList.remove('show');
-      resultModal.setAttribute('aria-hidden', 'true');
+    
+    // Keyingi testga o'tish tugmasi (Asosiy sahifaga qaytaradi)
+    nextQuizBtn.addEventListener('click', () => {
+        exitQuizToHome();
     });
+    
+    // Chiqish tugmasi (Yopish va chiqish)
     exitBtn.addEventListener('click', () => {
-      stopTimer();
-      resultModal.classList.remove('show');
-      resultModal.setAttribute('aria-hidden', 'true');
-      quizEl.style.display = 'none';
-      homeEl.style.display = 'block';
-      state = { topicIndex: null, qIndex: 0, answers: [], startAt: null, reviewed: false };
-      renderTopics();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    /* export (exports user answers only) */
-    exportBtn.addEventListener('click', () => {
-      if (state.topicIndex === null) return alert('Dastlab mavzu tanlang');
-      const payload = {
-        topic: topics[state.topicIndex].title,
-        startedAt: state.startAt,
-        answers: state.answers,
-        questionsCount: topics[state.topicIndex].questions.length,
-        elapsedTimeSeconds: secondsElapsed,
-        score: (() => { let c = 0; topics[state.topicIndex].questions.forEach((q, i) => { if (state.answers[i] === q.a) c++; }); return `${c}/${topics[state.topicIndex].questions.length}` })()
-      };
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = `${topics[state.topicIndex].id}_answers.json`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+        exitQuizToHome();
     });
 
     /* mini score update (Endi faqat progress bar va Quick List uchun ishlatiladi) */
@@ -1081,14 +1120,6 @@
       progressBar.style.width = perc + '%';
     }
 
-
-    /* username prompt */
-    window.addEventListener("DOMContentLoaded", () => {
-      let name = window.prompt("Ismingizni kiriting:", "Mehmon");
-      if (!name || name.trim() === "") name = "Mehmon";
-      window.__quizName = name;
-      userNameEl.textContent = name;
-    });
   </script>
 
 </body>
