@@ -24,7 +24,7 @@ function Contact() {
             setTimeout(() => {
                 setError(false);
                 setResponseMessage('');
-            }, 15000);
+            }, 5000);
             return;
         }
 
@@ -43,7 +43,7 @@ function Contact() {
                 setTimeout(() => {
                     setError(false);
                     setResponseMessage('');
-                }, 15000);
+                }, 5000);
                 return;
             }
 
@@ -54,7 +54,7 @@ function Contact() {
             setTimeout(() => {
                 setSubmitted(false);
                 setResponseMessage('');
-            }, 15000);
+            }, 5000);
 
         } catch (err) {
             const errorMessage = err.response?.data?.message || "An unexpected error occurred. Please try again.";
@@ -63,7 +63,7 @@ function Contact() {
             setTimeout(() => {
                 setError(false);
                 setResponseMessage('');
-            }, 15000);
+            }, 5000);
         }
     };
 
