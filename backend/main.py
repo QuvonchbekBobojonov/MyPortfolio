@@ -47,4 +47,5 @@ async def send_to_telegram(
         response = await client.post(url, data={"chat_id": CHAT_ID, "text": text})
         response.raise_for_status()
 
-    return {"success": True, "message": "Xabar yuborildi!"}
+    return {"success": True, "message": "Successfully delivered! Quvonchbek has received your message."}
+
