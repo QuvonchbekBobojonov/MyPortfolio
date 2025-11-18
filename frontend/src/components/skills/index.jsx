@@ -19,7 +19,7 @@ const skillsData = [
     {name: "JavaScript", image: JavaScriptImage, projects: "12+"},
     {name: "WordPress", image: WordPressImage, projects: "5+"},
     {name: "Docker", image: DockerImage, projects: "5+"},
-    {name: "Nginx", image: NginxImage, projects: "5+"},
+    {name: "Nginx", image: NginxImage, projects: "11+"},
     {name: "PostgresSQL", image: PostgresImage, projects: "10+"},
     {name: "SQLite", image: SQLiteImage, projects: "10+"},
     {name: "Redis", image: RedisImage, projects: "3+"},
