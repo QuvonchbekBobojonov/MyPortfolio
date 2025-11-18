@@ -6,12 +6,12 @@ function Resume() {
             place: 'Digital Education Development Center',
         },
         {
-            date: '2024 - Present',
+            date: '2024 - 2025',
             title: 'Desktop Engineer',
             place: 'TOTMEGA LLC',
         },
         {
-            date: '2023 - Present',
+            date: '2023 - 2025',
             title: 'Back-end Developer',
             place: 'TOTMEGA LLC',
         },
