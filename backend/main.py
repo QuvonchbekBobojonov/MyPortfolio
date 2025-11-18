@@ -27,12 +27,14 @@ async def send_to_telegram(
     subject: str = Form(...),
     budget: str = Form(...),
     message: str = Form(...),
+    telegram_username: str = Form(...)
 ):
     text = (
         f"📩 Yangi xabar!\n\n"
         f"👤 Ism: {full_name}\n"
         f"📧 Email: {email}\n"
         f"📞 Telefon: {phone_number}\n"
+        f"👤 Telegram: @{telegram_username}\n"
         f"📌 Mavzu: {subject}\n"
         f"💰 Byudjet: {budget}\n"
         f"💬 Xabar: {message}"
@@ -41,7 +43,13 @@ async def send_to_telegram(
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
     async with httpx.AsyncClient() as client:
+        check_telegram_username_response = await client.get(
+            f"https://t.me/{telegram_username}"
+        )
+        if check_telegram_username_response.status_code != 200:
+            return {"success": False, "message": "Telegram username does not exist."}
+
         response = await client.post(url, data={"chat_id": CHAT_ID, "text": text})
         response.raise_for_status()
 
-    return {"success": True, "message": "Xabar yuborildi!"}
+    return {"success": True, "message": "Message sent!"}
