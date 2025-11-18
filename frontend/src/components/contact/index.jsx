@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function Contact() {
     const [isSubmitted, setSubmitted] = useState(false);
+    const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
 
@@ -16,9 +17,10 @@ function Contact() {
         const phoneNumber = data.get('phone_number');
         const subject = data.get('subject');
         const message = data.get('message');
-        const telegramUsername = data.get('telegram_username');
 
-        if (!fullName || !email || !phoneNumber || !subject || !message || !telegramUsername) {
+        setLoading(true);
+
+        if (!fullName || !email || !phoneNumber || !subject || !message) {
             setError(true);
             setResponseMessage("Please fill in all required fields.");
             setTimeout(() => {
@@ -54,6 +56,7 @@ function Contact() {
             setTimeout(() => {
                 setSubmitted(false);
                 setResponseMessage('');
+                setLoading(false);
             }, 5000);
 
         } catch (err) {
@@ -63,6 +66,7 @@ function Contact() {
             setTimeout(() => {
                 setError(false);
                 setResponseMessage('');
+                setLoading(false)
             }, 5000);
         }
     };
@@ -117,14 +121,7 @@ function Contact() {
                                     <input type="text" name="subject" id="subject" required/>
                                 </div>
                             </div>
-                            <div className="col-md-6">
-                                <div className="input-group">
-                                    <label htmlFor="telegram-username">Telegram Username <sup>*</sup></label>
-                                    <input type="text" name="telegram_username" id="telegram-username"/>
-                                </div>
-                            </div>
-
-                            <div className="col-md-6">
+                            <div className="col-md-12">
                                 <div className="input-group">
                                     <label htmlFor="budget">Your Budget <span>(optional)</span></label>
                                     <input type="number" name="budget" id="budget"/>
@@ -139,7 +136,7 @@ function Contact() {
                             <div className="col-md-12">
                                 <div className="input-group submit-btn-wrap">
                                     <button className="theme-btn" type="submit" id="submit-form">
-                                        {isSubmitted ? 'Sent Successfully' : 'Send Message'}
+                                        {isSubmitted ? 'Sent Successfully' : isLoading ? 'Sending...' : 'Send Message'}
                                     </button>
                                 </div>
                             </div>
