@@ -20,7 +20,7 @@ function BodyOverlay() {
             autoPlay
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
         >
             <source src={randomVideo} type="video/mp4" />
             Sizning brauzeringiz video tagni qo‘llab-quvvatlamaydi.
