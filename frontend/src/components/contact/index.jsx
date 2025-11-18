@@ -117,7 +117,7 @@ function Contact() {
                                     <input type="text" name="subject" id="subject" required/>
                                 </div>
                             </div>
-                            <div className="col-md-12">
+                            <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="telegram-username">Telegram Username <sup>*</sup></label>
                                     <input type="text" name="telegram_username" id="telegram-username"
@@ -125,7 +125,7 @@ function Contact() {
                                 </div>
                             </div>
 
-                            <div className="col-md-12">
+                            <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="budget">Your Budget <span>(optional)</span></label>
                                     <input type="number" name="budget" id="budget"/>
