@@ -120,8 +120,7 @@ function Contact() {
                             <div className="col-md-6">
                                 <div className="input-group">
                                     <label htmlFor="telegram-username">Telegram Username <sup>*</sup></label>
-                                    <input type="text" name="telegram_username" id="telegram-username"
-                                           placeholder="@username"/>
+                                    <input type="text" name="telegram_username" id="telegram-username"/>
                                 </div>
                             </div>
 
