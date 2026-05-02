@@ -1,21 +1,26 @@
 function Resume() {
     const experienceData = [
-        {
-            date: '2024 - Present',
-            title: 'Full Stack Engineer Mentor | Mentor at "Al-Khwarizmi Heirs" Project',
-            place: 'Digital Education Development Center',
-        },
-        {
-            date: '2024 - 2025',
-            title: 'Desktop Engineer',
-            place: 'TOTMEGA LLC',
-        },
-        {
-            date: '2023 - 2025',
-            title: 'Back-end Developer',
-            place: 'TOTMEGA LLC',
-        },
-    ];
+    {
+        date: '2023 - Present',
+        title: 'CEO & Founder',
+        place: 'OVEL (Optimal Versatile Efficient Ledger MChJ)',
+    },
+    {
+        date: '2024 - Present',
+        title: 'Full Stack Engineer Mentor | Mentor at "Al-Khwarizmi Heirs" Project',
+        place: 'Digital Education Development Center',
+    },
+    {
+        date: '2024 - 2025',
+        title: 'Desktop Engineer',
+        place: 'TOTMEGA LLC',
+    },
+    {
+        date: '2023 - 2025',
+        title: 'Back-end Developer',
+        place: 'TOTMEGA LLC',
+    },
+];
 
     const educationData = [
         {
