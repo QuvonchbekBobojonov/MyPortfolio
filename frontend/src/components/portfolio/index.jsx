@@ -1,12 +1,20 @@
 import { useEffect } from 'react';
 import portfolioImage1 from '../../assets/portfolio/1.png';
 import portfolioImage2 from '../../assets/portfolio/5.jpg';
-import portfolioImage3 from '../../assets/portfolio/3.jpg';
+import portfolioImage4 from '../../assets/portfolio/3.jpg';
 
 function Portfolio() {
     const projects = [
         {
             id: 1,
+            title: 'Ovel POS - Advanced Point of Sale System',
+            image: portfolioImage4, // Bu yerga tegishli rasm o'zgaruvchisini qo'ying
+            link: 'https://ovel.uz', 
+            tech: ['Django', 'React', 'Django Rest Framework', 'PostgreSQL'],
+            layout: 'full',
+        },
+        {
+            id: 2,
             title: 'MegaLord - PC Monitoring System and Game Club Management Software',
             image: portfolioImage2,
             link: '#',
@@ -14,19 +22,11 @@ function Portfolio() {
             layout: 'half',
         },
         {
-            id: 2,
+            id: 3,
             title: 'Megalife - Water Automation Selling Device',
             image: portfolioImage3,
             link: '/',
             tech: ['Django', 'Django Rest Framework', 'MQTT', 'JavaScript', 'Qt'],
-            layout: 'full',
-        },
-        {
-            id: 3,
-            title: 'MedControl Apteka - Medical Control System',
-            image: portfolioImage1,
-            link: 'https://apteka.medcontrol.uz/',
-            tech: ['Django', 'Django Rest Framework', 'Django Channels', 'JavaScript'],
             layout: 'full',
         },
     ];
