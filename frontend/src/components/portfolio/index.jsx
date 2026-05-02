@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import portfolioImage1 from '../../assets/portfolio/1.png';
 import portfolioImage2 from '../../assets/portfolio/5.jpg';
-import portfolioImage4 from '../../assets/portfolio/3.jpg';
+import portfolioImage4 from '../../assets/portfolio/6.png';
 
 function Portfolio() {
     const projects = [
