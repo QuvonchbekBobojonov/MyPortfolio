@@ -1,7 +1,7 @@
 function Resume() {
     const experienceData = [
         {
-            date: '2023 - Present',
+            date: '2026 - Present',
             title: 'CEO & Founder',
             place: 'OVEL (Optimal Versatile Efficient Ledger MChJ)',
         },
