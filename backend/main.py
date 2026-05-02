@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Form
+from typing import Optional
 import httpx
 import os
 from dotenv import load_dotenv
@@ -12,6 +13,8 @@ app.add_middleware(
     allow_origins=[
         "https://moorfo.uz",
         "https://www.moorfo.uz",
+        "http://localhost:5173",
+        "http://localhost:3000",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -28,16 +31,17 @@ async def send_to_telegram(
     email: str = Form(...),
     phone_number: str = Form(...),
     subject: str = Form(...),
-    budget: str = Form(...),
     message: str = Form(...),
+    budget: Optional[str] = Form(None),
 ):
+    budget_text = budget if budget else "Kiritilmagan"
     text = (
         f"📩 Yangi xabar!\n\n"
         f"👤 Ism: {full_name}\n"
         f"📧 Email: {email}\n"
         f"📞 Telefon: {phone_number}\n"
         f"📌 Mavzu: {subject}\n"
-        f"💰 Byudjet: {budget}\n"
+        f"💰 Byudjet: {budget_text}\n"
         f"💬 Xabar: {message}"
     )
 
