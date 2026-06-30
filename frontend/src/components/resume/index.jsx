@@ -2,6 +2,11 @@ function Resume() {
     const experienceData = [
         {
             date: '2026 - Present',
+            title: 'Software Engineer',
+            place: 'REVO (codeplay MCHJ)',
+        },
+        {
+            date: '2026 - Present',
             title: 'CEO & Founder',
             place: 'OVEL (Optimal Versatile Efficient Ledger MChJ)',
         },
