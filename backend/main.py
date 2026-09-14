@@ -88,7 +88,8 @@ def get_data(lang: Lang = "en"):
     return load_data(lang)
 
 
-@app.get("/cv/")
+# HEAD ham qabul qilinadi: Telegram kabi link-preview botlari fayl turini avval shu bilan tekshirishi mumkin.
+@app.api_route("/cv/", methods=["GET", "HEAD"])
 def download_cv(lang: Lang = "en"):
     data = load_data(lang)
     profile = data["profile"]
