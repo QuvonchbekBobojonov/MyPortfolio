@@ -1,35 +1,12 @@
 import { useEffect } from 'react';
-import portfolioImage3 from '../../assets/portfolio/3.jpg';
-import portfolioImage2 from '../../assets/portfolio/5.jpg';
-import portfolioImage4 from '../../assets/portfolio/6.png';
+import { assetUrl } from '../../assets';
+import { useSiteData } from '../../site-data';
 
 function Portfolio() {
-    const projects = [
-        {
-            id: 1,
-            title: 'Ovel POS - Advanced Point of Sale System',
-            image: portfolioImage4, // Bu yerga tegishli rasm o'zgaruvchisini qo'ying
-            link: 'https://ovel.uz', 
-            tech: ['Django', 'React', 'Django Rest Framework', 'PostgreSQL'],
-            layout: 'full',
-        },
-        {
-            id: 2,
-            title: 'MegaLord - PC Monitoring System and Game Club Management Software',
-            image: portfolioImage2,
-            link: '#',
-            tech: ['Django', 'Django Rest Framework', 'JavaScript', 'Qt', 'PySide6'],
-            layout: 'half',
-        },
-        {
-            id: 3,
-            title: 'Megalife - Water Automation Selling Device',
-            image: portfolioImage3,
-            link: '/',
-            tech: ['Django', 'Django Rest Framework', 'MQTT', 'JavaScript', 'Qt'],
-            layout: 'full',
-        },
-    ];
+    const projects = useSiteData().portfolio.map((project) => ({
+        ...project,
+        image: assetUrl(project.image),
+    }));
 
     // Fade from bottom animation on scroll
     useEffect(() => {

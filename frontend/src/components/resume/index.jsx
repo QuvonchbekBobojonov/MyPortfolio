@@ -1,69 +1,15 @@
-function Resume() {
-    const experienceData = [
-        {
-            date: '2026 - Present',
-            title: 'Software Engineer',
-            place: 'REVO (codeplay MCHJ)',
-        },
-        {
-            date: '2026 - Present',
-            title: 'CEO & Founder',
-            place: 'OVEL (Optimal Versatile Efficient Ledger MChJ)',
-        },
-        {
-            date: '2024 - Present',
-            title: 'Full Stack Engineer Mentor | Mentor at "Al-Khwarizmi Heirs" Project',
-            place: 'Digital Education Development Center',
-        },
-        {
-            date: '2024 - 2025',
-            title: 'Desktop Engineer',
-            place: 'TOTMEGA LLC',
-        },
-        {
-            date: '2023 - 2025',
-            title: 'Back-end Developer',
-            place: 'TOTMEGA LLC',
-        },
-    ];
+import {useSiteData} from '../../site-data';
 
-    const educationData = [
-        {
-            date: '2024 - Present',
-            title: "Bachelor's Degree in Information Systems and Technologies",
-            place: 'International School of Finance Technology and Science (ISFT)',
-        },
-        {
-            date: '2022 - 2024',
-            title: 'Information Media Machines and Computer Networks Operator',
-            place: 'Vocational School No. 1 (Yangibozor District)',
-        },
-        {
-            date: '2022 - 2023',
-            title: 'Front-end Development Course',
-            place: 'IT Park (Yangibozor District)',
-        },
-        {
-            date: '2022 - 2023',
-            title: 'Python Backend Development',
-            place: 'Fulfil Education',
-        },
-        {
-            date: '2020 - 2022',
-            title: 'Back-end Development & Computer Literacy',
-            place: 'IT Park (Yangibozor District)',
-        },
-        {
-            date: '2020 - 2022',
-            title: 'Front-end & Back-end Development',
-            place: 'Mohirdev',
-        },
-        {
-            date: '2020 - 2022',
-            title: 'WordPress & Django REST Framework',
-            place: 'YouTube',
-        },
-    ];
+const renderTimelineItem = (item, key) => (
+    <div key={key} className="item scroll-animation" data-animation="fade_from_right">
+        <span className="date">{item.date}</span>
+        <h2>{item.title}</h2>
+        <p>{item.location ? `${item.place} (${item.location})` : item.place}</p>
+    </div>
+);
+
+function Resume() {
+    const {experience, education} = useSiteData();
 
     return (
         <section className="resume-area page-section scroll-to-page" id="resume">
@@ -80,30 +26,10 @@ function Resume() {
 
                     <div className="resume-timeline">
                         {/* --- Experience Section --- */}
-                        {experienceData.map((item, index) => (
-                            <div
-                                key={index}
-                                className="item scroll-animation"
-                                data-animation="fade_from_right"
-                            >
-                                <span className="date">{item.date}</span>
-                                <h2>{item.title}</h2>
-                                <p>{item.place}</p>
-                            </div>
-                        ))}
+                        {experience.map((item, index) => renderTimelineItem(item, `experience-${index}`))}
 
                         {/* --- Education Section --- */}
-                        {educationData.map((item, index) => (
-                            <div
-                                key={index + 100}
-                                className="item scroll-animation"
-                                data-animation="fade_from_right"
-                            >
-                                <span className="date">{item.date}</span>
-                                <h2>{item.title}</h2>
-                                <p>{item.place}</p>
-                            </div>
-                        ))}
+                        {education.map((item, index) => renderTimelineItem(item, `education-${index}`))}
                     </div>
                 </div>
             </div>

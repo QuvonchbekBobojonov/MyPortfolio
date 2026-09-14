@@ -1,11 +1,19 @@
+from datetime import date
+from pathlib import Path
 from fastapi import FastAPI, Form
+from fastapi.responses import Response
 from typing import Optional
 import httpx
+import json
 import os
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 
+from cv import build_cv
+
 load_dotenv()
+
+DATA_FILE = Path(__file__).parent / "data" / "profile.json"
 
 app = FastAPI()
 app.add_middleware(
@@ -23,6 +31,41 @@ app.add_middleware(
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
+
+def load_data() -> dict:
+    data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    profile = data["profile"]
+    year = date.today().year
+    experience = year - profile["career_start_year"]
+
+    profile["full_name"] = f"{profile['first_name']} {profile['last_name']}"
+    profile["age"] = year - profile["birth_year"]
+    profile["experience_years"] = experience
+    if experience < 2:
+        profile["level"] = "Junior Developer"
+    elif experience < 5:
+        profile["level"] = "Middle Developer"
+    else:
+        profile["level"] = "Senior Developer"
+    return data
+
+
+@app.get("/data/")
+def get_data():
+    return load_data()
+
+
+@app.get("/cv/")
+def download_cv():
+    data = load_data()
+    profile = data["profile"]
+    filename = f"{profile['first_name']}_{profile['last_name']}_CV.pdf"
+    return Response(
+        content=build_cv(data),
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
 
 
 @app.post("/send_telegram/")

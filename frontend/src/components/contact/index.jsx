@@ -1,7 +1,10 @@
 import {useState} from 'react';
 import axios from 'axios';
+import {API_URL} from '../../api';
+import {useSiteData} from '../../site-data';
 
 function Contact() {
+    const {profile} = useSiteData();
     const [isSubmitted, setSubmitted] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -35,7 +38,7 @@ function Contact() {
         setSubmitted(false);
 
         try {
-            const response = await axios.post('https://api.moorfo.uz/send_telegram/', data, {
+            const response = await axios.post(`${API_URL}/send_telegram/`, data, {
                 headers: {'Content-Type': 'multipart/form-data'},
             });
 
@@ -84,7 +87,7 @@ function Contact() {
                         </h1>
                     </div>
 
-                    <h3 className="scroll-animation" data-animation="fade_from_bottom">hi@moorfo.uz</h3>
+                    <h3 className="scroll-animation" data-animation="fade_from_bottom">{profile.email}</h3>
 
                     {responseMessage && (
                         <p className={`alert messenger-box-contact__msg ${error ? 'alert-danger' : 'alert-success'}`}

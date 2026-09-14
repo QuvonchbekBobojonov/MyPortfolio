@@ -1,4 +1,8 @@
+import {useSiteData} from '../../site-data';
+
 function About() {
+    const {profile} = useSiteData();
+
     return (
         <section className="about-area page-section scroll-to-page" id="about">
             <div className="custom-container">
@@ -9,36 +13,30 @@ function About() {
                         </h4>
                         <h1 className="scroll-animation" data-animation="fade_from_bottom">
                             My name is&nbsp;
-                            <span>Quvonchbek Bobojonov</span>
+                            <span>{profile.full_name}</span>
                         </h1>
                     </div>
-                    <p className="scroll-animation" data-animation="fade_from_bottom">
-                        I am a Software Engineer. I love creating new things and transforming complex problems into 
-                        simple, elegant, and intuitive designs. My mission is to make your websites and applications 
-                        functional and user-friendly while also ensuring they are visually appealing. 
-                        Additionally, I add a personal touch to your product, ensuring it is both eye-catching and easy to use. 
-                        My goal is to convey your message and identity creatively.
-                    </p>
+                    {profile.summary.map((paragraph, index) => (
+                        <p key={index} className="scroll-animation" data-animation="fade_from_bottom">
+                            {paragraph}
+                        </p>
+                    ))}
                     <div className="row mt-3 scroll-animation row-cols-1 row-cols-md-2" data-animation="fade_from_bottom">
                         <div className="col scroll-animation" data-animation="fade_from_left">
                             <ul>
-                                <li>Name: Quvonchbek</li>
-                                <li>Surname: Bobojonov</li>
-                                <li>Age: {new Date().getFullYear() - 2006}</li>
-                                <li>  Level: {(() => {
-    const experience = new Date().getFullYear() - 2022; // Ish boshlagan yilni kiriting
-    if (experience < 2) return "Junior Developer";
-    if (experience < 5) return "Middle Developer";
-    return "Senior Developer";
-  })()}</li>
+                                <li>Name: {profile.first_name}</li>
+                                <li>Surname: {profile.last_name}</li>
+                                <li>Age: {profile.age}</li>
+                                <li>Level: {profile.level}</li>
+                                <li>Languages: {profile.languages.map((lang) => lang.name).join(', ')}</li>
                             </ul>
                         </div>
                         <div className="col scroll-animation" data-animation="fade_from_right">
                             <ul>
-                                <li>Phone: +998 77 404 00 66</li>
-                                <li>Email: hi@moorfo.uz</li>
-                                <li>ZIP Code: 221209</li>
-                                <li>Address: Uzbekistan, Khorezm, Yangibozor, Chubalanchi</li>
+                                <li>Phone: {profile.phone}</li>
+                                <li>Email: {profile.email}</li>
+                                <li>ZIP Code: {profile.zip_code}</li>
+                                <li>Address: {profile.address}</li>
                             </ul>
                         </div>
                     </div>

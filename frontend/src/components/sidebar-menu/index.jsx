@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useSiteData } from '../../site-data';
 
 function SidebarMenu() {
+    const { socials } = useSiteData();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -13,12 +15,6 @@ function SidebarMenu() {
         { id: 'skills', icon: 'las la-shapes', label: 'Skills' },
         { id: 'portfolio', icon: 'las la-grip-vertical', label: 'Portfolio' },
         { id: 'contact', icon: 'las la-envelope', label: 'Contact' },
-    ];
-
-    const socialLinks = [
-        { href: 'https://t.me/+998774040066', icon: 'lab la-telegram', label: 'Telegram' },
-        { href: 'https://github.com/QuvonchbekBobojonov', icon: 'lab la-github', label: 'GitHub' },
-        { href: 'https://www.linkedin.com/in/moorfo/', icon: 'lab la-linkedin-in', label: 'LinkedIn' },
     ];
 
     return (
@@ -59,13 +55,13 @@ function SidebarMenu() {
                     <div className="sidebar-social">
                         <p>Social Media</p>
                         <ul className="social-links d-flex align-items-center">
-                            {socialLinks.map((link) => (
-                                <li key={link.href}>
+                            {socials.map((link) => (
+                                <li key={link.url}>
                                     <a
-                                        href={link.href}
+                                        href={link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        aria-label={link.label}
+                                        aria-label={link.name}
                                     >
                                         <i className={link.icon}></i>
                                     </a>

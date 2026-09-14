@@ -1,7 +1,11 @@
 import logo from '../../assets/moorfo.svg';
 import meImage from '../../assets/me.jpg';
+import {CV_URL} from '../../api';
+import {useSiteData} from '../../site-data';
 
 function LeftSidebarMobile() {
+    const {profile, socials} = useSiteData();
+
     return (
         <div className="left-sidebar">
             <div className="sidebar-header d-flex align-items-center justify-content-between">
@@ -9,35 +13,22 @@ function LeftSidebarMobile() {
                 <span className="designation"></span>
             </div>
             <img className="me" src={meImage} alt="Me" />
-            <h2 className="email">hi@moorfo.uz</h2>
-            <h2 className="address">Uzbekistan, Khorezm, Yangibozor</h2>
+            <h2 className="email">{profile.email}</h2>
+            <h2 className="address">{profile.location}</h2>
             <p className="copyright">
                 &copy; 2023 - {new Date().getFullYear()} Moorfo. All rights reserved.
             </p>
             <ul className="social-profile d-flex align-items-center flex-wrap justify-content-center">
-                <li>
-                    <a href="https://www.linkedin.com/in/moorfo/" target="_blank" rel="noreferrer">
-                        <i className="lab la-linkedin-in"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://t.me/+998774040066" target="_blank" rel="noreferrer">
-                        <i className="lab la-telegram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/moorfo.uz?igshid=NzZlODBkYWE4Ng==" target="_blank" rel="noreferrer">
-                        <i className="lab la-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/QuvonchbekBobojonov" target="_blank" rel="noreferrer">
-                        <i className="lab la-github"></i>
-                    </a>
-                </li>
+                {socials.map((social) => (
+                    <li key={social.url}>
+                        <a href={social.url} target="_blank" rel="noreferrer" aria-label={social.name}>
+                            <i className={social.icon}></i>
+                        </a>
+                    </li>
+                ))}
             </ul>
-            <a href="https://quvonchbek_bobojonov.t.me/" target="_blank" className="theme-btn" rel="noreferrer">
-                <i className="las la-envelope"></i> Contact
+            <a href={CV_URL} className="theme-btn" download>
+                <i className="las la-download"></i> Download CV
             </a>
         </div>
     );

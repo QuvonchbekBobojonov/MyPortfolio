@@ -1,0 +1,213 @@
+{
+  "profile": {
+    "first_name": "Quvonchbek",
+    "last_name": "Bobojonov",
+    "title": "Software Engineer",
+    "headline": "Software Engineer at Revolution Global LLC · Founder of Ovel",
+    "hero_text": "Full Stack Engineer and Mentor building reliable, scalable web, desktop, IoT, and system integration solutions.",
+    "summary": [
+      "I am a Full Stack Engineer and Mentor with experience in building real-world web, desktop, IoT, and system integration solutions. My expertise includes Python, Django, Django REST Framework, WebSockets, Redis, PostgreSQL, PySide6/PyQt, REST APIs, and modern frontend technologies. I have worked on real-time device management, payment and transaction systems, CRM platforms, vending machine ecosystems, analytics dashboards, Windows and Android applications, kiosk systems, and IoT integrations.",
+      "I focus on developing reliable, scalable, and user-centered software, from system architecture and backend APIs to desktop applications, deployment, and production maintenance. Alongside development, I mentor aspiring engineers, helping them move beyond theory through practical projects and real-world engineering challenges."
+    ],
+    "birth_year": 2006,
+    "career_start_year": 2022,
+    "projects_count": "20+",
+    "phone": "+998 77 404 00 66",
+    "phone_link": "+998774040066",
+    "email": "hi@moorfo.uz",
+    "website": "https://moorfo.uz",
+    "zip_code": "221209",
+    "address": "Cho'bolonchi village, Yangibozor district, Khorezm, Uzbekistan",
+    "location": "Uzbekistan, Khorezm, Yangibozor",
+    "languages": [
+      {"name": "Uzbek", "level": "Native"},
+      {"name": "English", "level": "Limited Working"}
+    ]
+  },
+  "socials": [
+    {"name": "LinkedIn", "url": "https://www.linkedin.com/in/moorfo/", "icon": "lab la-linkedin-in"},
+    {"name": "Telegram", "url": "https://t.me/+998774040066", "icon": "lab la-telegram"},
+    {"name": "Instagram", "url": "https://instagram.com/quvonchbekdev", "icon": "lab la-instagram"},
+    {"name": "GitHub", "url": "https://github.com/QuvonchbekBobojonov", "icon": "lab la-github"}
+  ],
+  "experience": [
+    {
+      "date": "May 2026 - Present",
+      "title": "Software Engineer",
+      "place": "Revolution Global LLC",
+      "location": "Tashkent"
+    },
+    {
+      "date": "Mar 2026 - Present",
+      "title": "Founder, CEO",
+      "place": "OVEL (Optimal Versatile Efficient Ledger MChJ)",
+      "description": "Leading the mission to digitalize business operations through IT services and specialized software solutions, bridging the gap between traditional retail and modern technology."
+    },
+    {
+      "date": "Nov 2024 - Jun 2026",
+      "title": "Full Stack Engineer Mentor | \"Al-Xorazmiy Vorislari\" Project",
+      "place": "Digital Education Development Center",
+      "location": "Yangibozor"
+    },
+    {
+      "date": "May 2024 - Nov 2025",
+      "title": "Desktop Engineer",
+      "place": "Megasoft | TOTMEGA LLC",
+      "location": "Urgench"
+    },
+    {
+      "date": "Jul 2023 - Nov 2025",
+      "title": "Back-end Developer",
+      "place": "Megasoft | TOTMEGA LLC",
+      "location": "Urgench"
+    },
+    {
+      "date": "Sep 2022 - Jun 2023",
+      "title": "Full-stack Developer",
+      "place": "IT Park Uzbekistan",
+      "location": "Yangibozor"
+    }
+  ],
+  "education": [
+    {
+      "date": "2024 - Present",
+      "title": "Bachelor's Degree in Information Systems and Technologies",
+      "place": "International School of Finance Technology and Science (ISFT)"
+    },
+    {
+      "date": "2022 - 2024",
+      "title": "Diploma, Operator of Information Media Machines and Computer Networks",
+      "place": "Vocational School No. 1 (Yangibozor District)"
+    },
+    {
+      "date": "2023",
+      "title": "Python Backend Development (Certification)",
+      "place": "Fulfil Education"
+    },
+    {
+      "date": "2021 - 2023",
+      "title": "Front-end & Back-end Development (Certification)",
+      "place": "IT Park (Yangibozor District)"
+    },
+    {
+      "date": "2020 - 2022",
+      "title": "Front-end & Back-end Development",
+      "place": "Mohirdev"
+    },
+    {
+      "date": "2020 - 2022",
+      "title": "WordPress & Django REST Framework",
+      "place": "YouTube"
+    }
+  ],
+  "certifications": [
+    "Python 3 Programming",
+    "Data Collection and Processing with Python",
+    "Python Basics",
+    "Python Functions, Files, and Dictionaries",
+    "Python Classes and Inheritance"
+  ],
+  "services": [
+    {
+      "icon": "las la-bezier-curve",
+      "title": "Website Development",
+      "description": "Creating websites of any type, such as online stores, blogs, and informational websites!",
+      "projects": "12+"
+    },
+    {
+      "icon": "las la-code",
+      "title": "Telegram Bot Development",
+      "description": "Developing Telegram bots of any kind and deploying them on a server with a professional appearance.",
+      "projects": "20+"
+    },
+    {
+      "icon": "las la-search",
+      "title": "SEO Optimization",
+      "description": "Improving website visibility in Google, Yandex, and other search engines.",
+      "projects": "5+"
+    },
+    {
+      "icon": "las la-desktop",
+      "title": "Desktop Application Development",
+      "description": "Creating cross-platform desktop applications using PySide6.",
+      "projects": "2+"
+    }
+  ],
+  "skills": [
+    {"name": "Python", "image": "python.png", "projects": "15+"},
+    {"name": "Django", "image": "django.png", "projects": "10+"},
+    {"name": "Django REST Framework", "image": "django-rest.png", "projects": "8+"},
+    {"name": "MQTT (Broker & Client)", "image": "https://user-images.githubusercontent.com/20068373/149942025-f8282889-15e5-4f8e-a40f-dc1c2b0be4fd.png", "projects": "2+"},
+    {"name": "JavaScript", "image": "js.png", "projects": "12+"},
+    {"name": "WordPress", "image": "wordpress.png", "projects": "5+"},
+    {"name": "Docker", "image": "docker.png", "projects": "5+"},
+    {"name": "Nginx", "image": "nginx.png", "projects": "11+"},
+    {"name": "PostgreSQL", "image": "postgresql.png", "projects": "10+"},
+    {"name": "SQLite", "image": "sqlite.png", "projects": "10+"},
+    {"name": "Redis", "image": "redis.png", "projects": "3+"},
+    {"name": "Qt for Python (PySide6)", "image": "pyqt.png", "projects": "2+"},
+    {"name": "Celery", "image": "celery.png", "projects": "4+"}
+  ],
+  "portfolio": [
+    {
+      "id": 1,
+      "title": "Ovel POS - Advanced Point of Sale System",
+      "image": "portfolio/6.png",
+      "link": "https://ovel.uz",
+      "tech": ["Django", "React", "Django Rest Framework", "PostgreSQL"],
+      "layout": "full"
+    },
+    {
+      "id": 2,
+      "title": "MegaLord - PC Monitoring System and Game Club Management Software",
+      "image": "portfolio/5.jpg",
+      "link": "#",
+      "tech": ["Django", "Django Rest Framework", "JavaScript", "Qt", "PySide6"],
+      "layout": "half"
+    },
+    {
+      "id": 3,
+      "title": "Megalife - Water Automation Selling Device",
+      "image": "portfolio/3.jpg",
+      "link": "/",
+      "tech": ["Django", "Django Rest Framework", "MQTT", "JavaScript", "Qt"],
+      "layout": "full"
+    }
+  ],
+  "pricing": {
+    "packages": [
+      {
+        "name": "Basic",
+        "tagline": ["Simple projects & startups", "Budget-friendly solution"],
+        "price": "$10",
+        "unit": "/ hour",
+        "features": [
+          "Backend development with Django & DRF",
+          "Basic API integrations (REST & WebSocket)",
+          "Simple desktop applications (PySide6 / Qt)",
+          "Basic Telegram bot development",
+          "Small automation scripts & services",
+          "Work on business days, no weekends",
+          "Support for 3 months"
+        ]
+      },
+      {
+        "name": "Premium",
+        "tagline": ["Complex & enterprise solutions", "Full project development"],
+        "price": "$19",
+        "unit": "/ hour",
+        "features": [
+          "Advanced Django & Django Rest Framework development",
+          "Complex API development (GraphQL, MQTT, WebSockets)",
+          "Full-stack applications (Backend + Frontend with React or Qt)",
+          "Enterprise-grade automation & IoT integration",
+          "Advanced Telegram bot & AI-powered automation",
+          "Works on weekends & priority support",
+          "12-months support & maintenance",
+          "Project always has priority"
+        ]
+      }
+    ],
+    "note": ["Need a custom solution for your unique project?", "Let's discuss and build a tailor-made package just for you."]
+  }
+}

@@ -1,4 +1,8 @@
+import {useSiteData} from '../../site-data';
+
 function Home() {
+    const {profile} = useSiteData();
+
     return (
         <section className="hero-section page-section scroll-to-page" id="home">
             <div className="custom-container">
@@ -12,17 +16,16 @@ function Home() {
                         </h1>
                     </div>
                     <p className="scroll-animation" data-animation="fade_from_bottom">
-                        Understanding, analyzing, and developing software efficiently. 
-                        Continuously updating applications and creating user-friendly features.
+                        {profile.hero_text}
                     </p>
 
                     <div className="facts d-flex">
                         <div className="left scroll-animation" data-animation="fade_from_left">
-                            <h1>{(new Date().getFullYear() - 2022) + "+"}</h1> 
+                            <h1>{profile.experience_years}+</h1>
                             <p>Years of Experience</p>
                         </div>
                         <div className="right scroll-animation" data-animation="fade_from_right">
-                            <h1>20+</h1>
+                            <h1>{profile.projects_count}</h1>
                             <p>Projects</p>
                         </div>
                     </div>
