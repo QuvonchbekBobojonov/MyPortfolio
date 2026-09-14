@@ -1,6 +1,10 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
+import axios from 'axios';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+
+import {API_URL} from './api';
+import {SiteDataContext} from './site-data';
 
 import About from "./components/about"
 import BodyOverlay from "./components/body-overlay"
@@ -20,7 +24,18 @@ import Skills from "./components/skills"
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(false);
+
     useEffect(() => {
+        axios.get(`${API_URL}/data/`)
+            .then((response) => setData(response.data))
+            .catch(() => setError(true));
+    }, []);
+
+    useEffect(() => {
+        if (!data) return;
+
         const defaults = {
             duration: 1.2,
             ease: "power4.out",
@@ -55,66 +70,76 @@ function App() {
             },
         };
 
-        gsap.utils.toArray(".scroll-animation").forEach(box => {
-            const gsapObj = {};
-            const settings = {
-                duration: parseFloat(box.dataset.animationDuration) || defaults.duration,
-            };
-            const scrollTrigger = {
-                scrollTrigger: {
-                    trigger: box,
-                    once: defaults.once,
-                    start: "top bottom+=20%",
-                    toggleActions: "play none none reverse",
-                    markers: false,
-                },
-            };
+        const ctx = gsap.context(() => {
+            gsap.utils.toArray(".scroll-animation").forEach(box => {
+                const gsapObj = {};
+                const settings = {
+                    duration: parseFloat(box.dataset.animationDuration) || defaults.duration,
+                };
+                const scrollTrigger = {
+                    scrollTrigger: {
+                        trigger: box,
+                        once: defaults.once,
+                        start: "top bottom+=20%",
+                        toggleActions: "play none none reverse",
+                        markers: false,
+                    },
+                };
 
-            Object.assign(gsapObj, settings);
-            Object.assign(gsapObj, animations[box.dataset.animation || defaults.animation]);
-            Object.assign(gsapObj, scrollTrigger);
-            gsap.from(box, gsapObj);
+                Object.assign(gsapObj, settings);
+                Object.assign(gsapObj, animations[box.dataset.animation || defaults.animation]);
+                Object.assign(gsapObj, scrollTrigger);
+                gsap.from(box, gsapObj);
+            });
         });
-    }, []);
+
+        return () => ctx.revert();
+    }, [data]);
 
     return (
-        <div className="home-page">
+        <SiteDataContext.Provider value={data}>
+            <div className="home-page">
 
-            <BodyOverlay/>
+                <BodyOverlay/>
 
-            <PageLoader/>
+                <PageLoader ready={Boolean(data)} error={error}/>
 
-            <SidebarMenu/>
+                {data && (
+                    <>
+                        <SidebarMenu/>
 
-            <ScrollNav/>
+                        <ScrollNav/>
 
-            <LeftSidebar/>
+                        <LeftSidebar/>
 
-            <main className="drake-main">
-                <div id="smooth-wrapper">
-                    <div id="smooth-content">
+                        <main className="drake-main">
+                            <div id="smooth-wrapper">
+                                <div id="smooth-content">
 
-                        <LeftSidebarMobile/>
+                                    <LeftSidebarMobile/>
 
-                        <Home/>
+                                    <Home/>
 
-                        <About/>
+                                    <About/>
 
-                        <Resume/>
+                                    <Resume/>
 
-                        <Services/>
+                                    <Services/>
 
-                        <Skills/>
+                                    <Skills/>
 
-                        <Portfolio/>
+                                    <Portfolio/>
 
-                        <Pricing />
+                                    <Pricing />
 
-                        <Contact/>
-                    </div>
-                </div>
-            </main>
-        </div>
+                                    <Contact/>
+                                </div>
+                            </div>
+                        </main>
+                    </>
+                )}
+            </div>
+        </SiteDataContext.Provider>
     )
 }
 
