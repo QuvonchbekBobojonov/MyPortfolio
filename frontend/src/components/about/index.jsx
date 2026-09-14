@@ -1,7 +1,8 @@
 import {useSiteData} from '../../site-data';
 
 function About() {
-    const {profile} = useSiteData();
+    const {profile, ui} = useSiteData();
+    const t = ui.about;
 
     return (
         <section className="about-area page-section scroll-to-page" id="about">
@@ -9,10 +10,10 @@ function About() {
                 <div className="about-content content-width">
                     <div className="section-header">
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
-                            <i className="lar la-user"></i> About Me
+                            <i className="lar la-user"></i> {t.subtitle}
                         </h4>
                         <h1 className="scroll-animation" data-animation="fade_from_bottom">
-                            My name is&nbsp;
+                            {t.title}&nbsp;
                             <span>{profile.full_name}</span>
                         </h1>
                     </div>
@@ -24,19 +25,19 @@ function About() {
                     <div className="row mt-3 scroll-animation row-cols-1 row-cols-md-2" data-animation="fade_from_bottom">
                         <div className="col scroll-animation" data-animation="fade_from_left">
                             <ul>
-                                <li>Name: {profile.first_name}</li>
-                                <li>Surname: {profile.last_name}</li>
-                                <li>Age: {profile.age}</li>
-                                <li>Level: {profile.level}</li>
-                                <li>Languages: {profile.languages.map((lang) => lang.name).join(', ')}</li>
+                                <li>{t.name}: {profile.first_name}</li>
+                                <li>{t.surname}: {profile.last_name}</li>
+                                <li>{t.age}: {profile.age}</li>
+                                <li>{t.level}: {profile.level}</li>
+                                <li>{t.languages}: {profile.languages.map((lang) => lang.name).join(', ')}</li>
                             </ul>
                         </div>
                         <div className="col scroll-animation" data-animation="fade_from_right">
                             <ul>
-                                <li>Phone: {profile.phone}</li>
-                                <li>Email: {profile.email}</li>
-                                <li>ZIP Code: {profile.zip_code}</li>
-                                <li>Address: {profile.address}</li>
+                                <li>{t.phone}: {profile.phone}</li>
+                                <li>{t.email}: {profile.email}</li>
+                                <li>{t.zip}: {profile.zip_code}</li>
+                                <li>{t.address}: {profile.address}</li>
                             </ul>
                         </div>
                     </div>

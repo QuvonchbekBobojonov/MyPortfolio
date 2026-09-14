@@ -4,7 +4,8 @@ import {API_URL} from '../../api';
 import {useSiteData} from '../../site-data';
 
 function Contact() {
-    const {profile} = useSiteData();
+    const {profile, ui} = useSiteData();
+    const t = ui.contact;
     const [isSubmitted, setSubmitted] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -25,7 +26,7 @@ function Contact() {
 
         if (!fullName || !email || !phoneNumber || !subject || !message) {
             setError(true);
-            setResponseMessage("Please fill in all required fields.");
+            setResponseMessage(t.required);
             setTimeout(() => {
                 setError(false);
                 setResponseMessage('');
@@ -43,7 +44,7 @@ function Contact() {
             });
 
             if (response.data && response.data.success === false) {
-                setResponseMessage(response.data.message || "Operation failed.");
+                setResponseMessage(t.error);
                 setError(true);
                 setTimeout(() => {
                     setError(false);
@@ -52,7 +53,7 @@ function Contact() {
                 return;
             }
 
-            setResponseMessage(response.data.message || "Your message has been successfully sent.");
+            setResponseMessage(t.success);
             setSubmitted(true);
 
             form.reset();
@@ -62,9 +63,8 @@ function Contact() {
                 setLoading(false);
             }, 5000);
 
-        } catch (err) {
-            const errorMessage = err.response?.data?.message || "An unexpected error occurred. Please try again.";
-            setResponseMessage(errorMessage);
+        } catch {
+            setResponseMessage(t.error);
             setError(true);
             setTimeout(() => {
                 setError(false);
@@ -80,10 +80,10 @@ function Contact() {
                 <div className="contact-content content-width">
                     <div className="section-header">
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
-                            <i className="las la-dollar-sign"></i> Contact
+                            <i className="las la-dollar-sign"></i> {ui.nav.contact}
                         </h4>
                         <h1 className="scroll-animation" data-animation="fade_from_bottom">
-                            Get in&nbsp;<span>touch!</span>
+                            {t.title[0]}&nbsp;<span>{t.title[1]}</span>
                         </h1>
                     </div>
 
@@ -102,44 +102,44 @@ function Contact() {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="input-group">
-                                    <label htmlFor="full-name">Full Name <sup>*</sup></label>
+                                    <label htmlFor="full-name">{t.full_name} <sup>*</sup></label>
                                     <input type="text" name="full_name" id="full-name" required/>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
-                                    <label htmlFor="email">Email <sup>*</sup></label>
+                                    <label htmlFor="email">{t.email} <sup>*</sup></label>
                                     <input type="email" name="email" id="email" required/>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
-                                    <label htmlFor="phone-number">Phone <sup>*</sup></label>
+                                    <label htmlFor="phone-number">{t.phone} <sup>*</sup></label>
                                     <input type="text" name="phone_number" id="phone-number" required/>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="input-group">
-                                    <label htmlFor="subject">Subject <sup>*</sup></label>
+                                    <label htmlFor="subject">{t.subject} <sup>*</sup></label>
                                     <input type="text" name="subject" id="subject" required/>
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="input-group">
-                                    <label htmlFor="budget">Your Budget <span>(optional)</span></label>
+                                    <label htmlFor="budget">{t.budget} <span>{t.optional}</span></label>
                                     <input type="number" name="budget" id="budget"/>
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="input-group">
-                                    <label htmlFor="message">Message <sup>*</sup></label>
+                                    <label htmlFor="message">{t.message} <sup>*</sup></label>
                                     <textarea name="message" id="message" required></textarea>
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="input-group submit-btn-wrap">
                                     <button className="theme-btn" type="submit" id="submit-form">
-                                        {isSubmitted ? 'Sent Successfully' : isLoading ? 'Sending...' : 'Send Message'}
+                                        {isSubmitted ? t.sent : isLoading ? t.sending : t.send}
                                     </button>
                                 </div>
                             </div>

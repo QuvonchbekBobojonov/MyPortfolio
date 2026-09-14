@@ -2,7 +2,7 @@ import {assetUrl} from '../../assets';
 import {useSiteData} from '../../site-data';
 
 function Skills() {
-    const {skills} = useSiteData();
+    const {skills, ui} = useSiteData();
 
     return (
         <section className="skills-area page-section scroll-to-page" id="skills">
@@ -10,10 +10,10 @@ function Skills() {
                 <div className="skills-content content-width">
                     <div className="section-header">
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
-                            <i className="las la-shapes"></i> Skills
+                            <i className="las la-shapes"></i> {ui.nav.skills}
                         </h4>
                         <h1 className="scroll-animation" data-animation="fade_from_bottom">
-                            My <span> Technical Strengths</span>
+                            {ui.skills.title[0]} <span> {ui.skills.title[1]}</span>
                         </h1>
                     </div>
 
@@ -27,7 +27,7 @@ function Skills() {
                                 <div className="skill">
                                     <div className="skill-inner">
                                         <img src={assetUrl(skill.image)} alt={skill.name} width="70px"/>
-                                        <h1 className="percent">{skill.projects}<br/> projects</h1>
+                                        <h1 className="percent">{skill.projects}<br/> {ui.projects_suffix}</h1>
                                     </div>
                                     <p className="name">{skill.name}</p>
                                 </div>

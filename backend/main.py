@@ -2,7 +2,7 @@ from datetime import date
 from pathlib import Path
 from fastapi import FastAPI, Form
 from fastapi.responses import Response
-from typing import Optional
+from typing import Literal, Optional
 import httpx
 import json
 import os
@@ -14,6 +14,8 @@ from cv import build_cv
 load_dotenv()
 
 DATA_FILE = Path(__file__).parent / "data" / "profile.json"
+LANGS = ("en", "uz", "ru")
+Lang = Literal["en", "uz", "ru"]
 
 app = FastAPI()
 app.add_middleware(
@@ -33,8 +35,36 @@ BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 
-def load_data() -> dict:
-    data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+def localize(value, lang):
+    """{"en": ..., "uz": ..., "ru": ...} ko'rinishidagi qiymatlarni tanlangan tildagi qiymat bilan almashtiradi."""
+    if isinstance(value, dict):
+        if "en" in value and set(value) <= set(LANGS):
+            return value.get(lang, value["en"])
+        return {key: localize(item, lang) for key, item in value.items()}
+    if isinstance(value, list):
+        return [localize(item, lang) for item in value]
+    return value
+
+
+def format_period(start, end, dates):
+    """"2024-05" -> "May 2024", "2024" -> "2024", None -> "Present" (tanlangan tilda)."""
+    def fmt(value):
+        if value is None:
+            return dates["present"]
+        year, _, month = value.partition("-")
+        return f"{dates['months'][int(month) - 1]} {year}" if month else year
+
+    if start == end:
+        return fmt(start)
+    return f"{fmt(start)} - {fmt(end)}"
+
+
+def load_data(lang: str = "en") -> dict:
+    data = localize(json.loads(DATA_FILE.read_text(encoding="utf-8")), lang)
+    ui = data["ui"]
+    for item in data["experience"] + data["education"]:
+        item["date"] = format_period(item.pop("start"), item.pop("end"), ui["dates"])
+
     profile = data["profile"]
     year = date.today().year
     experience = year - profile["career_start_year"]
@@ -43,24 +73,26 @@ def load_data() -> dict:
     profile["age"] = year - profile["birth_year"]
     profile["experience_years"] = experience
     if experience < 2:
-        profile["level"] = "Junior Developer"
+        level = "junior"
     elif experience < 5:
-        profile["level"] = "Middle Developer"
+        level = "middle"
     else:
-        profile["level"] = "Senior Developer"
+        level = "senior"
+    profile["level"] = ui["levels"][level]
+    data["lang"] = lang
     return data
 
 
 @app.get("/data/")
-def get_data():
-    return load_data()
+def get_data(lang: Lang = "en"):
+    return load_data(lang)
 
 
 @app.get("/cv/")
-def download_cv():
-    data = load_data()
+def download_cv(lang: Lang = "en"):
+    data = load_data(lang)
     profile = data["profile"]
-    filename = f"{profile['first_name']}_{profile['last_name']}_CV.pdf"
+    filename = f"{profile['first_name']}_{profile['last_name']}_CV_{lang.upper()}.pdf"
     return Response(
         content=build_cv(data),
         media_type="application/pdf",

@@ -9,7 +9,7 @@ const renderTimelineItem = (item, key) => (
 );
 
 function Resume() {
-    const {experience, education} = useSiteData();
+    const {experience, education, ui} = useSiteData();
 
     return (
         <section className="resume-area page-section scroll-to-page" id="resume">
@@ -17,10 +17,10 @@ function Resume() {
                 <div className="resume-content content-width">
                     <div className="section-header scroll-animation" data-animation="fade_from_bottom">
                         <h4 className="subtitle">
-                            <i className="las la-briefcase"></i> Resume
+                            <i className="las la-briefcase"></i> {ui.nav.resume}
                         </h4>
                         <h1>
-                            Education and&nbsp;<span>Experience</span>
+                            {ui.resume.title[0]}&nbsp;<span>{ui.resume.title[1]}</span>
                         </h1>
                     </div>
 

@@ -1,7 +1,7 @@
 import {useSiteData} from '../../site-data';
 
 function Pricing() {
-    const {pricing, profile} = useSiteData();
+    const {pricing, profile, ui} = useSiteData();
     const phoneLink = `tel:${profile.phone_link}`;
 
     return (
@@ -10,9 +10,11 @@ function Pricing() {
                 <div className="pricing-content content-width">
                     <div className="section-header">
                         <h4 className="subtitle scroll-animation" data-animation="fade_from_bottom">
-                            <i className="las la-dollar-sign"></i> Pricing
+                            <i className="las la-dollar-sign"></i> {ui.nav.pricing}
                         </h4>
-                        <h1 className="scroll-animation" data-animation="fade_from_bottom">My <span>Pricing</span></h1>
+                        <h1 className="scroll-animation" data-animation="fade_from_bottom">
+                            {ui.pricing.title[0]} <span>{ui.pricing.title[1]}</span>
+                        </h1>
                     </div>
 
                     <div className="pricing-table-items">
@@ -39,7 +41,7 @@ function Pricing() {
                                                 <li key={feature}>{feature}</li>
                                             ))}
                                         </ul>
-                                        <a href={phoneLink} className="theme-btn">Pick this package</a>
+                                        <a href={phoneLink} className="theme-btn">{ui.pricing.pick}</a>
                                     </div>
                                 </div>
                             ))}
@@ -48,7 +50,7 @@ function Pricing() {
                         {/* Custom Package */}
                         <p className="info scroll-animation" data-animation="fade_from_bottom">
                             {pricing.note[0]}<br />
-                            {pricing.note[1]} <a href={phoneLink}>Contact Me</a>
+                            {pricing.note[1]} <a href={phoneLink}>{ui.pricing.contact}</a>
                         </p>
                     </div>
                 </div>
