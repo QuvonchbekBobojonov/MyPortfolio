@@ -209,7 +209,7 @@ ul {
     padding: 0 8px;
     border: 1px solid #575757;
     border-radius: 30px;
-    background: #1f1f1f;
+    background: transparent;
     z-index: 99;
 }
 
