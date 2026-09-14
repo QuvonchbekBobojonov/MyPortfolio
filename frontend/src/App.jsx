@@ -4,12 +4,13 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 import {API_URL} from './api';
-import {SiteDataContext} from './site-data';
+import {LanguageContext, SiteDataContext, detectLanguage} from './site-data';
 
 import About from "./components/about"
 import BodyOverlay from "./components/body-overlay"
 import Contact from "./components/contact"
 import Home from "./components/home"
+import LanguageSwitcher from "./components/language-switcher"
 import LeftSidebar from "./components/left-sidebar"
 import LeftSidebarMobile from "./components/left-sidebar-mobile"
 import PageLoader from "./components/page-loader"
@@ -24,14 +25,31 @@ import Skills from "./components/skills"
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+    const [lang, setLang] = useState(detectLanguage);
     const [data, setData] = useState(null);
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        axios.get(`${API_URL}/data/`)
-            .then((response) => setData(response.data))
-            .catch(() => setError(true));
-    }, []);
+        let ignore = false;
+        document.documentElement.lang = lang;
+        try {
+            localStorage.setItem('lang', lang);
+        } catch {
+            // localStorage bloklangan bo'lishi mumkin
+        }
+
+        axios.get(`${API_URL}/data/`, {params: {lang}})
+            .then((response) => {
+                if (!ignore) setData(response.data);
+            })
+            .catch(() => {
+                if (!ignore) setError(true);
+            });
+
+        return () => {
+            ignore = true;
+        };
+    }, [lang]);
 
     useEffect(() => {
         if (!data) return;
@@ -97,6 +115,7 @@ function App() {
     }, [data]);
 
     return (
+        <LanguageContext.Provider value={{lang, setLang}}>
         <SiteDataContext.Provider value={data}>
             <div className="home-page">
 
@@ -106,6 +125,8 @@ function App() {
 
                 {data && (
                     <>
+                        <LanguageSwitcher/>
+
                         <SidebarMenu/>
 
                         <ScrollNav/>
@@ -140,6 +161,7 @@ function App() {
                 )}
             </div>
         </SiteDataContext.Provider>
+        </LanguageContext.Provider>
     )
 }
 

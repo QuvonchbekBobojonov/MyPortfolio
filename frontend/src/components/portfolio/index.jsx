@@ -3,7 +3,8 @@ import { assetUrl } from '../../assets';
 import { useSiteData } from '../../site-data';
 
 function Portfolio() {
-    const projects = useSiteData().portfolio.map((project) => ({
+    const { portfolio, ui } = useSiteData();
+    const projects = portfolio.map((project) => ({
         ...project,
         image: assetUrl(project.image),
     }));
@@ -34,10 +35,10 @@ function Portfolio() {
                         data-animation="fade_from_bottom"
                     >
                         <h4 className="subtitle">
-                            <i className="las la-grip-vertical"></i> Portfolio
+                            <i className="las la-grip-vertical"></i> {ui.nav.portfolio}
                         </h4>
                         <h1>
-                            Featured <span>Projects</span>
+                            {ui.portfolio.title[0]} <span>{ui.portfolio.title[1]}</span>
                         </h1>
                     </div>
 

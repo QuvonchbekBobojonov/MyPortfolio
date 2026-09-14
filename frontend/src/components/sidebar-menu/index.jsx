@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { useSiteData } from '../../site-data';
 
+const menuItems = [
+    { id: 'home', icon: 'las la-home' },
+    { id: 'about', icon: 'lar la-user' },
+    { id: 'resume', icon: 'las la-briefcase' },
+    { id: 'services', icon: 'las la-stream' },
+    { id: 'skills', icon: 'las la-shapes' },
+    { id: 'portfolio', icon: 'las la-grip-vertical' },
+    { id: 'contact', icon: 'las la-envelope' },
+];
+
 function SidebarMenu() {
-    const { socials } = useSiteData();
+    const { socials, ui } = useSiteData();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
-
-    const menuItems = [
-        { id: 'home', icon: 'las la-home', label: 'Home' },
-        { id: 'about', icon: 'lar la-user', label: 'About' },
-        { id: 'resume', icon: 'las la-briefcase', label: 'Resume' },
-        { id: 'services', icon: 'las la-stream', label: 'Services' },
-        { id: 'skills', icon: 'las la-shapes', label: 'Skills' },
-        { id: 'portfolio', icon: 'las la-grip-vertical', label: 'Portfolio' },
-        { id: 'contact', icon: 'las la-envelope', label: 'Contact' },
-    ];
 
     return (
         <>
@@ -36,7 +36,7 @@ function SidebarMenu() {
 
                 <nav className="sidebar-menu-inner" aria-label="Sidebar Navigation">
                     <div className="menu-wrap">
-                        <p>Menu</p>
+                        <p>{ui.nav.menu}</p>
                         <ul className="menu scroll-nav-responsive d-flex flex-column">
                             {menuItems.map((item) => (
                                 <li key={item.id}>
@@ -45,7 +45,7 @@ function SidebarMenu() {
                                         href={`#${item.id}`}
                                         onClick={toggleMenu}
                                     >
-                                        <i className={item.icon}></i> <span>{item.label}</span>
+                                        <i className={item.icon}></i> <span>{ui.nav[item.id]}</span>
                                     </a>
                                 </li>
                             ))}
@@ -53,7 +53,7 @@ function SidebarMenu() {
                     </div>
 
                     <div className="sidebar-social">
-                        <p>Social Media</p>
+                        <p>{ui.nav.social}</p>
                         <ul className="social-links d-flex align-items-center">
                             {socials.map((link) => (
                                 <li key={link.url}>

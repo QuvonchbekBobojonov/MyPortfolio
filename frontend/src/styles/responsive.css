@@ -89,7 +89,8 @@
         width: auto;
     }
 
-    .icon-menu {
+    .icon-menu,
+    .language-switcher {
         position: fixed;
     }
 
@@ -168,6 +169,11 @@
 @media (max-width: 767px) {
     .icon-menu {
         right: 30px;
+        top: 30px;
+    }
+
+    .language-switcher {
+        right: 95px;
         top: 30px;
     }
 

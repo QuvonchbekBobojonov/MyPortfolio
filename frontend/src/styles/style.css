@@ -198,6 +198,40 @@ ul {
     background: var(--primary_color);
 }
 
+.language-switcher {
+    position: absolute;
+    right: 135px;
+    top: 60px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0 8px;
+    border: 1px solid #575757;
+    border-radius: 30px;
+    background: #1f1f1f;
+    z-index: 99;
+}
+
+.language-switcher button {
+    background: none;
+    border: 0;
+    color: #999;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.language-switcher button:hover {
+    color: #fff;
+}
+
+.language-switcher button.active {
+    color: var(--primary_color);
+}
+
 
 #scroll-section {
     /* overflow-x: hidden !important;
