@@ -1,42 +1,48 @@
-import {useEffect, useState} from 'react'
+import {useCallback, useEffect, useState} from 'react'
 import axios from 'axios';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 import {API_URL} from './api';
-import {LanguageContext, SiteDataContext, detectLanguage} from './site-data';
+import {
+    LanguageContext,
+    SiteDataContext,
+    languageFromPath,
+    pathForLanguage,
+    preferredLanguage,
+    saveLanguage,
+} from './site-data';
 
-import About from "./components/about"
 import BodyOverlay from "./components/body-overlay"
-import Contact from "./components/contact"
-import Home from "./components/home"
-import LanguageSwitcher from "./components/language-switcher"
-import LeftSidebar from "./components/left-sidebar"
-import LeftSidebarMobile from "./components/left-sidebar-mobile"
 import PageLoader from "./components/page-loader"
-import Portfolio from "./components/portfolio"
-import Pricing from "./components/pricing"
-import Resume from "./components/resume"
-import ScrollNav from "./components/scroll-nav"
-import Services from "./components/services"
-import SidebarMenu from "./components/sidebar-menu"
-import Skills from "./components/skills"
+import SiteContent from "./components/site-content"
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
-    const [lang, setLang] = useState(detectLanguage);
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(false);
+// Til URL'dan olinadi. Faqat bosh sahifada (/) avval tanlangan yoki brauzer tiliga o'tkaziladi.
+function initialLanguage() {
+    const fromPath = languageFromPath(window.location.pathname);
+    if (window.location.pathname !== '/') return fromPath;
 
+    const preferred = preferredLanguage();
+    if (preferred && preferred !== fromPath) {
+        window.history.replaceState(null, '', pathForLanguage(preferred) + window.location.hash);
+        return preferred;
+    }
+    return fromPath;
+}
+
+function App() {
+    const [lang, setLang] = useState(initialLanguage);
+    // Prerender qilingan sahifa ma'lumotni HTML ichida olib keladi, shuning uchun kontent darhol chiqadi.
+    const [data, setData] = useState(() => (window.__SITE_DATA__?.lang === lang ? window.__SITE_DATA__ : null));
+    const [error, setError] = useState(false);
+    const dataLang = data?.lang;
+
+    // Build vaqtidagi nusxa eskirgan bo'lishi mumkin, shuning uchun backend'dan har doim yangisi olinadi.
     useEffect(() => {
         let ignore = false;
         document.documentElement.lang = lang;
-        try {
-            localStorage.setItem('lang', lang);
-        } catch {
-            // localStorage bloklangan bo'lishi mumkin
-        }
 
         axios.get(`${API_URL}/data/`, {params: {lang}})
             .then((response) => {
@@ -52,7 +58,28 @@ function App() {
     }, [lang]);
 
     useEffect(() => {
-        if (!data) return;
+        const onPopState = () => setLang(languageFromPath(window.location.pathname));
+        window.addEventListener('popstate', onPopState);
+        return () => window.removeEventListener('popstate', onPopState);
+    }, []);
+
+    useEffect(() => {
+        if (!data?.seo) return;
+        document.title = data.seo.title;
+        document.querySelector('meta[name="description"]')?.setAttribute('content', data.seo.description);
+        document.querySelector('link[rel="canonical"]')
+            ?.setAttribute('href', data.profile.website.replace(/\/$/, '') + pathForLanguage(data.lang));
+    }, [data]);
+
+    const changeLanguage = useCallback((code) => {
+        if (code === lang) return;
+        saveLanguage(code);
+        window.history.pushState(null, '', pathForLanguage(code) + window.location.hash);
+        setLang(code);
+    }, [lang]);
+
+    useEffect(() => {
+        if (!dataLang) return;
 
         const defaults = {
             duration: 1.2,
@@ -112,53 +139,18 @@ function App() {
         });
 
         return () => ctx.revert();
-    }, [data]);
+    }, [dataLang]);
 
     return (
-        <LanguageContext.Provider value={{lang, setLang}}>
+        <LanguageContext.Provider value={{lang, setLang: changeLanguage}}>
         <SiteDataContext.Provider value={data}>
             <div className="home-page">
 
                 <BodyOverlay/>
 
-                <PageLoader ready={Boolean(data)} error={error}/>
+                <PageLoader ready={Boolean(data)} error={error && !data}/>
 
-                {data && (
-                    <>
-                        <LanguageSwitcher/>
-
-                        <SidebarMenu/>
-
-                        <ScrollNav/>
-
-                        <LeftSidebar/>
-
-                        <main className="drake-main">
-                            <div id="smooth-wrapper">
-                                <div id="smooth-content">
-
-                                    <LeftSidebarMobile/>
-
-                                    <Home/>
-
-                                    <About/>
-
-                                    <Resume/>
-
-                                    <Services/>
-
-                                    <Skills/>
-
-                                    <Portfolio/>
-
-                                    <Pricing />
-
-                                    <Contact/>
-                                </div>
-                            </div>
-                        </main>
-                    </>
-                )}
+                {data && <SiteContent/>}
             </div>
         </SiteDataContext.Provider>
         </LanguageContext.Provider>

@@ -94,6 +94,24 @@
       "page": {"en": "Page", "uz": "Sahifa", "ru": "Стр."}
     }
   },
+  "seo": {
+    "title": {
+      "en": "Quvonchbek Bobojonov | Software Engineer",
+      "uz": "Quvonchbek Bobojonov | Dasturiy muhandis",
+      "ru": "Quvonchbek Bobojonov | Инженер-программист"
+    },
+    "description": {
+      "en": "Quvonchbek Bobojonov — Software Engineer at Revolution Global LLC, founder of Ovel. Full Stack web, desktop and IoT development with Python and Django.",
+      "uz": "Quvonchbek Bobojonov — Revolution Global LLC dasturiy muhandisi, Ovel asoschisi. Python va Django’da veb, desktop va IoT yechimlar yaratadi.",
+      "ru": "Quvonchbek Bobojonov — инженер-программист в Revolution Global LLC, основатель Ovel. Full Stack разработка веб-, десктоп- и IoT-решений на Python и Django."
+    },
+    "keywords": {
+      "en": "Quvonchbek Bobojonov, Software Engineer, Full Stack Developer, Python developer, Django, Django REST Framework, PySide6, Uzbekistan, moorfo",
+      "uz": "Quvonchbek Bobojonov, dasturchi, dasturiy muhandis, Full Stack dasturchi, Python dasturchi, Django, PySide6, O‘zbekiston, Xorazm, moorfo",
+      "ru": "Quvonchbek Bobojonov, Кувончбек Бобожонов, программист, инженер-программист, Full Stack разработчик, Python разработчик, Django, PySide6, Узбекистан, moorfo"
+    },
+    "alternate_names": ["Кувончбек Бобожонов", "moorfo"]
+  },
   "profile": {
     "first_name": "Quvonchbek",
     "last_name": "Bobojonov",

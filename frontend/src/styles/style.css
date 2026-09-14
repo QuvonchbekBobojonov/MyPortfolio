@@ -213,22 +213,21 @@ ul {
     z-index: 99;
 }
 
-.language-switcher button {
-    background: none;
-    border: 0;
+.language-switcher a {
     color: #999;
     font-size: 13px;
     font-weight: 500;
-    padding: 8px 8px;
-    cursor: pointer;
+    line-height: 1;
+    padding: 8px;
+    text-decoration: none;
     transition: .3s;
 }
 
-.language-switcher button:hover {
+.language-switcher a:hover {
     color: #fff;
 }
 
-.language-switcher button.active {
+.language-switcher a.active {
     color: var(--primary_color);
 }
 

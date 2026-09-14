@@ -1,20 +1,25 @@
-import {LANGUAGES, useLanguage} from '../../site-data';
+import {LANGUAGES, pathForLanguage, useLanguage} from '../../site-data';
 
+// Oddiy havolalar: qidiruv tizimlari har bir til sahifasini topadi, bosilganda esa sahifa qayta yuklanmaydi.
 function LanguageSwitcher() {
     const {lang, setLang} = useLanguage();
 
     return (
         <div className="language-switcher" role="group" aria-label="Language">
             {LANGUAGES.map((code) => (
-                <button
+                <a
                     key={code}
-                    type="button"
+                    href={pathForLanguage(code)}
+                    hrefLang={code}
                     className={code === lang ? 'active' : ''}
-                    aria-pressed={code === lang}
-                    onClick={() => setLang(code)}
+                    aria-current={code === lang ? 'page' : undefined}
+                    onClick={(event) => {
+                        event.preventDefault();
+                        setLang(code);
+                    }}
                 >
                     {code.toUpperCase()}
-                </button>
+                </a>
             ))}
         </div>
     );
