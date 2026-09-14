@@ -1,4 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "^/cv/?$",
+      "has": [{ "type": "query", "key": "lang", "value": "(?<lang>uz|ru|en)" }],
+      "destination": "https://api.moorfo.uz/cv/?lang=:lang"
+    },
+    {
+      "source": "^/cv/?$",
+      "destination": "https://api.moorfo.uz/cv/"
+    }
+  ]
 }
