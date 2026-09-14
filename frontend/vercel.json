@@ -3,12 +3,12 @@
   "trailingSlash": true,
   "rewrites": [
     {
-      "source": "^/cv/?$",
+      "source": "/cv/",
       "has": [{ "type": "query", "key": "lang", "value": "(?<lang>uz|ru|en)" }],
       "destination": "https://api.moorfo.uz/cv/?lang=:lang"
     },
     {
-      "source": "^/cv/?$",
+      "source": "/cv/",
       "destination": "https://api.moorfo.uz/cv/"
     }
   ]
