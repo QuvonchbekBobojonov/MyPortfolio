@@ -1,97 +1,447 @@
 {
   "ui": {
     "nav": {
-      "home": {"en": "Home", "uz": "Bosh sahifa", "ru": "Главная"},
-      "about": {"en": "About", "uz": "Men haqimda", "ru": "Обо мне"},
-      "resume": {"en": "Resume", "uz": "Rezyume", "ru": "Резюме"},
-      "services": {"en": "Services", "uz": "Xizmatlar", "ru": "Услуги"},
-      "skills": {"en": "Skills", "uz": "Ko‘nikmalar", "ru": "Навыки"},
-      "portfolio": {"en": "Portfolio", "uz": "Portfolio", "ru": "Портфолио"},
-      "pricing": {"en": "Pricing", "uz": "Narxlar", "ru": "Цены"},
-      "contact": {"en": "Contact", "uz": "Aloqa", "ru": "Контакты"},
-      "menu": {"en": "Menu", "uz": "Menyu", "ru": "Меню"},
-      "social": {"en": "Social Media", "uz": "Ijtimoiy tarmoqlar", "ru": "Соцсети"}
+      "home": {
+        "en": "Home",
+        "uz": "Bosh sahifa",
+        "ru": "Главная"
+      },
+      "about": {
+        "en": "About",
+        "uz": "Men haqimda",
+        "ru": "Обо мне"
+      },
+      "resume": {
+        "en": "Resume",
+        "uz": "Rezyume",
+        "ru": "Резюме"
+      },
+      "services": {
+        "en": "Services",
+        "uz": "Xizmatlar",
+        "ru": "Услуги"
+      },
+      "skills": {
+        "en": "Skills",
+        "uz": "Ko‘nikmalar",
+        "ru": "Навыки"
+      },
+      "portfolio": {
+        "en": "Portfolio",
+        "uz": "Portfolio",
+        "ru": "Портфолио"
+      },
+      "pricing": {
+        "en": "Pricing",
+        "uz": "Narxlar",
+        "ru": "Цены"
+      },
+      "contact": {
+        "en": "Contact",
+        "uz": "Aloqa",
+        "ru": "Контакты"
+      },
+      "menu": {
+        "en": "Menu",
+        "uz": "Menyu",
+        "ru": "Меню"
+      },
+      "social": {
+        "en": "Social Media",
+        "uz": "Ijtimoiy tarmoqlar",
+        "ru": "Соцсети"
+      }
     },
     "sidebar": {
-      "download_cv": {"en": "Download CV", "uz": "CV yuklab olish", "ru": "Скачать CV"},
-      "rights": {"en": "All rights reserved.", "uz": "Barcha huquqlar himoyalangan.", "ru": "Все права защищены."}
+      "download_cv": {
+        "en": "Download CV",
+        "uz": "CV yuklab olish",
+        "ru": "Скачать CV"
+      },
+      "rights": {
+        "en": "All rights reserved.",
+        "uz": "Barcha huquqlar himoyalangan.",
+        "ru": "Все права защищены."
+      }
     },
     "home": {
-      "subtitle": {"en": "Main", "uz": "Asosiy", "ru": "Главная"},
-      "title": {"en": ["Hello", "There"], "uz": ["Assalomu", "alaykum"], "ru": ["Всем", "привет"]},
-      "experience": {"en": "Years of Experience", "uz": "Yillik tajriba", "ru": "Лет опыта"},
-      "projects": {"en": "Projects", "uz": "Loyihalar", "ru": "Проектов"}
+      "subtitle": {
+        "en": "Main",
+        "uz": "Asosiy",
+        "ru": "Главная"
+      },
+      "title": {
+        "en": [
+          "Hello",
+          "There"
+        ],
+        "uz": [
+          "Assalomu",
+          "alaykum"
+        ],
+        "ru": [
+          "Всем",
+          "привет"
+        ]
+      },
+      "experience": {
+        "en": "Years of Experience",
+        "uz": "Yillik tajriba",
+        "ru": "Лет опыта"
+      },
+      "projects": {
+        "en": "Projects",
+        "uz": "Loyihalar",
+        "ru": "Проектов"
+      }
     },
     "about": {
-      "subtitle": {"en": "About Me", "uz": "Men haqimda", "ru": "Обо мне"},
-      "title": {"en": "My name is", "uz": "Mening ismim", "ru": "Меня зовут"},
-      "name": {"en": "Name", "uz": "Ism", "ru": "Имя"},
-      "surname": {"en": "Surname", "uz": "Familiya", "ru": "Фамилия"},
-      "age": {"en": "Age", "uz": "Yosh", "ru": "Возраст"},
-      "level": {"en": "Level", "uz": "Daraja", "ru": "Уровень"},
-      "languages": {"en": "Languages", "uz": "Tillar", "ru": "Языки"},
-      "phone": {"en": "Phone", "uz": "Telefon", "ru": "Телефон"},
-      "email": {"en": "Email", "uz": "Email", "ru": "Email"},
-      "zip": {"en": "ZIP Code", "uz": "Pochta indeksi", "ru": "Индекс"},
-      "address": {"en": "Address", "uz": "Manzil", "ru": "Адрес"}
+      "subtitle": {
+        "en": "About Me",
+        "uz": "Men haqimda",
+        "ru": "Обо мне"
+      },
+      "title": {
+        "en": "My name is",
+        "uz": "Mening ismim",
+        "ru": "Меня зовут"
+      },
+      "name": {
+        "en": "Name",
+        "uz": "Ism",
+        "ru": "Имя"
+      },
+      "surname": {
+        "en": "Surname",
+        "uz": "Familiya",
+        "ru": "Фамилия"
+      },
+      "age": {
+        "en": "Age",
+        "uz": "Yosh",
+        "ru": "Возраст"
+      },
+      "level": {
+        "en": "Level",
+        "uz": "Daraja",
+        "ru": "Уровень"
+      },
+      "languages": {
+        "en": "Languages",
+        "uz": "Tillar",
+        "ru": "Языки"
+      },
+      "phone": {
+        "en": "Phone",
+        "uz": "Telefon",
+        "ru": "Телефон"
+      },
+      "email": {
+        "en": "Email",
+        "uz": "Email",
+        "ru": "Email"
+      },
+      "zip": {
+        "en": "ZIP Code",
+        "uz": "Pochta indeksi",
+        "ru": "Индекс"
+      },
+      "address": {
+        "en": "Address",
+        "uz": "Manzil",
+        "ru": "Адрес"
+      }
     },
     "resume": {
-      "title": {"en": ["Education and", "Experience"], "uz": ["Ta’lim va", "tajriba"], "ru": ["Образование и", "опыт"]}
+      "title": {
+        "en": [
+          "Education and",
+          "Experience"
+        ],
+        "uz": [
+          "Ta’lim va",
+          "tajriba"
+        ],
+        "ru": [
+          "Образование и",
+          "опыт"
+        ]
+      }
     },
     "services": {
-      "title": {"en": ["What can I", "offer you?"], "uz": ["Sizga nima", "taklif qila olaman?"], "ru": ["Что я могу", "вам предложить?"]}
+      "title": {
+        "en": [
+          "What can I",
+          "offer you?"
+        ],
+        "uz": [
+          "Sizga nima",
+          "taklif qila olaman?"
+        ],
+        "ru": [
+          "Что я могу",
+          "вам предложить?"
+        ]
+      }
     },
     "skills": {
-      "title": {"en": ["My", "Technical Strengths"], "uz": ["Mening", "texnik ko‘nikmalarim"], "ru": ["Мои", "технические навыки"]}
+      "title": {
+        "en": [
+          "My",
+          "Technical Strengths"
+        ],
+        "uz": [
+          "Mening",
+          "texnik ko‘nikmalarim"
+        ],
+        "ru": [
+          "Мои",
+          "технические навыки"
+        ]
+      }
     },
     "portfolio": {
-      "title": {"en": ["Featured", "Projects"], "uz": ["Tanlangan", "loyihalar"], "ru": ["Избранные", "проекты"]}
+      "title": {
+        "en": [
+          "Featured",
+          "Projects"
+        ],
+        "uz": [
+          "Tanlangan",
+          "loyihalar"
+        ],
+        "ru": [
+          "Избранные",
+          "проекты"
+        ]
+      }
     },
     "pricing": {
-      "title": {"en": ["My", "Pricing"], "uz": ["Mening", "narxlarim"], "ru": ["Мои", "цены"]},
-      "pick": {"en": "Pick this package", "uz": "Ushbu paketni tanlash", "ru": "Выбрать пакет"},
-      "contact": {"en": "Contact Me", "uz": "Bog‘lanish", "ru": "Связаться"}
+      "title": {
+        "en": [
+          "My",
+          "Pricing"
+        ],
+        "uz": [
+          "Mening",
+          "narxlarim"
+        ],
+        "ru": [
+          "Мои",
+          "цены"
+        ]
+      },
+      "pick": {
+        "en": "Pick this package",
+        "uz": "Ushbu paketni tanlash",
+        "ru": "Выбрать пакет"
+      },
+      "contact": {
+        "en": "Contact Me",
+        "uz": "Bog‘lanish",
+        "ru": "Связаться"
+      }
     },
     "contact": {
-      "title": {"en": ["Get in", "touch!"], "uz": ["Men bilan", "bog‘laning!"], "ru": ["Свяжитесь", "со мной!"]},
-      "full_name": {"en": "Full Name", "uz": "To‘liq ism", "ru": "Полное имя"},
-      "email": {"en": "Email", "uz": "Email", "ru": "Email"},
-      "phone": {"en": "Phone", "uz": "Telefon", "ru": "Телефон"},
-      "subject": {"en": "Subject", "uz": "Mavzu", "ru": "Тема"},
-      "budget": {"en": "Your Budget", "uz": "Byudjetingiz", "ru": "Ваш бюджет"},
-      "optional": {"en": "(optional)", "uz": "(ixtiyoriy)", "ru": "(необязательно)"},
-      "message": {"en": "Message", "uz": "Xabar", "ru": "Сообщение"},
-      "send": {"en": "Send Message", "uz": "Xabar yuborish", "ru": "Отправить"},
-      "sending": {"en": "Sending...", "uz": "Yuborilmoqda...", "ru": "Отправка..."},
-      "sent": {"en": "Sent Successfully", "uz": "Muvaffaqiyatli yuborildi", "ru": "Успешно отправлено"},
-      "required": {"en": "Please fill in all required fields.", "uz": "Iltimos, barcha majburiy maydonlarni to‘ldiring.", "ru": "Пожалуйста, заполните все обязательные поля."},
-      "success": {"en": "Your message has been successfully sent.", "uz": "Xabaringiz muvaffaqiyatli yuborildi.", "ru": "Ваше сообщение успешно отправлено."},
-      "error": {"en": "An unexpected error occurred. Please try again.", "uz": "Kutilmagan xatolik yuz berdi. Qaytadan urinib ko‘ring.", "ru": "Произошла непредвиденная ошибка. Попробуйте ещё раз."}
+      "title": {
+        "en": [
+          "Get in",
+          "touch!"
+        ],
+        "uz": [
+          "Men bilan",
+          "bog‘laning!"
+        ],
+        "ru": [
+          "Свяжитесь",
+          "со мной!"
+        ]
+      },
+      "full_name": {
+        "en": "Full Name",
+        "uz": "To‘liq ism",
+        "ru": "Полное имя"
+      },
+      "email": {
+        "en": "Email",
+        "uz": "Email",
+        "ru": "Email"
+      },
+      "phone": {
+        "en": "Phone",
+        "uz": "Telefon",
+        "ru": "Телефон"
+      },
+      "subject": {
+        "en": "Subject",
+        "uz": "Mavzu",
+        "ru": "Тема"
+      },
+      "budget": {
+        "en": "Your Budget",
+        "uz": "Byudjetingiz",
+        "ru": "Ваш бюджет"
+      },
+      "optional": {
+        "en": "(optional)",
+        "uz": "(ixtiyoriy)",
+        "ru": "(необязательно)"
+      },
+      "message": {
+        "en": "Message",
+        "uz": "Xabar",
+        "ru": "Сообщение"
+      },
+      "send": {
+        "en": "Send Message",
+        "uz": "Xabar yuborish",
+        "ru": "Отправить"
+      },
+      "sending": {
+        "en": "Sending...",
+        "uz": "Yuborilmoqda...",
+        "ru": "Отправка..."
+      },
+      "sent": {
+        "en": "Sent Successfully",
+        "uz": "Muvaffaqiyatli yuborildi",
+        "ru": "Успешно отправлено"
+      },
+      "required": {
+        "en": "Please fill in all required fields.",
+        "uz": "Iltimos, barcha majburiy maydonlarni to‘ldiring.",
+        "ru": "Пожалуйста, заполните все обязательные поля."
+      },
+      "success": {
+        "en": "Your message has been successfully sent.",
+        "uz": "Xabaringiz muvaffaqiyatli yuborildi.",
+        "ru": "Ваше сообщение успешно отправлено."
+      },
+      "error": {
+        "en": "An unexpected error occurred. Please try again.",
+        "uz": "Kutilmagan xatolik yuz berdi. Qaytadan urinib ko‘ring.",
+        "ru": "Произошла непредвиденная ошибка. Попробуйте ещё раз."
+      }
     },
-    "projects_suffix": {"en": "projects", "uz": "loyiha", "ru": "проектов"},
+    "projects_suffix": {
+      "en": "projects",
+      "uz": "loyiha",
+      "ru": "проектов"
+    },
     "levels": {
-      "junior": {"en": "Junior Developer", "uz": "Junior dasturchi", "ru": "Junior-разработчик"},
-      "middle": {"en": "Middle Developer", "uz": "Middle dasturchi", "ru": "Middle-разработчик"},
-      "senior": {"en": "Senior Developer", "uz": "Senior dasturchi", "ru": "Senior-разработчик"}
+      "junior": {
+        "en": "Junior Developer",
+        "uz": "Junior dasturchi",
+        "ru": "Junior-разработчик"
+      },
+      "middle": {
+        "en": "Middle Developer",
+        "uz": "Middle dasturchi",
+        "ru": "Middle-разработчик"
+      },
+      "senior": {
+        "en": "Senior Developer",
+        "uz": "Senior dasturchi",
+        "ru": "Senior-разработчик"
+      }
     },
     "dates": {
-      "present": {"en": "Present", "uz": "Hozirgacha", "ru": "наст. время"},
+      "present": {
+        "en": "Present",
+        "uz": "Hozirgacha",
+        "ru": "наст. время"
+      },
       "months": {
-        "en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "uz": ["Yan", "Fev", "Mar", "Apr", "May", "Iyun", "Iyul", "Avg", "Sen", "Okt", "Noy", "Dek"],
-        "ru": ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]
+        "en": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        "uz": [
+          "Yan",
+          "Fev",
+          "Mar",
+          "Apr",
+          "May",
+          "Iyun",
+          "Iyul",
+          "Avg",
+          "Sen",
+          "Okt",
+          "Noy",
+          "Dek"
+        ],
+        "ru": [
+          "Янв",
+          "Фев",
+          "Мар",
+          "Апр",
+          "Май",
+          "Июн",
+          "Июл",
+          "Авг",
+          "Сен",
+          "Окт",
+          "Ноя",
+          "Дек"
+        ]
       }
     },
     "cv": {
-      "summary": {"en": "Summary", "uz": "Qisqacha", "ru": "О себе"},
-      "experience": {"en": "Experience", "uz": "Ish tajribasi", "ru": "Опыт работы"},
-      "education": {"en": "Education", "uz": "Ta’lim", "ru": "Образование"},
-      "skills": {"en": "Skills", "uz": "Ko‘nikmalar", "ru": "Навыки"},
-      "projects": {"en": "Projects", "uz": "Loyihalar", "ru": "Проекты"},
-      "certifications": {"en": "Certifications", "uz": "Sertifikatlar", "ru": "Сертификаты"},
-      "languages": {"en": "Languages", "uz": "Tillar", "ru": "Языки"},
-      "document": {"en": "Curriculum Vitae", "uz": "Rezyume", "ru": "Резюме"},
-      "page": {"en": "Page", "uz": "Sahifa", "ru": "Стр."}
+      "summary": {
+        "en": "Summary",
+        "uz": "Qisqacha",
+        "ru": "О себе"
+      },
+      "experience": {
+        "en": "Experience",
+        "uz": "Ish tajribasi",
+        "ru": "Опыт работы"
+      },
+      "education": {
+        "en": "Education",
+        "uz": "Ta’lim",
+        "ru": "Образование"
+      },
+      "skills": {
+        "en": "Skills",
+        "uz": "Ko‘nikmalar",
+        "ru": "Навыки"
+      },
+      "projects": {
+        "en": "Projects",
+        "uz": "Loyihalar",
+        "ru": "Проекты"
+      },
+      "certifications": {
+        "en": "Certifications",
+        "uz": "Sertifikatlar",
+        "ru": "Сертификаты"
+      },
+      "languages": {
+        "en": "Languages",
+        "uz": "Tillar",
+        "ru": "Языки"
+      },
+      "document": {
+        "en": "Curriculum Vitae",
+        "uz": "Rezyume",
+        "ru": "Резюме"
+      },
+      "page": {
+        "en": "Page",
+        "uz": "Sahifa",
+        "ru": "Стр."
+      }
     }
   },
   "seo": {
@@ -110,12 +460,19 @@
       "uz": "Quvonchbek Bobojonov, dasturchi, dasturiy muhandis, Full Stack dasturchi, Python dasturchi, Django, PySide6, O‘zbekiston, Xorazm, moorfo",
       "ru": "Quvonchbek Bobojonov, Кувончбек Бобожонов, программист, инженер-программист, Full Stack разработчик, Python разработчик, Django, PySide6, Узбекистан, moorfo"
     },
-    "alternate_names": ["Кувончбек Бобожонов", "moorfo"]
+    "alternate_names": [
+      "Кувончбек Бобожонов",
+      "moorfo"
+    ]
   },
   "profile": {
     "first_name": "Quvonchbek",
     "last_name": "Bobojonov",
-    "title": {"en": "Software Engineer", "uz": "Dasturiy muhandis", "ru": "Инженер-программист"},
+    "title": {
+      "en": "Software Engineer",
+      "uz": "Dasturiy muhandis",
+      "ru": "Инженер-программист"
+    },
     "headline": {
       "en": "Software Engineer at Revolution Global LLC · Founder of Ovel",
       "uz": "Revolution Global LLC dasturiy muhandisi · Ovel asoschisi",
@@ -160,26 +517,62 @@
     },
     "languages": [
       {
-        "name": {"en": "Uzbek", "uz": "O‘zbek", "ru": "Узбекский"},
-        "level": {"en": "Native", "uz": "Ona tili", "ru": "Родной"}
+        "name": {
+          "en": "Uzbek",
+          "uz": "O‘zbek",
+          "ru": "Узбекский"
+        },
+        "level": {
+          "en": "Native",
+          "uz": "Ona tili",
+          "ru": "Родной"
+        }
       },
       {
-        "name": {"en": "English", "uz": "Ingliz", "ru": "Английский"},
-        "level": {"en": "Limited Working", "uz": "Boshlang‘ich ish darajasi", "ru": "Базовый рабочий"}
+        "name": {
+          "en": "English",
+          "uz": "Ingliz",
+          "ru": "Английский"
+        },
+        "level": {
+          "en": "Limited Working",
+          "uz": "Boshlang‘ich ish darajasi",
+          "ru": "Базовый рабочий"
+        }
       }
     ]
   },
   "socials": [
-    {"name": "LinkedIn", "url": "https://www.linkedin.com/in/moorfo/", "icon": "lab la-linkedin-in"},
-    {"name": "Telegram", "url": "https://t.me/+998774040066", "icon": "lab la-telegram"},
-    {"name": "Instagram", "url": "https://instagram.com/quvonchbekdev", "icon": "lab la-instagram"},
-    {"name": "GitHub", "url": "https://github.com/QuvonchbekBobojonov", "icon": "lab la-github"}
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/moorfo/",
+      "icon": "lab la-linkedin-in"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/+998774040066",
+      "icon": "lab la-telegram"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/quvonchbekdev",
+      "icon": "lab la-instagram"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/QuvonchbekBobojonov",
+      "icon": "lab la-github"
+    }
   ],
   "experience": [
-     {
+    {
       "start": "2026-03",
       "end": null,
-      "title": {"en": "Founder, CEO", "uz": "Asoschi, bosh direktor", "ru": "Основатель, CEO"},
+      "title": {
+        "en": "Founder, CEO",
+        "uz": "Asoschi, bosh direktor",
+        "ru": "Основатель, CEO"
+      },
       "place": "OVEL (Optimal Versatile Efficient Ledger MChJ)",
       "description": {
         "en": "Leading the mission to digitalize business operations through IT services and specialized software solutions, bridging the gap between traditional retail and modern technology.",
@@ -190,10 +583,18 @@
     {
       "start": "2026-05",
       "end": "2026-09",
-      "title": {"en": "Software Engineer", "uz": "Dasturiy muhandis", "ru": "Инженер-программист"},
+      "title": {
+        "en": "Software Engineer",
+        "uz": "Dasturiy muhandis",
+        "ru": "Инженер-программист"
+      },
       "place": "Revolution Global LLC",
-      "location": {"en": "Tashkent", "uz": "Toshkent", "ru": "Ташкент"}
-    }
+      "location": {
+        "en": "Tashkent",
+        "uz": "Toshkent",
+        "ru": "Ташкент"
+      }
+    },
     {
       "start": "2024-11",
       "end": "2026-06",
@@ -207,28 +608,56 @@
         "uz": "Raqamli ta’limni rivojlantirish markazi",
         "ru": "Центр развития цифрового образования"
       },
-      "location": {"en": "Yangibozor", "uz": "Yangibozor", "ru": "Янгибазар"}
+      "location": {
+        "en": "Yangibozor",
+        "uz": "Yangibozor",
+        "ru": "Янгибазар"
+      }
     },
     {
       "start": "2024-05",
       "end": "2025-11",
-      "title": {"en": "Desktop Engineer", "uz": "Desktop muhandis", "ru": "Desktop-инженер"},
+      "title": {
+        "en": "Desktop Engineer",
+        "uz": "Desktop muhandis",
+        "ru": "Desktop-инженер"
+      },
       "place": "Megasoft | TOTMEGA LLC",
-      "location": {"en": "Urgench", "uz": "Urganch", "ru": "Ургенч"}
+      "location": {
+        "en": "Urgench",
+        "uz": "Urganch",
+        "ru": "Ургенч"
+      }
     },
     {
       "start": "2023-07",
       "end": "2025-11",
-      "title": {"en": "Back-end Developer", "uz": "Backend dasturchi", "ru": "Backend-разработчик"},
+      "title": {
+        "en": "Back-end Developer",
+        "uz": "Backend dasturchi",
+        "ru": "Backend-разработчик"
+      },
       "place": "Megasoft | TOTMEGA LLC",
-      "location": {"en": "Urgench", "uz": "Urganch", "ru": "Ургенч"}
+      "location": {
+        "en": "Urgench",
+        "uz": "Urganch",
+        "ru": "Ургенч"
+      }
     },
     {
       "start": "2022-09",
       "end": "2023-06",
-      "title": {"en": "Full-stack Developer", "uz": "Full-stack dasturchi", "ru": "Full-stack разработчик"},
+      "title": {
+        "en": "Full-stack Developer",
+        "uz": "Full-stack dasturchi",
+        "ru": "Full-stack разработчик"
+      },
       "place": "IT Park Uzbekistan",
-      "location": {"en": "Yangibozor", "uz": "Yangibozor", "ru": "Янгибазар"}
+      "location": {
+        "en": "Yangibozor",
+        "uz": "Yangibozor",
+        "ru": "Янгибазар"
+      }
     }
   ],
   "education": [
@@ -274,12 +703,20 @@
         "uz": "Frontend va backend dasturlash (sertifikat)",
         "ru": "Frontend и backend разработка (сертификат)"
       },
-      "place": {"en": "IT Park (Yangibozor District)", "uz": "IT Park (Yangibozor tumani)", "ru": "IT Park (Янгибазарский район)"}
+      "place": {
+        "en": "IT Park (Yangibozor District)",
+        "uz": "IT Park (Yangibozor tumani)",
+        "ru": "IT Park (Янгибазарский район)"
+      }
     },
     {
       "start": "2020",
       "end": "2022",
-      "title": {"en": "Front-end & Back-end Development", "uz": "Frontend va backend dasturlash", "ru": "Frontend и backend разработка"},
+      "title": {
+        "en": "Front-end & Back-end Development",
+        "uz": "Frontend va backend dasturlash",
+        "ru": "Frontend и backend разработка"
+      },
       "place": "Mohirdev"
     },
     {
@@ -299,7 +736,11 @@
   "services": [
     {
       "icon": "las la-bezier-curve",
-      "title": {"en": "Website Development", "uz": "Veb-sayt yaratish", "ru": "Разработка сайтов"},
+      "title": {
+        "en": "Website Development",
+        "uz": "Veb-sayt yaratish",
+        "ru": "Разработка сайтов"
+      },
       "description": {
         "en": "Creating websites of any type, such as online stores, blogs, and informational websites!",
         "uz": "Internet-do‘konlar, bloglar va axborot saytlari kabi har qanday turdagi veb-saytlarni yaratish!",
@@ -309,7 +750,11 @@
     },
     {
       "icon": "las la-code",
-      "title": {"en": "Telegram Bot Development", "uz": "Telegram bot yaratish", "ru": "Разработка Telegram-ботов"},
+      "title": {
+        "en": "Telegram Bot Development",
+        "uz": "Telegram bot yaratish",
+        "ru": "Разработка Telegram-ботов"
+      },
       "description": {
         "en": "Developing Telegram bots of any kind and deploying them on a server with a professional appearance.",
         "uz": "Har qanday turdagi Telegram botlarni ishlab chiqish va ularni serverga professional tarzda joylashtirish.",
@@ -319,7 +764,11 @@
     },
     {
       "icon": "las la-search",
-      "title": {"en": "SEO Optimization", "uz": "SEO optimallashtirish", "ru": "SEO-оптимизация"},
+      "title": {
+        "en": "SEO Optimization",
+        "uz": "SEO optimallashtirish",
+        "ru": "SEO-оптимизация"
+      },
       "description": {
         "en": "Improving website visibility in Google, Yandex, and other search engines.",
         "uz": "Saytning Google, Yandex va boshqa qidiruv tizimlaridagi ko‘rinishini yaxshilash.",
@@ -329,7 +778,11 @@
     },
     {
       "icon": "las la-desktop",
-      "title": {"en": "Desktop Application Development", "uz": "Desktop ilovalar yaratish", "ru": "Разработка десктоп-приложений"},
+      "title": {
+        "en": "Desktop Application Development",
+        "uz": "Desktop ilovalar yaratish",
+        "ru": "Разработка десктоп-приложений"
+      },
       "description": {
         "en": "Creating cross-platform desktop applications using PySide6.",
         "uz": "PySide6 yordamida kross-platforma desktop ilovalarini yaratish.",
@@ -339,19 +792,71 @@
     }
   ],
   "skills": [
-    {"name": "Python", "image": "python.png", "projects": "15+"},
-    {"name": "Django", "image": "django.png", "projects": "10+"},
-    {"name": "Django REST Framework", "image": "django-rest.png", "projects": "8+"},
-    {"name": "MQTT (Broker & Client)", "image": "https://user-images.githubusercontent.com/20068373/149942025-f8282889-15e5-4f8e-a40f-dc1c2b0be4fd.png", "projects": "2+"},
-    {"name": "JavaScript", "image": "js.png", "projects": "12+"},
-    {"name": "WordPress", "image": "wordpress.png", "projects": "5+"},
-    {"name": "Docker", "image": "docker.png", "projects": "5+"},
-    {"name": "Nginx", "image": "nginx.png", "projects": "11+"},
-    {"name": "PostgreSQL", "image": "postgresql.png", "projects": "10+"},
-    {"name": "SQLite", "image": "sqlite.png", "projects": "10+"},
-    {"name": "Redis", "image": "redis.png", "projects": "3+"},
-    {"name": "Qt for Python (PySide6)", "image": "pyqt.png", "projects": "2+"},
-    {"name": "Celery", "image": "celery.png", "projects": "4+"}
+    {
+      "name": "Python",
+      "image": "python.png",
+      "projects": "15+"
+    },
+    {
+      "name": "Django",
+      "image": "django.png",
+      "projects": "10+"
+    },
+    {
+      "name": "Django REST Framework",
+      "image": "django-rest.png",
+      "projects": "8+"
+    },
+    {
+      "name": "MQTT (Broker & Client)",
+      "image": "https://user-images.githubusercontent.com/20068373/149942025-f8282889-15e5-4f8e-a40f-dc1c2b0be4fd.png",
+      "projects": "2+"
+    },
+    {
+      "name": "JavaScript",
+      "image": "js.png",
+      "projects": "12+"
+    },
+    {
+      "name": "WordPress",
+      "image": "wordpress.png",
+      "projects": "5+"
+    },
+    {
+      "name": "Docker",
+      "image": "docker.png",
+      "projects": "5+"
+    },
+    {
+      "name": "Nginx",
+      "image": "nginx.png",
+      "projects": "11+"
+    },
+    {
+      "name": "PostgreSQL",
+      "image": "postgresql.png",
+      "projects": "10+"
+    },
+    {
+      "name": "SQLite",
+      "image": "sqlite.png",
+      "projects": "10+"
+    },
+    {
+      "name": "Redis",
+      "image": "redis.png",
+      "projects": "3+"
+    },
+    {
+      "name": "Qt for Python (PySide6)",
+      "image": "pyqt.png",
+      "projects": "2+"
+    },
+    {
+      "name": "Celery",
+      "image": "celery.png",
+      "projects": "4+"
+    }
   ],
   "portfolio": [
     {
@@ -363,7 +868,12 @@
       },
       "image": "portfolio/6.png",
       "link": "https://ovel.uz",
-      "tech": ["Django", "React", "Django Rest Framework", "PostgreSQL"],
+      "tech": [
+        "Django",
+        "React",
+        "Django Rest Framework",
+        "PostgreSQL"
+      ],
       "layout": "full"
     },
     {
@@ -375,7 +885,13 @@
       },
       "image": "portfolio/5.jpg",
       "link": "#",
-      "tech": ["Django", "Django Rest Framework", "JavaScript", "Qt", "PySide6"],
+      "tech": [
+        "Django",
+        "Django Rest Framework",
+        "JavaScript",
+        "Qt",
+        "PySide6"
+      ],
       "layout": "half"
     },
     {
@@ -387,21 +903,44 @@
       },
       "image": "portfolio/3.jpg",
       "link": "/",
-      "tech": ["Django", "Django Rest Framework", "MQTT", "JavaScript", "Qt"],
+      "tech": [
+        "Django",
+        "Django Rest Framework",
+        "MQTT",
+        "JavaScript",
+        "Qt"
+      ],
       "layout": "full"
     }
   ],
   "pricing": {
     "packages": [
       {
-        "name": {"en": "Basic", "uz": "Asosiy", "ru": "Базовый"},
+        "name": {
+          "en": "Basic",
+          "uz": "Asosiy",
+          "ru": "Базовый"
+        },
         "tagline": {
-          "en": ["Simple projects & startups", "Budget-friendly solution"],
-          "uz": ["Oddiy loyihalar va startaplar", "Hamyonbop yechim"],
-          "ru": ["Простые проекты и стартапы", "Бюджетное решение"]
+          "en": [
+            "Simple projects & startups",
+            "Budget-friendly solution"
+          ],
+          "uz": [
+            "Oddiy loyihalar va startaplar",
+            "Hamyonbop yechim"
+          ],
+          "ru": [
+            "Простые проекты и стартапы",
+            "Бюджетное решение"
+          ]
         },
         "price": "$10",
-        "unit": {"en": "/ hour", "uz": "/ soat", "ru": "/ час"},
+        "unit": {
+          "en": "/ hour",
+          "uz": "/ soat",
+          "ru": "/ час"
+        },
         "features": {
           "en": [
             "Backend development with Django & DRF",
@@ -433,14 +972,31 @@
         }
       },
       {
-        "name": {"en": "Premium", "uz": "Premium", "ru": "Премиум"},
+        "name": {
+          "en": "Premium",
+          "uz": "Premium",
+          "ru": "Премиум"
+        },
         "tagline": {
-          "en": ["Complex & enterprise solutions", "Full project development"],
-          "uz": ["Murakkab va korporativ yechimlar", "Loyihani to‘liq ishlab chiqish"],
-          "ru": ["Сложные и корпоративные решения", "Полная разработка проекта"]
+          "en": [
+            "Complex & enterprise solutions",
+            "Full project development"
+          ],
+          "uz": [
+            "Murakkab va korporativ yechimlar",
+            "Loyihani to‘liq ishlab chiqish"
+          ],
+          "ru": [
+            "Сложные и корпоративные решения",
+            "Полная разработка проекта"
+          ]
         },
         "price": "$19",
-        "unit": {"en": "/ hour", "uz": "/ soat", "ru": "/ час"},
+        "unit": {
+          "en": "/ hour",
+          "uz": "/ soat",
+          "ru": "/ час"
+        },
         "features": {
           "en": [
             "Advanced Django & Django Rest Framework development",
@@ -476,9 +1032,18 @@
       }
     ],
     "note": {
-      "en": ["Need a custom solution for your unique project?", "Let's discuss and build a tailor-made package just for you."],
-      "uz": ["Loyihangiz uchun maxsus yechim kerakmi?", "Keling, muhokama qilib, aynan siz uchun paket tuzamiz."],
-      "ru": ["Нужно индивидуальное решение для вашего проекта?", "Давайте обсудим и соберём пакет специально для вас."]
+      "en": [
+        "Need a custom solution for your unique project?",
+        "Let's discuss and build a tailor-made package just for you."
+      ],
+      "uz": [
+        "Loyihangiz uchun maxsus yechim kerakmi?",
+        "Keling, muhokama qilib, aynan siz uchun paket tuzamiz."
+      ],
+      "ru": [
+        "Нужно индивидуальное решение для вашего проекта?",
+        "Давайте обсудим и соберём пакет специально для вас."
+      ]
     }
   }
 }
