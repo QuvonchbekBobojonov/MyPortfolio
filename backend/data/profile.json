@@ -176,14 +176,7 @@
     {"name": "GitHub", "url": "https://github.com/QuvonchbekBobojonov", "icon": "lab la-github"}
   ],
   "experience": [
-    {
-      "start": "2026-05",
-      "end": null,
-      "title": {"en": "Software Engineer", "uz": "Dasturiy muhandis", "ru": "Инженер-программист"},
-      "place": "Revolution Global LLC",
-      "location": {"en": "Tashkent", "uz": "Toshkent", "ru": "Ташкент"}
-    },
-    {
+     {
       "start": "2026-03",
       "end": null,
       "title": {"en": "Founder, CEO", "uz": "Asoschi, bosh direktor", "ru": "Основатель, CEO"},
@@ -194,6 +187,13 @@
         "ru": "Руковожу цифровизацией бизнес-процессов с помощью IT-услуг и специализированных программных решений, сокращая разрыв между традиционной торговлей и современными технологиями."
       }
     },
+    {
+      "start": "2026-05",
+      "end": "2026-09",
+      "title": {"en": "Software Engineer", "uz": "Dasturiy muhandis", "ru": "Инженер-программист"},
+      "place": "Revolution Global LLC",
+      "location": {"en": "Tashkent", "uz": "Toshkent", "ru": "Ташкент"}
+    }
     {
       "start": "2024-11",
       "end": "2026-06",
