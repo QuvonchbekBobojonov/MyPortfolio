@@ -473,10 +473,10 @@
       "uz": "Dasturiy muhandis",
       "ru": "Инженер-программист"
     },
-    "headline": {
-      "en": "Software Engineer at Revolution Global LLC · Founder of Ovel",
-      "uz": "Revolution Global LLC dasturiy muhandisi · Ovel asoschisi",
-      "ru": "Инженер-программист в Revolution Global LLC · Основатель Ovel"
+     "headline": {
+    "en": "Software Engineer · Founder of Ovel",
+    "uz": "Dasturiy muhandis · Ovel asoschisi",
+    "ru": "Инженер-программист · Основатель Ovel"
     },
     "hero_text": {
       "en": "Full Stack Engineer and Mentor building reliable, scalable web, desktop, IoT, and system integration solutions.",
