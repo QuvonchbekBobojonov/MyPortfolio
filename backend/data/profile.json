@@ -3,7 +3,7 @@
     "nav": {
       "home": {
         "en": "Home",
-        "uz": "Bosh sahifa",
+        "uz": "Boş sahifa",
         "ru": "Главная"
       },
       "about": {
@@ -23,7 +23,7 @@
       },
       "skills": {
         "en": "Skills",
-        "uz": "Ko‘nikmalar",
+        "uz": "Kõnikmalar",
         "ru": "Навыки"
       },
       "portfolio": {
@@ -55,12 +55,12 @@
     "sidebar": {
       "download_cv": {
         "en": "Download CV",
-        "uz": "CV yuklab olish",
+        "uz": "CV yuklab oliş",
         "ru": "Скачать CV"
       },
       "rights": {
         "en": "All rights reserved.",
-        "uz": "Barcha huquqlar himoyalangan.",
+        "uz": "Barça huquqlar himoyalangan.",
         "ru": "Все права защищены."
       }
     },
@@ -118,7 +118,7 @@
       },
       "age": {
         "en": "Age",
-        "uz": "Yosh",
+        "uz": "Yoş",
         "ru": "Возраст"
       },
       "level": {
@@ -143,7 +143,7 @@
       },
       "zip": {
         "en": "ZIP Code",
-        "uz": "Pochta indeksi",
+        "uz": "Poçta indeksi",
         "ru": "Индекс"
       },
       "address": {
@@ -192,7 +192,7 @@
         ],
         "uz": [
           "Mening",
-          "texnik ko‘nikmalarim"
+          "texnik kõnikmalarim"
         ],
         "ru": [
           "Мои",
@@ -233,12 +233,12 @@
       },
       "pick": {
         "en": "Pick this package",
-        "uz": "Ushbu paketni tanlash",
+        "uz": "Uşbu paketni tanlaş",
         "ru": "Выбрать пакет"
       },
       "contact": {
         "en": "Contact Me",
-        "uz": "Bog‘lanish",
+        "uz": "Boğlaniş",
         "ru": "Связаться"
       }
     },
@@ -250,7 +250,7 @@
         ],
         "uz": [
           "Men bilan",
-          "bog‘laning!"
+          "boğlaning!"
         ],
         "ru": [
           "Свяжитесь",
@@ -259,7 +259,7 @@
       },
       "full_name": {
         "en": "Full Name",
-        "uz": "To‘liq ism",
+        "uz": "Tõliq ism",
         "ru": "Полное имя"
       },
       "email": {
@@ -294,7 +294,7 @@
       },
       "send": {
         "en": "Send Message",
-        "uz": "Xabar yuborish",
+        "uz": "Xabar yuboriş",
         "ru": "Отправить"
       },
       "sending": {
@@ -309,7 +309,7 @@
       },
       "required": {
         "en": "Please fill in all required fields.",
-        "uz": "Iltimos, barcha majburiy maydonlarni to‘ldiring.",
+        "uz": "Iltimos, barça majburiy maydonlarni tõldiring.",
         "ru": "Пожалуйста, заполните все обязательные поля."
       },
       "success": {
@@ -319,7 +319,7 @@
       },
       "error": {
         "en": "An unexpected error occurred. Please try again.",
-        "uz": "Kutilmagan xatolik yuz berdi. Qaytadan urinib ko‘ring.",
+        "uz": "Kutilmagan xatolik yuz berdi. Qaytadan urinib kõring.",
         "ru": "Произошла непредвиденная ошибка. Попробуйте ещё раз."
       }
     },
@@ -331,24 +331,24 @@
     "levels": {
       "junior": {
         "en": "Junior Developer",
-        "uz": "Junior dasturchi",
+        "uz": "Junior dasturçi",
         "ru": "Junior-разработчик"
       },
       "middle": {
         "en": "Middle Developer",
-        "uz": "Middle dasturchi",
+        "uz": "Middle dasturçi",
         "ru": "Middle-разработчик"
       },
       "senior": {
         "en": "Senior Developer",
-        "uz": "Senior dasturchi",
+        "uz": "Senior dasturçi",
         "ru": "Senior-разработчик"
       }
     },
     "dates": {
       "present": {
         "en": "Present",
-        "uz": "Hozirgacha",
+        "uz": "Hozirgaça",
         "ru": "наст. время"
       },
       "months": {
@@ -399,12 +399,12 @@
     "cv": {
       "summary": {
         "en": "Summary",
-        "uz": "Qisqacha",
+        "uz": "Qisqaça",
         "ru": "О себе"
       },
       "experience": {
         "en": "Experience",
-        "uz": "Ish tajribasi",
+        "uz": "Iş tajribasi",
         "ru": "Опыт работы"
       },
       "education": {
@@ -414,7 +414,7 @@
       },
       "skills": {
         "en": "Skills",
-        "uz": "Ko‘nikmalar",
+        "uz": "Kõnikmalar",
         "ru": "Навыки"
       },
       "projects": {
@@ -447,17 +447,17 @@
   "seo": {
     "title": {
       "en": "Quvonchbek Bobojonov | Software Engineer",
-      "uz": "Quvonchbek Bobojonov | Dasturiy muhandis",
+      "uz": "Quvonçbek Bobojonov | Dasturiy muhandis",
       "ru": "Quvonchbek Bobojonov | Инженер-программист"
     },
     "description": {
       "en": "Quvonchbek Bobojonov — Software Engineer at Revolution Global LLC, founder of Ovel. Full Stack web, desktop and IoT development with Python and Django.",
-      "uz": "Quvonchbek Bobojonov — Revolution Global LLC dasturiy muhandisi, Ovel asoschisi. Python va Django’da veb, desktop va IoT yechimlar yaratadi.",
+      "uz": "Quvonçbek Bobojonov — Revolution Global LLC dasturiy muhandisi, Ovel asosçisi. Python va Django’da veb, desktop va IoT yeçimlar yaratadi.",
       "ru": "Quvonchbek Bobojonov — инженер-программист в Revolution Global LLC, основатель Ovel. Full Stack разработка веб-, десктоп- и IoT-решений на Python и Django."
     },
     "keywords": {
       "en": "Quvonchbek Bobojonov, Software Engineer, Full Stack Developer, Python developer, Django, Django REST Framework, PySide6, Uzbekistan, moorfo",
-      "uz": "Quvonchbek Bobojonov, dasturchi, dasturiy muhandis, Full Stack dasturchi, Python dasturchi, Django, PySide6, O‘zbekiston, Xorazm, moorfo",
+      "uz": "Quvonçbek Bobojonov, dasturçi, dasturiy muhandis, Full Stack dasturçi, Python dasturçi, Django, PySide6, Õzbekiston, Xorazm, moorfo",
       "ru": "Quvonchbek Bobojonov, Кувончбек Бобожонов, программист, инженер-программист, Full Stack разработчик, Python разработчик, Django, PySide6, Узбекистан, moorfo"
     },
     "alternate_names": [
@@ -475,12 +475,12 @@
     },
      "headline": {
     "en": "Software Engineer · Founder of Ovel",
-    "uz": "Dasturiy muhandis · Ovel asoschisi",
+    "uz": "Dasturiy muhandis · Ovel asosçisi",
     "ru": "Инженер-программист · Основатель Ovel"
     },
     "hero_text": {
       "en": "Full Stack Engineer and Mentor building reliable, scalable web, desktop, IoT, and system integration solutions.",
-      "uz": "Ishonchli va kengaytiriladigan veb, desktop, IoT va tizim integratsiyasi yechimlarini yaratuvchi Full Stack muhandis va mentor.",
+      "uz": "Işonçli va kengaytiriladigan veb, desktop, IoT va tizim integratsiyasi yeçimlarini yaratuvçi Full Stack muhandis va mentor.",
       "ru": "Full Stack инженер и ментор, создающий надёжные и масштабируемые веб-, десктоп- и IoT-решения, а также системные интеграции."
     },
     "summary": {
@@ -489,8 +489,8 @@
         "I focus on developing reliable, scalable, and user-centered software, from system architecture and backend APIs to desktop applications, deployment, and production maintenance. Alongside development, I mentor aspiring engineers, helping them move beyond theory through practical projects and real-world engineering challenges."
       ],
       "uz": [
-        "Men real loyihalarda veb, desktop, IoT va tizim integratsiyasi yechimlarini yaratish tajribasiga ega Full Stack muhandis va mentorman. Asosiy yo‘nalishlarim: Python, Django, Django REST Framework, WebSockets, Redis, PostgreSQL, PySide6/PyQt, REST API va zamonaviy frontend texnologiyalari. Real vaqtda qurilmalarni boshqarish, to‘lov va tranzaksiya tizimlari, CRM platformalar, vending avtomatlar ekotizimi, analitik panellar, Windows va Android ilovalari, kiosk tizimlari hamda IoT integratsiyalari ustida ishlaganman.",
-        "Tizim arxitekturasi va backend API’lardan tortib desktop ilovalar, deploy va production’ni qo‘llab-quvvatlashgacha — ishonchli, kengaytiriladigan va foydalanuvchiga yo‘naltirilgan dasturiy ta’minot yaratishga e’tibor qarataman. Dasturlashdan tashqari, yosh muhandislarga mentorlik qilib, ularga nazariyadan amaliy loyihalar va real muhandislik vazifalariga o‘tishda yordam beraman."
+        "Men real loyihalarda veb, desktop, IoT va tizim integratsiyasi yeçimlarini yaratiş tajribasiga ega Full Stack muhandis va mentorman. Asosiy yõnalişlarim: Python, Django, Django REST Framework, WebSockets, Redis, PostgreSQL, PySide6/PyQt, REST API va zamonaviy frontend texnologiyalari. Real vaqtda qurilmalarni boşqariş, tõlov va tranzaksiya tizimlari, CRM platformalar, vending avtomatlar ekotizimi, analitik panellar, Windows va Android ilovalari, kiosk tizimlari hamda IoT integratsiyalari ustida işlaganman.",
+        "Tizim arxitekturasi va backend API’lardan tortib desktop ilovalar, deploy va production’ni qõllab-quvvatlaşgaça — işonçli, kengaytiriladigan va foydalanuvçiga yõnaltirilgan dasturiy ta’minot yaratişga e’tibor qarataman. Dasturlaşdan taşqari, yoş muhandislarga mentorlik qilib, ularga nazariyadan amaliy loyihalar va real muhandislik vazifalariga õtişda yordam beraman."
       ],
       "ru": [
         "Я Full Stack инженер и ментор с опытом создания реальных веб-, десктоп- и IoT-решений, а также системных интеграций. Мой стек: Python, Django, Django REST Framework, WebSockets, Redis, PostgreSQL, PySide6/PyQt, REST API и современные фронтенд-технологии. Работал над управлением устройствами в реальном времени, платёжными и транзакционными системами, CRM-платформами, экосистемами вендинговых автоматов, аналитическими панелями, приложениями для Windows и Android, киосками и IoT-интеграциями.",
@@ -507,19 +507,19 @@
     "zip_code": "221209",
     "address": {
       "en": "Cho'bolonchi village, Yangibozor district, Khorezm, Uzbekistan",
-      "uz": "Xorazm viloyati, Yangibozor tumani, Cho‘bolonchi qishlog‘i",
+      "uz": "Xorazm viloyati, Yangibozor tumani, Çõbolonçi qişloği",
       "ru": "Узбекистан, Хорезмская область, Янгибазарский район, кишлак Чуболанчи"
     },
     "location": {
       "en": "Uzbekistan, Khorezm, Yangibozor",
-      "uz": "O‘zbekiston, Xorazm, Yangibozor",
+      "uz": "Õzbekiston, Xorazm, Yangibozor",
       "ru": "Узбекистан, Хорезм, Янгибазар"
     },
     "languages": [
       {
         "name": {
           "en": "Uzbek",
-          "uz": "O‘zbek",
+          "uz": "Õzbek",
           "ru": "Узбекский"
         },
         "level": {
@@ -536,7 +536,7 @@
         },
         "level": {
           "en": "Limited Working",
-          "uz": "Boshlang‘ich ish darajasi",
+          "uz": "Boşlanğiç iş darajasi",
           "ru": "Базовый рабочий"
         }
       }
@@ -570,13 +570,13 @@
       "end": null,
       "title": {
         "en": "Founder, CEO",
-        "uz": "Asoschi, bosh direktor",
+        "uz": "Asosçi, boş direktor",
         "ru": "Основатель, CEO"
       },
       "place": "OVEL (Optimal Versatile Efficient Ledger MChJ)",
       "description": {
         "en": "Leading the mission to digitalize business operations through IT services and specialized software solutions, bridging the gap between traditional retail and modern technology.",
-        "uz": "Biznes jarayonlarini IT xizmatlar va maxsus dasturiy yechimlar orqali raqamlashtirish missiyasini boshqaraman, an’anaviy savdo va zamonaviy texnologiyalar o‘rtasidagi bo‘shliqni to‘ldiraman.",
+        "uz": "Biznes jarayonlarini IT xizmatlar va maxsus dasturiy yeçimlar orqali raqamlaştiriş missiyasini boşqaraman, an’anaviy savdo va zamonaviy texnologiyalar õrtasidagi bõşliqni tõldiraman.",
         "ru": "Руковожу цифровизацией бизнес-процессов с помощью IT-услуг и специализированных программных решений, сокращая разрыв между традиционной торговлей и современными технологиями."
       }
     },
@@ -591,7 +591,7 @@
       "place": "Revolution Global LLC",
       "location": {
         "en": "Tashkent",
-        "uz": "Toshkent",
+        "uz": "Toşkent",
         "ru": "Ташкент"
       }
     },
@@ -605,7 +605,7 @@
       },
       "place": {
         "en": "Digital Education Development Center",
-        "uz": "Raqamli ta’limni rivojlantirish markazi",
+        "uz": "Raqamli ta’limni rivojlantiriş markazi",
         "ru": "Центр развития цифрового образования"
       },
       "location": {
@@ -625,7 +625,7 @@
       "place": "Megasoft | TOTMEGA LLC",
       "location": {
         "en": "Urgench",
-        "uz": "Urganch",
+        "uz": "Urganç",
         "ru": "Ургенч"
       }
     },
@@ -634,13 +634,13 @@
       "end": "2025-11",
       "title": {
         "en": "Back-end Developer",
-        "uz": "Backend dasturchi",
+        "uz": "Backend dasturçi",
         "ru": "Backend-разработчик"
       },
       "place": "Megasoft | TOTMEGA LLC",
       "location": {
         "en": "Urgench",
-        "uz": "Urganch",
+        "uz": "Urganç",
         "ru": "Ургенч"
       }
     },
@@ -649,7 +649,7 @@
       "end": "2023-06",
       "title": {
         "en": "Full-stack Developer",
-        "uz": "Full-stack dasturchi",
+        "uz": "Full-stack dasturçi",
         "ru": "Full-stack разработчик"
       },
       "place": "IT Park Uzbekistan",
@@ -666,7 +666,7 @@
       "end": null,
       "title": {
         "en": "Bachelor's Degree in Information Systems and Technologies",
-        "uz": "Axborot tizimlari va texnologiyalari bo‘yicha bakalavr",
+        "uz": "Axborot tizimlari va texnologiyalari bõyiça bakalavr",
         "ru": "Бакалавр по направлению «Информационные системы и технологии»"
       },
       "place": "International School of Finance Technology and Science (ISFT)"
@@ -676,7 +676,7 @@
       "end": "2024",
       "title": {
         "en": "Diploma, Operator of Information Media Machines and Computer Networks",
-        "uz": "Diplom, axborot vositalari mashinalari va kompyuter tarmoqlari operatori",
+        "uz": "Diplom, axborot vositalari maşinalari va kompyuter tarmoqlari operatori",
         "ru": "Диплом, оператор машин информационных носителей и компьютерных сетей"
       },
       "place": {
@@ -690,7 +690,7 @@
       "end": "2023",
       "title": {
         "en": "Python Backend Development (Certification)",
-        "uz": "Python backend dasturlash (sertifikat)",
+        "uz": "Python backend dasturlaş (sertifikat)",
         "ru": "Backend-разработка на Python (сертификат)"
       },
       "place": "Fulfil Education"
@@ -700,7 +700,7 @@
       "end": "2023",
       "title": {
         "en": "Front-end & Back-end Development (Certification)",
-        "uz": "Frontend va backend dasturlash (sertifikat)",
+        "uz": "Frontend va backend dasturlaş (sertifikat)",
         "ru": "Frontend и backend разработка (сертификат)"
       },
       "place": {
@@ -714,7 +714,7 @@
       "end": "2022",
       "title": {
         "en": "Front-end & Back-end Development",
-        "uz": "Frontend va backend dasturlash",
+        "uz": "Frontend va backend dasturlaş",
         "ru": "Frontend и backend разработка"
       },
       "place": "Mohirdev"
@@ -738,12 +738,12 @@
       "icon": "las la-bezier-curve",
       "title": {
         "en": "Website Development",
-        "uz": "Veb-sayt yaratish",
+        "uz": "Veb-sayt yaratiş",
         "ru": "Разработка сайтов"
       },
       "description": {
         "en": "Creating websites of any type, such as online stores, blogs, and informational websites!",
-        "uz": "Internet-do‘konlar, bloglar va axborot saytlari kabi har qanday turdagi veb-saytlarni yaratish!",
+        "uz": "Internet-dõkonlar, bloglar va axborot saytlari kabi har qanday turdagi veb-saytlarni yaratiş!",
         "ru": "Создание сайтов любого типа: интернет-магазины, блоги, информационные сайты!"
       },
       "projects": "12+"
@@ -752,12 +752,12 @@
       "icon": "las la-code",
       "title": {
         "en": "Telegram Bot Development",
-        "uz": "Telegram bot yaratish",
+        "uz": "Telegram bot yaratiş",
         "ru": "Разработка Telegram-ботов"
       },
       "description": {
         "en": "Developing Telegram bots of any kind and deploying them on a server with a professional appearance.",
-        "uz": "Har qanday turdagi Telegram botlarni ishlab chiqish va ularni serverga professional tarzda joylashtirish.",
+        "uz": "Har qanday turdagi Telegram botlarni işlab çiqiş va ularni serverga professional tarzda joylaştiriş.",
         "ru": "Разработка Telegram-ботов любой сложности и их профессиональное развёртывание на сервере."
       },
       "projects": "20+"
@@ -766,12 +766,12 @@
       "icon": "las la-search",
       "title": {
         "en": "SEO Optimization",
-        "uz": "SEO optimallashtirish",
+        "uz": "SEO optimallaştiriş",
         "ru": "SEO-оптимизация"
       },
       "description": {
         "en": "Improving website visibility in Google, Yandex, and other search engines.",
-        "uz": "Saytning Google, Yandex va boshqa qidiruv tizimlaridagi ko‘rinishini yaxshilash.",
+        "uz": "Saytning Google, Yandex va boşqa qidiruv tizimlaridagi kõrinişini yaxşilaş.",
         "ru": "Улучшение видимости сайта в Google, Яндексе и других поисковых системах."
       },
       "projects": "5+"
@@ -780,12 +780,12 @@
       "icon": "las la-desktop",
       "title": {
         "en": "Desktop Application Development",
-        "uz": "Desktop ilovalar yaratish",
+        "uz": "Desktop ilovalar yaratiş",
         "ru": "Разработка десктоп-приложений"
       },
       "description": {
         "en": "Creating cross-platform desktop applications using PySide6.",
-        "uz": "PySide6 yordamida kross-platforma desktop ilovalarini yaratish.",
+        "uz": "PySide6 yordamida kross-platforma desktop ilovalarini yaratiş.",
         "ru": "Создание кроссплатформенных десктоп-приложений на PySide6."
       },
       "projects": "2+"
@@ -880,7 +880,7 @@
       "id": 2,
       "title": {
         "en": "MegaLord - PC Monitoring System and Game Club Management Software",
-        "uz": "MegaLord - kompyuterlarni monitoring qilish va o‘yin klublarini boshqarish tizimi",
+        "uz": "MegaLord - kompyuterlarni monitoring qiliş va õyin klublarini boşqariş tizimi",
         "ru": "MegaLord — система мониторинга ПК и управления компьютерными клубами"
       },
       "image": "portfolio/5.jpg",
@@ -898,7 +898,7 @@
       "id": 3,
       "title": {
         "en": "Megalife - Water Automation Selling Device",
-        "uz": "Megalife - suv sotish avtomati",
+        "uz": "Megalife - suv sotiş avtomati",
         "ru": "Megalife — автомат по продаже воды"
       },
       "image": "portfolio/3.jpg",
@@ -928,7 +928,7 @@
           ],
           "uz": [
             "Oddiy loyihalar va startaplar",
-            "Hamyonbop yechim"
+            "Hamyonbop yeçim"
           ],
           "ru": [
             "Простые проекты и стартапы",
@@ -952,13 +952,13 @@
             "Support for 3 months"
           ],
           "uz": [
-            "Django va DRF’da backend ishlab chiqish",
+            "Django va DRF’da backend işlab çiqiş",
             "Oddiy API integratsiyalar (REST va WebSocket)",
             "Oddiy desktop ilovalar (PySide6 / Qt)",
-            "Oddiy Telegram botlar yaratish",
-            "Kichik avtomatlashtirish skriptlari va servislar",
-            "Faqat ish kunlari, dam olish kunlarisiz",
-            "3 oylik qo‘llab-quvvatlash"
+            "Oddiy Telegram botlar yaratiş",
+            "Kiçik avtomatlaştiriş skriptlari va servislar",
+            "Faqat iş kunlari, dam oliş kunlarisiz",
+            "3 oylik qõllab-quvvatlaş"
           ],
           "ru": [
             "Backend-разработка на Django и DRF",
@@ -983,8 +983,8 @@
             "Full project development"
           ],
           "uz": [
-            "Murakkab va korporativ yechimlar",
-            "Loyihani to‘liq ishlab chiqish"
+            "Murakkab va korporativ yeçimlar",
+            "Loyihani tõliq işlab çiqiş"
           ],
           "ru": [
             "Сложные и корпоративные решения",
@@ -1009,13 +1009,13 @@
             "Project always has priority"
           ],
           "uz": [
-            "Django va Django Rest Framework’da ilg‘or ishlab chiqish",
-            "Murakkab API ishlab chiqish (GraphQL, MQTT, WebSockets)",
+            "Django va Django Rest Framework’da ilğor işlab çiqiş",
+            "Murakkab API işlab çiqiş (GraphQL, MQTT, WebSockets)",
             "Full-stack ilovalar (Backend + React yoki Qt’da frontend)",
-            "Korporativ darajadagi avtomatlashtirish va IoT integratsiyasi",
-            "Ilg‘or Telegram botlar va AI asosidagi avtomatlashtirish",
-            "Dam olish kunlari ham ishlash va ustuvor qo‘llab-quvvatlash",
-            "12 oylik qo‘llab-quvvatlash va texnik xizmat",
+            "Korporativ darajadagi avtomatlaştiriş va IoT integratsiyasi",
+            "Ilğor Telegram botlar va AI asosidagi avtomatlaştiriş",
+            "Dam oliş kunlari ham işlaş va ustuvor qõllab-quvvatlaş",
+            "12 oylik qõllab-quvvatlaş va texnik xizmat",
             "Loyiha doimo ustuvor"
           ],
           "ru": [
@@ -1037,8 +1037,8 @@
         "Let's discuss and build a tailor-made package just for you."
       ],
       "uz": [
-        "Loyihangiz uchun maxsus yechim kerakmi?",
-        "Keling, muhokama qilib, aynan siz uchun paket tuzamiz."
+        "Loyihangiz uçun maxsus yeçim kerakmi?",
+        "Keling, muhokama qilib, aynan siz uçun paket tuzamiz."
       ],
       "ru": [
         "Нужно индивидуальное решение для вашего проекта?",
